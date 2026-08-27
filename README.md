@@ -51,12 +51,26 @@ tratar, e um único comando (`node server.js`) sobe tudo.
 
 ### Quadro kanban
 
-As tarefas do projeto selecionado aparecem em três colunas — **Pendente**,
-**Fazendo** e **Concluída** — uma por valor de `status`. Arrastar um card para
-outra coluna (ou usar o `<select>` do card, alternativa acessível e para toque)
-dispara um `PUT /api/tarefas/:id` só com o novo `status`; ao concluir, o quadro
-é recarregado da API. Não há mudança de backend nem de schema: o kanban é
-apenas uma visão sobre o campo `status` que já existia.
+As tarefas do projeto selecionado aparecem em três colunas lado a lado —
+**A Fazer** (`status = pendente`), **Fazendo** (`fazendo`) e **Feito**
+(`concluida`) — cada tarefa como um cartão dentro da coluna do seu `status`.
+
+Para mover um cartão entre colunas há **arrastar-e-soltar** implementado à mão
+em `public/app.js`, sem os eventos de drag do HTML5:
+
+- **Toque**: `touchstart` / `touchmove` (não passivo, com `preventDefault` para
+  travar a rolagem) / `touchend` / `touchcancel`.
+- **Mouse**: `mousedown` / `mousemove` / `mouseup`, reaproveitando a mesma
+  lógica.
+
+O arraste só começa após ~8 px de movimento; um clone flutuante segue o
+dedo/cursor e `document.elementFromPoint` identifica a coluna sob o ponteiro.
+Ao soltar numa coluna diferente, chama-se `PUT /api/tarefas/:id` apenas com o
+novo `status` e o quadro é recarregado da API; soltar na mesma coluna não faz
+nada. O `<select>` de cada cartão continua como alternativa acessível.
+
+Não há mudança de backend nem de schema: o kanban é apenas uma visão sobre o
+campo `status` que já existia.
 
 ### Estrutura de arquivos
 
@@ -66,7 +80,7 @@ apenas uma visão sobre o campo `status` que já existia.
 | `db.js` | Conexão SQLite, criação das tabelas e funções de acesso a dados |
 | `public/index.html` | Layout: barra lateral de projetos + quadro kanban de tarefas |
 | `public/style.css` | Estilo (flexbox; colunas do kanban; borda colorida por status; prazo atrasado em vermelho) |
-| `public/app.js` | Lógica do cliente: carrega/cria projetos e tarefas, renderiza o kanban, move tarefas (arrastar ou `<select>`), exclui — tudo via `fetch()` |
+| `public/app.js` | Lógica do cliente: carrega/cria projetos e tarefas, renderiza o kanban, arrastar-e-soltar por toque e mouse (`touch*` / `mouse*`, sem drag HTML5), `<select>` de status, exclusão — tudo via `fetch()` |
 | `package.json` | Dependências (`express`, `better-sqlite3`) e script `start` |
 | `banco.db` | Banco SQLite (gerado em runtime; ignorado pelo git) |
 

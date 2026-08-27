@@ -1,10 +1,12 @@
 'use strict';
 
 const STATUS_LABEL = {
-  pendente: 'Pendente',
+  pendente: 'A Fazer',
   fazendo: 'Fazendo',
-  concluida: 'Concluída',
+  concluida: 'Feito',
 };
+
+const LIMIAR_ARRASTE = 8; // px de movimento antes de considerar que é um arraste
 
 let projetoAtual = null;
 
@@ -142,7 +144,6 @@ function renderKanban(tarefas) {
 function criarCard(tarefa) {
   const card = document.createElement('div');
   card.className = 'card';
-  card.draggable = true;
   card.dataset.id = tarefa.id;
   card.dataset.status = tarefa.status;
 
@@ -188,38 +189,155 @@ function criarCard(tarefa) {
   acoes.append(select, btnApagar);
   card.appendChild(acoes);
 
-  card.addEventListener('dragstart', (e) => {
-    e.dataTransfer.setData('text/plain', String(tarefa.id));
-    e.dataTransfer.effectAllowed = 'move';
-    card.classList.add('arrastando');
-  });
-  card.addEventListener('dragend', () => card.classList.remove('arrastando'));
+  // Arrastar-e-soltar por toque e por mouse (sem os eventos de drag do HTML5)
+  card.addEventListener('touchstart', (e) => arrasteInicio(e, card), { passive: true });
+  card.addEventListener('mousedown', (e) => arrasteInicio(e, card));
 
   return card;
 }
 
-// Listeners de drop nas colunas (fixas — registrados uma vez)
-for (const status of Object.keys(dropzones)) {
-  const zona = dropzones[status];
-  const coluna = zona.closest('.coluna');
+// --- Arrastar-e-soltar de cartões (touch* + mouse, lógica compartilhada) ---
 
-  zona.addEventListener('dragover', (e) => {
-    e.preventDefault();
-    e.dataTransfer.dropEffect = 'move';
+let arraste = null;
+
+// Extrai {x, y, id} do evento. `alvoId` = identifier do toque a seguir (null p/ mouse).
+function pontoDoEvento(e, alvoId) {
+  const toques = e.changedTouches || e.touches;
+  if (toques) {
+    for (const t of toques) {
+      if (alvoId === null || alvoId === undefined || t.identifier === alvoId) {
+        return { x: t.clientX, y: t.clientY, id: t.identifier };
+      }
+    }
+    return null;
+  }
+  return { x: e.clientX, y: e.clientY, id: null };
+}
+
+function arrasteInicio(e, card) {
+  if (arraste) return;
+  // Não iniciar arraste ao tocar no <select> ou no botão de apagar
+  if (e.target.closest('select, button')) return;
+  if (e.type === 'mousedown' && e.button !== 0) return;
+
+  const p = pontoDoEvento(e, null);
+  if (!p) return;
+
+  const toque = e.type === 'touchstart';
+  arraste = {
+    card,
+    id: card.dataset.id,
+    statusOrigem: card.dataset.status,
+    touchId: toque ? p.id : null,
+    x0: p.x,
+    y0: p.y,
+    ativo: false,
+    clone: null,
+    offsetX: 0,
+    offsetY: 0,
+    colunaAlvo: null,
+  };
+
+  if (toque) {
+    document.addEventListener('touchmove', arrasteMover, { passive: false });
+    document.addEventListener('touchend', arrasteFim);
+    document.addEventListener('touchcancel', arrasteCancelar);
+  } else {
+    e.preventDefault(); // evita seleção de texto do cartão
+    document.addEventListener('mousemove', arrasteMover);
+    document.addEventListener('mouseup', arrasteFim);
+  }
+}
+
+function arrasteMover(e) {
+  if (!arraste) return;
+  const p = pontoDoEvento(e, arraste.touchId);
+  if (!p) return;
+
+  if (!arraste.ativo) {
+    if (Math.hypot(p.x - arraste.x0, p.y - arraste.y0) < LIMIAR_ARRASTE) return;
+    arrasteAtivar(p);
+  }
+
+  e.preventDefault(); // trava a rolagem durante o arraste por toque
+  arraste.clone.style.left = `${p.x - arraste.offsetX}px`;
+  arraste.clone.style.top = `${p.y - arraste.offsetY}px`;
+  arrasteMarcarColuna(p);
+}
+
+function arrasteAtivar(p) {
+  const card = arraste.card;
+  const r = card.getBoundingClientRect();
+
+  const clone = card.cloneNode(true);
+  clone.classList.add('card-clone');
+  clone.classList.remove('arrastando');
+  clone.style.width = `${r.width}px`;
+  clone.style.left = `${r.left}px`;
+  clone.style.top = `${r.top}px`;
+  document.body.appendChild(clone);
+
+  arraste.clone = clone;
+  arraste.offsetX = p.x - r.left;
+  arraste.offsetY = p.y - r.top;
+  arraste.ativo = true;
+  card.classList.add('arrastando');
+  document.body.classList.add('arrastando-ativo');
+}
+
+function colunaEmPonto(p) {
+  const el = document.elementFromPoint(p.x, p.y);
+  return el && el.closest ? el.closest('.coluna') : null;
+}
+
+function arrasteMarcarColuna(p) {
+  const coluna = colunaEmPonto(p);
+  if (arraste.colunaAlvo && arraste.colunaAlvo !== coluna) {
+    arraste.colunaAlvo.classList.remove('drag-over');
+  }
+  arraste.colunaAlvo = coluna;
+  if (coluna && coluna.dataset.status !== arraste.statusOrigem) {
     coluna.classList.add('drag-over');
-  });
-  zona.addEventListener('dragleave', (e) => {
-    if (!zona.contains(e.relatedTarget)) coluna.classList.remove('drag-over');
-  });
-  zona.addEventListener('drop', (e) => {
-    e.preventDefault();
+  } else if (coluna) {
     coluna.classList.remove('drag-over');
-    const id = e.dataTransfer.getData('text/plain');
-    if (!id) return;
-    const card = kanbanEl.querySelector(`.card[data-id="${id}"]`);
-    if (card && card.dataset.status === status) return; // mesma coluna
-    mudarStatus(id, status);
-  });
+  }
+}
+
+function arrasteFim(e) {
+  if (!arraste) return;
+  const ativo = arraste.ativo;
+  const p = pontoDoEvento(e, arraste.touchId) || { x: arraste.x0, y: arraste.y0 };
+  const coluna = ativo ? (colunaEmPonto(p) || arraste.colunaAlvo) : null;
+  const { id, statusOrigem } = arraste;
+
+  arrasteLimpar();
+
+  if (ativo && coluna) {
+    const novoStatus = coluna.dataset.status;
+    if (novoStatus && novoStatus !== statusOrigem) {
+      mudarStatus(id, novoStatus);
+    }
+  }
+}
+
+function arrasteCancelar() {
+  arrasteLimpar();
+}
+
+function arrasteLimpar() {
+  document.removeEventListener('touchmove', arrasteMover, { passive: false });
+  document.removeEventListener('touchend', arrasteFim);
+  document.removeEventListener('touchcancel', arrasteCancelar);
+  document.removeEventListener('mousemove', arrasteMover);
+  document.removeEventListener('mouseup', arrasteFim);
+
+  if (arraste) {
+    if (arraste.clone) arraste.clone.remove();
+    if (arraste.card) arraste.card.classList.remove('arrastando');
+    if (arraste.colunaAlvo) arraste.colunaAlvo.classList.remove('drag-over');
+  }
+  document.body.classList.remove('arrastando-ativo');
+  arraste = null;
 }
 
 function formatarData(iso) {

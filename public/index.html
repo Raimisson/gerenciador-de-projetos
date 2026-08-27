@@ -38,16 +38,16 @@
           <input type="text" id="tarefa-titulo" placeholder="Título da tarefa" required />
           <input type="date" id="tarefa-prazo" />
           <select id="tarefa-status">
-            <option value="pendente">Pendente</option>
+            <option value="pendente">A Fazer</option>
             <option value="fazendo">Fazendo</option>
-            <option value="concluida">Concluída</option>
+            <option value="concluida">Feito</option>
           </select>
           <button type="submit">Adicionar tarefa</button>
         </form>
 
         <div id="kanban" class="kanban">
           <div class="coluna" data-status="pendente">
-            <h3>Pendente <span class="contador" data-count>0</span></h3>
+            <h3>A Fazer <span class="contador" data-count>0</span></h3>
             <div class="coluna-cards" data-dropzone="pendente">
               <!-- cards entram aqui via JS -->
             </div>
@@ -57,7 +57,7 @@
             <div class="coluna-cards" data-dropzone="fazendo"></div>
           </div>
           <div class="coluna" data-status="concluida">
-            <h3>Concluída <span class="contador" data-count>0</span></h3>
+            <h3>Feito <span class="contador" data-count>0</span></h3>
             <div class="coluna-cards" data-dropzone="concluida"></div>
           </div>
         </div>
