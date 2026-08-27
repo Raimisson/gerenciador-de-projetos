@@ -49,15 +49,38 @@ tratar, e um único comando (`node server.js`) sobe tudo.
 - **Banco (`banco.db`)** — arquivo SQLite criado automaticamente no primeiro
   start, na raiz do projeto. Está no `.gitignore`.
 
+### Quadro kanban
+
+As tarefas do projeto selecionado aparecem em três colunas lado a lado —
+**A Fazer** (`status = pendente`), **Fazendo** (`fazendo`) e **Feito**
+(`concluida`) — cada tarefa como um cartão dentro da coluna do seu `status`.
+
+Para mover um cartão entre colunas há **arrastar-e-soltar** implementado à mão
+em `public/app.js`, sem os eventos de drag do HTML5:
+
+- **Toque**: `touchstart` / `touchmove` (não passivo, com `preventDefault` para
+  travar a rolagem) / `touchend` / `touchcancel`.
+- **Mouse**: `mousedown` / `mousemove` / `mouseup`, reaproveitando a mesma
+  lógica.
+
+O arraste só começa após ~8 px de movimento; um clone flutuante segue o
+dedo/cursor e `document.elementFromPoint` identifica a coluna sob o ponteiro.
+Ao soltar numa coluna diferente, chama-se `PUT /api/tarefas/:id` apenas com o
+novo `status` e o quadro é recarregado da API; soltar na mesma coluna não faz
+nada. O `<select>` de cada cartão continua como alternativa acessível.
+
+Não há mudança de backend nem de schema: o kanban é apenas uma visão sobre o
+campo `status` que já existia.
+
 ### Estrutura de arquivos
 
 | Arquivo | Papel |
 |---|---|
 | `server.js` | Servidor Express: estáticos de `public/` + API REST em `/api/` |
 | `db.js` | Conexão SQLite, criação das tabelas e funções de acesso a dados |
-| `public/index.html` | Layout: barra lateral de projetos + painel de tarefas |
-| `public/style.css` | Estilo (flexbox; borda colorida por status; prazo atrasado em vermelho) |
-| `public/app.js` | Lógica do cliente: carrega/cria projetos e tarefas, troca status, exclui — tudo via `fetch()` |
+| `public/index.html` | Layout: barra lateral de projetos + quadro kanban de tarefas |
+| `public/style.css` | Estilo (flexbox; colunas do kanban; borda colorida por status; prazo atrasado em vermelho) |
+| `public/app.js` | Lógica do cliente: carrega/cria projetos e tarefas, renderiza o kanban, arrastar-e-soltar por toque e mouse (`touch*` / `mouse*`, sem drag HTML5), `<select>` de status, exclusão — tudo via `fetch()` |
 | `package.json` | Dependências (`express`, `better-sqlite3`) e script `start` |
 | `banco.db` | Banco SQLite (gerado em runtime; ignorado pelo git) |
 
