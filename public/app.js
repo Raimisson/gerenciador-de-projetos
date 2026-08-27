@@ -23,7 +23,11 @@ const formTarefaEl = document.getElementById('form-tarefa');
 const tarefaTituloEl = document.getElementById('tarefa-titulo');
 const tarefaPrazoEl = document.getElementById('tarefa-prazo');
 const tarefaStatusEl = document.getElementById('tarefa-status');
-const listaTarefasEl = document.getElementById('lista-tarefas');
+const kanbanEl = document.getElementById('kanban');
+const dropzones = {};
+for (const dz of kanbanEl.querySelectorAll('[data-dropzone]')) {
+  dropzones[dz.dataset.dropzone] = dz;
+}
 
 // --- Helper de fetch ---
 async function api(url, options = {}) {
@@ -109,53 +113,62 @@ formProjetoEl.addEventListener('submit', async (e) => {
   }
 });
 
-// --- Tarefas ---
+// --- Tarefas (quadro kanban) ---
 
 async function carregarTarefas() {
   if (!projetoAtual) return;
 
   const tarefas = await api(`/api/projetos/${projetoAtual.id}/tarefas`);
-  listaTarefasEl.innerHTML = '';
+  renderKanban(tarefas);
+}
 
-  if (tarefas.length === 0) {
-    const li = document.createElement('li');
-    li.className = 'vazio';
-    li.textContent = 'Nenhuma tarefa neste projeto.';
-    listaTarefasEl.appendChild(li);
-    return;
+function renderKanban(tarefas) {
+  const porStatus = { pendente: [], fazendo: [], concluida: [] };
+  for (const tarefa of tarefas) {
+    (porStatus[tarefa.status] || porStatus.pendente).push(tarefa);
   }
 
-  for (const tarefa of tarefas) {
-    listaTarefasEl.appendChild(criarItemTarefa(tarefa));
+  for (const status of Object.keys(dropzones)) {
+    const zona = dropzones[status];
+    zona.innerHTML = '';
+    for (const tarefa of porStatus[status]) {
+      zona.appendChild(criarCard(tarefa));
+    }
+    const contador = zona.closest('.coluna').querySelector('[data-count]');
+    if (contador) contador.textContent = String(porStatus[status].length);
   }
 }
 
-function criarItemTarefa(tarefa) {
-  const li = document.createElement('li');
-  li.className = 'tarefa';
-  li.dataset.status = tarefa.status;
-
-  const info = document.createElement('div');
-  info.className = 'tarefa-info';
+function criarCard(tarefa) {
+  const card = document.createElement('div');
+  card.className = 'card';
+  card.draggable = true;
+  card.dataset.id = tarefa.id;
+  card.dataset.status = tarefa.status;
 
   const titulo = document.createElement('div');
-  titulo.className = 'tarefa-titulo';
+  titulo.className = 'card-titulo';
   titulo.textContent = tarefa.titulo;
-  info.appendChild(titulo);
+  card.appendChild(titulo);
 
   if (tarefa.prazo) {
     const prazo = document.createElement('div');
-    prazo.className = 'tarefa-prazo';
+    prazo.className = 'card-prazo';
     prazo.textContent = `Prazo: ${formatarData(tarefa.prazo)}`;
     const hoje = new Date().toISOString().slice(0, 10);
     if (tarefa.prazo < hoje && tarefa.status !== 'concluida') {
       prazo.classList.add('atrasado');
       prazo.textContent += ' (atrasado)';
     }
-    info.appendChild(prazo);
+    card.appendChild(prazo);
   }
 
+  const acoes = document.createElement('div');
+  acoes.className = 'card-acoes';
+
+  // <select> como alternativa acessível / para toque, além do arrastar
   const select = document.createElement('select');
+  select.title = 'Mover para';
   for (const valor of Object.keys(STATUS_LABEL)) {
     const opt = document.createElement('option');
     opt.value = valor;
@@ -172,8 +185,41 @@ function criarItemTarefa(tarefa) {
   btnApagar.title = 'Apagar tarefa';
   btnApagar.addEventListener('click', () => apagarTarefa(tarefa.id));
 
-  li.append(info, select, btnApagar);
-  return li;
+  acoes.append(select, btnApagar);
+  card.appendChild(acoes);
+
+  card.addEventListener('dragstart', (e) => {
+    e.dataTransfer.setData('text/plain', String(tarefa.id));
+    e.dataTransfer.effectAllowed = 'move';
+    card.classList.add('arrastando');
+  });
+  card.addEventListener('dragend', () => card.classList.remove('arrastando'));
+
+  return card;
+}
+
+// Listeners de drop nas colunas (fixas — registrados uma vez)
+for (const status of Object.keys(dropzones)) {
+  const zona = dropzones[status];
+  const coluna = zona.closest('.coluna');
+
+  zona.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'move';
+    coluna.classList.add('drag-over');
+  });
+  zona.addEventListener('dragleave', (e) => {
+    if (!zona.contains(e.relatedTarget)) coluna.classList.remove('drag-over');
+  });
+  zona.addEventListener('drop', (e) => {
+    e.preventDefault();
+    coluna.classList.remove('drag-over');
+    const id = e.dataTransfer.getData('text/plain');
+    if (!id) return;
+    const card = kanbanEl.querySelector(`.card[data-id="${id}"]`);
+    if (card && card.dataset.status === status) return; // mesma coluna
+    mudarStatus(id, status);
+  });
 }
 
 function formatarData(iso) {

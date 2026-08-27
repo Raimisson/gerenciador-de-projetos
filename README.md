@@ -49,15 +49,24 @@ tratar, e um único comando (`node server.js`) sobe tudo.
 - **Banco (`banco.db`)** — arquivo SQLite criado automaticamente no primeiro
   start, na raiz do projeto. Está no `.gitignore`.
 
+### Quadro kanban
+
+As tarefas do projeto selecionado aparecem em três colunas — **Pendente**,
+**Fazendo** e **Concluída** — uma por valor de `status`. Arrastar um card para
+outra coluna (ou usar o `<select>` do card, alternativa acessível e para toque)
+dispara um `PUT /api/tarefas/:id` só com o novo `status`; ao concluir, o quadro
+é recarregado da API. Não há mudança de backend nem de schema: o kanban é
+apenas uma visão sobre o campo `status` que já existia.
+
 ### Estrutura de arquivos
 
 | Arquivo | Papel |
 |---|---|
 | `server.js` | Servidor Express: estáticos de `public/` + API REST em `/api/` |
 | `db.js` | Conexão SQLite, criação das tabelas e funções de acesso a dados |
-| `public/index.html` | Layout: barra lateral de projetos + painel de tarefas |
-| `public/style.css` | Estilo (flexbox; borda colorida por status; prazo atrasado em vermelho) |
-| `public/app.js` | Lógica do cliente: carrega/cria projetos e tarefas, troca status, exclui — tudo via `fetch()` |
+| `public/index.html` | Layout: barra lateral de projetos + quadro kanban de tarefas |
+| `public/style.css` | Estilo (flexbox; colunas do kanban; borda colorida por status; prazo atrasado em vermelho) |
+| `public/app.js` | Lógica do cliente: carrega/cria projetos e tarefas, renderiza o kanban, move tarefas (arrastar ou `<select>`), exclui — tudo via `fetch()` |
 | `package.json` | Dependências (`express`, `better-sqlite3`) e script `start` |
 | `banco.db` | Banco SQLite (gerado em runtime; ignorado pelo git) |
 

@@ -172,59 +172,124 @@ button:hover {
 
 /* ----- Lista de tarefas ----- */
 
-.lista-tarefas {
-  list-style: none;
+/* ----- Quadro kanban ----- */
+
+.kanban {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.coluna {
+  flex: 1 1 240px;
+  min-width: 240px;
+  background: #ebecf0;
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.coluna h3 {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--texto-suave);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.contador {
+  background: #d5d7dd;
+  color: var(--texto-suave);
+  border-radius: 10px;
+  padding: 0 7px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.coluna-cards {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  min-height: 48px;
+  border-radius: 6px;
+  transition: background 0.15s;
 }
 
-.tarefa {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+.coluna-cards:empty::after {
+  content: "Solte um card aqui";
+  display: block;
+  text-align: center;
+  color: #9aa0ab;
+  font-size: 12px;
+  padding: 14px 0;
+}
+
+.coluna.drag-over .coluna-cards {
+  background: #dbe4ff;
+  outline: 2px dashed var(--azul);
+  outline-offset: -2px;
+}
+
+.card {
   background: var(--painel);
   border: 1px solid var(--borda);
   border-left: 4px solid var(--pendente);
   border-radius: 8px;
-  padding: 12px 16px;
+  padding: 10px 12px;
+  cursor: grab;
 }
 
-.tarefa[data-status="fazendo"] {
+.card:active {
+  cursor: grabbing;
+}
+
+.card.arrastando {
+  opacity: 0.5;
+}
+
+.coluna[data-status="fazendo"] .card {
   border-left-color: var(--fazendo);
 }
 
-.tarefa[data-status="concluida"] {
+.coluna[data-status="concluida"] .card {
   border-left-color: var(--concluida);
 }
 
-.tarefa-info {
-  flex-grow: 1;
-  min-width: 0;
-}
-
-.tarefa-titulo {
+.card-titulo {
   font-weight: 500;
+  word-break: break-word;
 }
 
-.tarefa[data-status="concluida"] .tarefa-titulo {
+.coluna[data-status="concluida"] .card-titulo {
   text-decoration: line-through;
   color: var(--texto-suave);
 }
 
-.tarefa-prazo {
+.card-prazo {
   font-size: 13px;
   color: var(--texto-suave);
-  margin-top: 2px;
+  margin-top: 4px;
 }
 
-.tarefa-prazo.atrasado {
+.card-prazo.atrasado {
   color: #de350b;
   font-weight: 600;
 }
 
-.tarefa select {
-  flex-shrink: 0;
+.card-acoes {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.card-acoes select {
+  flex-grow: 1;
+  padding: 4px 6px;
+  font-size: 13px;
 }
 
 .btn-apagar {

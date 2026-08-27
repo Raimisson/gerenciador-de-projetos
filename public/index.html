@@ -45,9 +45,22 @@
           <button type="submit">Adicionar tarefa</button>
         </form>
 
-        <ul id="lista-tarefas" class="lista-tarefas">
-          <!-- tarefas entram aqui via JS -->
-        </ul>
+        <div id="kanban" class="kanban">
+          <div class="coluna" data-status="pendente">
+            <h3>Pendente <span class="contador" data-count>0</span></h3>
+            <div class="coluna-cards" data-dropzone="pendente">
+              <!-- cards entram aqui via JS -->
+            </div>
+          </div>
+          <div class="coluna" data-status="fazendo">
+            <h3>Fazendo <span class="contador" data-count>0</span></h3>
+            <div class="coluna-cards" data-dropzone="fazendo"></div>
+          </div>
+          <div class="coluna" data-status="concluida">
+            <h3>Concluída <span class="contador" data-count>0</span></h3>
+            <div class="coluna-cards" data-dropzone="concluida"></div>
+          </div>
+        </div>
       </section>
     </main>
   </div>
