@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gerenciador de Projetos</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <h1>Projetos</h1>
+
+      <ul id="lista-projetos" class="lista-projetos">
+        <!-- projetos entram aqui via JS -->
+      </ul>
+
+      <form id="form-projeto" class="form-bloco">
+        <h2>Novo projeto</h2>
+        <input type="text" id="projeto-nome" placeholder="Nome do projeto" required />
+        <textarea id="projeto-descricao" placeholder="Descrição (opcional)" rows="2"></textarea>
+        <button type="submit">Criar projeto</button>
+      </form>
+    </aside>
+
+    <main class="conteudo">
+      <div id="sem-selecao" class="sem-selecao">
+        <p>Selecione um projeto na barra lateral ou crie um novo.</p>
+      </div>
+
+      <section id="painel-projeto" class="painel-projeto oculto">
+        <header class="painel-cabecalho">
+          <h2 id="projeto-titulo"></h2>
+          <p id="projeto-desc" class="projeto-desc"></p>
+        </header>
+
+        <form id="form-tarefa" class="form-tarefa">
+          <input type="text" id="tarefa-titulo" placeholder="Título da tarefa" required />
+          <input type="date" id="tarefa-prazo" />
+          <select id="tarefa-status">
+            <option value="pendente">Pendente</option>
+            <option value="fazendo">Fazendo</option>
+            <option value="concluida">Concluída</option>
+          </select>
+          <button type="submit">Adicionar tarefa</button>
+        </form>
+
+        <ul id="lista-tarefas" class="lista-tarefas">
+          <!-- tarefas entram aqui via JS -->
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

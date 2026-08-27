@@ -1,0 +1,13 @@
+{
+  "name": "gerenciador-de-projetos",
+  "version": "1.0.0",
+  "description": "Sistema full-stack de gerenciamento de projetos e tarefas (Express + better-sqlite3 + frontend puro)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "express": "^4.22.2"
+  }
+}
