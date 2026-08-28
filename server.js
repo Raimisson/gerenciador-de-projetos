@@ -152,26 +152,6 @@ app.delete('/api/tarefas/:id', (req, res) => {
 
 // ------------------------------------------------------------------
 
-// Sobe o servidor HTTP. Retorna uma Promise com { server, port } — a porta
-// pode diferir de `porta` quando se passa 0 (deixa o SO escolher uma livre),
-// o que a versão Electron usa para não colidir com nada.
-function iniciar(porta = PORT) {
-  return new Promise((resolve, reject) => {
-    const server = app.listen(porta, () => {
-      const { port } = server.address();
-      console.log(`Servidor rodando em http://localhost:${port}`);
-      resolve({ server, port });
-    });
-    server.on('error', reject);
-  });
-}
-
-module.exports = { app, iniciar };
-
-// Executado direto (`node server.js`): inicia na porta padrão.
-if (require.main === module) {
-  iniciar().catch((err) => {
-    console.error('Falha ao iniciar o servidor:', err);
-    process.exit(1);
-  });
-}
+app.listen(PORT, () => {
+  console.log(`Servidor rodando em http://localhost:${PORT}`);
+});

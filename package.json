@@ -2,10 +2,10 @@
   "name": "gerenciador-de-projetos",
   "version": "1.0.0",
   "description": "Sistema full-stack de gerenciamento de projetos e tarefas (Express + better-sqlite3 + frontend puro)",
-  "main": "electron/main.js",
+  "main": "main.js",
   "scripts": {
-    "start": "node server.js",
-    "electron": "electron .",
+    "start": "electron .",
+    "server": "node server.js",
     "dist:win": "electron-builder --win",
     "postinstall": "electron-rebuild"
   },
@@ -25,7 +25,7 @@
     "appId": "com.raimisson.gerenciador",
     "productName": "Gerenciador de Projetos",
     "files": [
-      "electron/**/*",
+      "main.js",
       "server.js",
       "db.js",
       "public/**/*",

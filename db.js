@@ -3,10 +3,11 @@
 const path = require('path');
 const Database = require('better-sqlite3');
 
-// Caminho do banco: por padrão `banco.db` ao lado do código. A versão Electron
-// define BANCO_DB apontando para uma pasta gravável (userData), já que dentro
-// do pacote (asar) o diretório do app é somente leitura.
-const CAMINHO_BANCO = process.env.BANCO_DB || path.join(__dirname, 'banco.db');
+// Caminho do banco: usa DB_PATH quando definido (a versão Electron aponta para
+// uma pasta gravável em userData, já que o diretório do app empacotado é
+// somente leitura); sem a variável, usa `banco.db` ao lado do código — o
+// comportamento normal fora do Electron.
+const CAMINHO_BANCO = process.env.DB_PATH || path.join(__dirname, 'banco.db');
 
 const db = new Database(CAMINHO_BANCO);
 
