@@ -8,6 +8,11 @@ const STATUS_LABEL = {
 
 const LIMIAR_ARRASTE = 8; // px de movimento antes de considerar que é um arraste
 
+// Endereço base da API. Absoluto para que o frontend funcione também quando
+// carregado de outra origem (ex.: WebView do app Android), e não só quando
+// servido pelo próprio Express. Ajuste o IP/porta conforme a máquina do servidor.
+const API_BASE = 'http://192.168.0.15:3000';
+
 let projetoAtual = null;
 
 // --- Elementos ---
@@ -32,8 +37,9 @@ for (const dz of kanbanEl.querySelectorAll('[data-dropzone]')) {
 }
 
 // --- Helper de fetch ---
-async function api(url, options = {}) {
-  const resp = await fetch(url, {
+// `caminho` é sempre algo como '/api/...'; o endereço completo é montado com API_BASE.
+async function api(caminho, options = {}) {
+  const resp = await fetch(API_BASE + caminho, {
     headers: { 'Content-Type': 'application/json' },
     ...options,
   });

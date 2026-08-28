@@ -9,7 +9,19 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
-// Serve o frontend (public/index.html em "/") na mesma porta da API -> sem CORS.
+// CORS liberado para as rotas /api/*. Necessário para o app Android (Capacitor),
+// cuja WebView roda em outra origem (http://localhost) e conversa com este
+// servidor pela rede local. Quando o frontend é servido pelo próprio Express
+// (mesma origem), estes headers são apenas inofensivos.
+app.use('/api', (req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  if (req.method === 'OPTIONS') return res.sendStatus(204);
+  next();
+});
+
+// Serve o frontend estático (public/index.html em "/") na mesma porta da API.
 app.use(express.static(path.join(__dirname, 'public')));
 
 // ------------------------------------------------------------------
