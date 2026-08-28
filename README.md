@@ -76,13 +76,15 @@ campo `status` que já existia.
 
 | Arquivo | Papel |
 |---|---|
-| `server.js` | Servidor Express: estáticos de `public/` + API REST em `/api/` |
-| `db.js` | Conexão SQLite, criação das tabelas e funções de acesso a dados |
+| `server.js` | Servidor Express: estáticos de `public/` + API REST em `/api/`. Exporta `iniciar(porta)`; só escuta sozinho com `node server.js` |
+| `db.js` | Conexão SQLite (caminho via `BANCO_DB`), criação das tabelas e funções de acesso a dados |
+| `electron/main.js` | Processo Electron (versão desktop): sobe o Express numa porta livre e abre a janela em `http://localhost:<porta>` |
 | `public/index.html` | Layout: barra lateral de projetos + quadro kanban de tarefas |
 | `public/style.css` | Estilo (flexbox; colunas do kanban; borda colorida por status; prazo atrasado em vermelho) |
 | `public/app.js` | Lógica do cliente: carrega/cria projetos e tarefas, renderiza o kanban, arrastar-e-soltar por toque e mouse (`touch*` / `mouse*`, sem drag HTML5), `<select>` de status, exclusão — tudo via `fetch()` |
-| `package.json` | Dependências (`express`, `better-sqlite3`) e script `start` |
+| `package.json` | Dependências e scripts (`start`, `electron`, `dist:win`, `postinstall`); config `build` do electron-builder |
 | `banco.db` | Banco SQLite (gerado em runtime; ignorado pelo git) |
+| `dist/` | Instaladores gerados pelo electron-builder (ignorado pelo git) |
 
 ---
 
@@ -195,3 +197,39 @@ compatível com a sua versão do Node; se não houver, tenta compilar do zero (o
 que exige ferramentas de build C++). Se o `npm install` falhar na compilação,
 atualize para a versão mais recente do `better-sqlite3`, que costuma já ter o
 binário pronto para o seu Node.
+
+## Versão desktop (Windows / Electron)
+
+O mesmo backend Express roda dentro de um processo Electron: `electron/main.js`
+chama `iniciar(0)` de `server.js` (porta livre escolhida pelo SO), abre uma
+janela e carrega `http://localhost:<porta>`. Como a página é servida por HTTP na
+mesma origem, o frontend usa caminhos relativos (`API_BASE` vazio) e não há CORS.
+
+O banco fica em `app.getPath('userData')/banco.db` (via `BANCO_DB`), fora do
+pacote, que é somente leitura.
+
+### Rodar em desenvolvimento
+
+```bash
+npm install
+npm run electron
+```
+
+### Gerar o instalador
+
+```bash
+npm run dist:win
+```
+
+Sai um instalador NSIS em `dist/` (config em `build` no `package.json`:
+`appId`, `productName`, `asarUnpack` do `better-sqlite3`).
+
+### `postinstall` / `electron-rebuild`
+
+`npm install` roda `electron-rebuild` (script `postinstall`) para recompilar
+módulos nativos contra o ABI do Electron. **Isso exige toolchain C++**
+(Visual Studio Build Tools com "Desktop development with C++" + Python).
+
+Sem esse toolchain o `electron-rebuild` falha, mas o app ainda funciona: o
+`better-sqlite3` 13 usa **Node-API** (ABI estável entre Node e Electron), então
+o binário pré-compilado já carrega na janela do Electron sem recompilar.

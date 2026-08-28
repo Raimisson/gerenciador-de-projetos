@@ -2,9 +2,12 @@
   "name": "gerenciador-de-projetos",
   "version": "1.0.0",
   "description": "Sistema full-stack de gerenciamento de projetos e tarefas (Express + better-sqlite3 + frontend puro)",
-  "main": "server.js",
+  "main": "electron/main.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "electron": "electron .",
+    "dist:win": "electron-builder --win",
+    "postinstall": "electron-rebuild"
   },
   "dependencies": {
     "@capacitor/android": "^8.5.0",
@@ -13,6 +16,30 @@
     "express": "^4.22.2"
   },
   "devDependencies": {
-    "@capacitor/cli": "^8.5.0"
+    "@capacitor/cli": "^8.5.0",
+    "@electron/rebuild": "^4.2.0",
+    "electron": "^44.0.0",
+    "electron-builder": "^26.15.3"
+  },
+  "build": {
+    "appId": "com.raimisson.gerenciador",
+    "productName": "Gerenciador de Projetos",
+    "files": [
+      "electron/**/*",
+      "server.js",
+      "db.js",
+      "public/**/*",
+      "package.json"
+    ],
+    "asarUnpack": [
+      "**/node_modules/better-sqlite3/**"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
   }
 }

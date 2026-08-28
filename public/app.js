@@ -8,10 +8,15 @@ const STATUS_LABEL = {
 
 const LIMIAR_ARRASTE = 8; // px de movimento antes de considerar que é um arraste
 
-// Endereço base da API. Absoluto para que o frontend funcione também quando
-// carregado de outra origem (ex.: WebView do app Android), e não só quando
-// servido pelo próprio Express. Ajuste o IP/porta conforme a máquina do servidor.
-const API_BASE = 'http://192.168.0.15:3000';
+// Endereço base da API.
+// - Página servida por HTTP (Express local, janela do Electron, dev server):
+//   usa a mesma origem — caminhos relativos, sem CORS.
+// - Página aberta de outra origem sem servidor próprio (ex.: file://, WebView
+//   de app empacotado): cai no endereço absoluto do servidor na rede local.
+const API_BASE =
+  location.protocol === 'http:' || location.protocol === 'https:'
+    ? ''
+    : 'http://192.168.0.15:3000';
 
 let projetoAtual = null;
 
