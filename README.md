@@ -82,7 +82,7 @@ campo `status` que já existia.
 | `public/index.html` | Layout: barra lateral de projetos + quadro kanban de tarefas |
 | `public/style.css` | Estilo (flexbox; colunas do kanban; borda colorida por status; prazo atrasado em vermelho) |
 | `public/app.js` | Lógica do cliente: carrega/cria projetos e tarefas, renderiza o kanban, arrastar-e-soltar por toque e mouse (`touch*` / `mouse*`, sem drag HTML5), `<select>` de status, exclusão — tudo via `fetch()` |
-| `package.json` | `main` = `main.js`; scripts `start` (`electron .`), `server` (`node server.js`), `dist:win`, `postinstall`; config `build` do electron-builder |
+| `package.json` | `main` = `main.js`; scripts `start` (`electron .`), `server` (`node server.js`), `dist` (`electron-builder`), `postinstall`; config `build` do electron-builder |
 | `banco.db` | Banco SQLite (gerado em runtime; ignorado pelo git) |
 | `dist/` | Instaladores gerados pelo electron-builder (ignorado pelo git) |
 
@@ -231,11 +231,13 @@ Backend isolado (sem Electron): `npm run server` (= `node server.js`).
 ### Gerar o instalador
 
 ```bash
-npm run dist:win
+npm run dist
 ```
 
-Sai um instalador NSIS em `dist/` (config em `build` no `package.json`:
-`appId`, `productName`, `asarUnpack` do `better-sqlite3`).
+Roda o `electron-builder` com a config em `build` no `package.json`
+(`appId` `com.raimisson.gerenciadordeprojetos`, `productName`
+"Gerenciador de Projetos", `asarUnpack` do `better-sqlite3`, alvo `nsis`
+no Windows). Sai um instalador NSIS em `dist/`.
 
 ### `postinstall` / `electron-rebuild`
 

@@ -6,7 +6,7 @@
   "scripts": {
     "start": "electron .",
     "server": "node server.js",
-    "dist:win": "electron-builder --win",
+    "dist": "electron-builder",
     "postinstall": "electron-rebuild"
   },
   "dependencies": {
@@ -22,7 +22,7 @@
     "electron-builder": "^26.15.3"
   },
   "build": {
-    "appId": "com.raimisson.gerenciador",
+    "appId": "com.raimisson.gerenciadordeprojetos",
     "productName": "Gerenciador de Projetos",
     "files": [
       "main.js",
