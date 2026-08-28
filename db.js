@@ -3,7 +3,13 @@
 const path = require('path');
 const Database = require('better-sqlite3');
 
-const db = new Database(path.join(__dirname, 'banco.db'));
+// Caminho do banco: usa DB_PATH quando definido (a versão Electron aponta para
+// uma pasta gravável em userData, já que o diretório do app empacotado é
+// somente leitura); sem a variável, usa `banco.db` ao lado do código — o
+// comportamento normal fora do Electron.
+const CAMINHO_BANCO = process.env.DB_PATH || path.join(__dirname, 'banco.db');
+
+const db = new Database(CAMINHO_BANCO);
 
 // Necessário para o ON DELETE CASCADE das tarefas funcionar.
 db.pragma('foreign_keys = ON');

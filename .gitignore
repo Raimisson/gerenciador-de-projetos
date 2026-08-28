@@ -1,2 +1,5 @@
 node_modules/
 banco.db
+
+# Saída do electron-builder
+dist/

@@ -1,0 +1,8 @@
+{
+  "appId": "com.raimisson.gerenciador",
+  "appName": "Gerenciador de Projetos",
+  "webDir": "public",
+  "server": {
+    "cleartext": true
+  }
+}

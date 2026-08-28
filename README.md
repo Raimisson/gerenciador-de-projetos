@@ -76,13 +76,15 @@ campo `status` que já existia.
 
 | Arquivo | Papel |
 |---|---|
-| `server.js` | Servidor Express: estáticos de `public/` + API REST em `/api/` |
-| `db.js` | Conexão SQLite, criação das tabelas e funções de acesso a dados |
+| `server.js` | Servidor Express: estáticos de `public/` + API REST em `/api/`. Exporta `iniciar(porta)`; só escuta sozinho com `node server.js` |
+| `db.js` | Conexão SQLite (caminho via `DB_PATH`, com fallback local), criação das tabelas e funções de acesso a dados |
+| `main.js` | Processo principal do Electron (versão desktop): faz `fork()` do `server.js` com `DB_PATH` em `userData` e abre a janela em `http://localhost:3000` com retry |
 | `public/index.html` | Layout: barra lateral de projetos + quadro kanban de tarefas |
 | `public/style.css` | Estilo (flexbox; colunas do kanban; borda colorida por status; prazo atrasado em vermelho) |
 | `public/app.js` | Lógica do cliente: carrega/cria projetos e tarefas, renderiza o kanban, arrastar-e-soltar por toque e mouse (`touch*` / `mouse*`, sem drag HTML5), `<select>` de status, exclusão — tudo via `fetch()` |
-| `package.json` | Dependências (`express`, `better-sqlite3`) e script `start` |
+| `package.json` | `main` = `main.js`; scripts `start` (`electron .`), `server` (`node server.js`), `dist` (`electron-builder`), `postinstall`; config `build` do electron-builder |
 | `banco.db` | Banco SQLite (gerado em runtime; ignorado pelo git) |
+| `dist/` | Instaladores gerados pelo electron-builder (ignorado pelo git) |
 
 ---
 
@@ -195,3 +197,55 @@ compatível com a sua versão do Node; se não houver, tenta compilar do zero (o
 que exige ferramentas de build C++). Se o `npm install` falhar na compilação,
 atualize para a versão mais recente do `better-sqlite3`, que costuma já ter o
 binário pronto para o seu Node.
+
+## Versão desktop (Windows / Electron)
+
+`main.js` (raiz) é o processo principal do Electron. Ao iniciar ele:
+
+1. calcula `app.getPath('userData')` e define `DB_PATH` =
+   `<userData>/banco.db` — pasta gravável, ao contrário do diretório do app
+   empacotado;
+2. sobe o `server.js` como **processo filho** (`child_process.fork()`) com esse
+   `DB_PATH` no ambiente;
+3. abre uma `BrowserWindow` e carrega `http://localhost:3000`, com **retry**:
+   faz `http.get` na URL em laço (40 × 250 ms) até o servidor responder e, como
+   reforço, re-tenta o `loadURL` no evento `did-fail-load`.
+
+Ao fechar a janela, o processo filho é encerrado (`servidor.kill()`).
+
+`server.js` e o frontend **não mudam de lógica**: o servidor lê `DB_PATH` de
+`process.env` quando existe (via `db.js`) e cai no `banco.db` local quando não
+existe — então `node server.js` fora do Electron funciona como sempre. Como a
+janela carrega `http://localhost:3000`, o frontend faz chamadas de mesma origem
+(caminhos relativos), sem CORS.
+
+### Rodar em desenvolvimento
+
+```bash
+npm install
+npm start        # electron .
+```
+
+Backend isolado (sem Electron): `npm run server` (= `node server.js`).
+
+### Gerar o instalador
+
+```bash
+npm run dist
+```
+
+Roda o `electron-builder` com a config em `build` no `package.json`
+(`appId` `com.raimisson.gerenciadordeprojetos`, `productName`
+"Gerenciador de Projetos", `asarUnpack` do `better-sqlite3`, alvo `nsis`
+no Windows). Sai um instalador NSIS em `dist/`.
+
+### `postinstall` / `electron-rebuild`
+
+`npm install` roda `electron-rebuild` (script `postinstall`), que recompila
+módulos nativos e **exige toolchain C++** (Visual Studio Build Tools com
+"Desktop development with C++" + Python).
+
+Com o modelo de processo filho o `server.js` roda como Node puro (Electron
+define `ELECTRON_RUN_AS_NODE`), então o `better-sqlite3` usa o ABI do Node e o
+`electron-rebuild` não é estritamente necessário para ele — fica como
+precaução para eventuais módulos nativos carregados no processo principal.
