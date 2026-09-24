@@ -1,0 +1,86 @@
+{
+  "journal": "PREENCHER",
+  "slug": "preencher",
+  "publisher": "PREENCHER",
+  "aims_scope": {
+    "status": "NOT_VERIFIED"
+  },
+  "dimensions": {
+    "topic_fit": {
+      "rating": "INSUFFICIENT_EVIDENCE",
+      "justification": "preencher com evidência verificável",
+      "evidence": [],
+      "weight": 1
+    },
+    "method_fit": {
+      "rating": "INSUFFICIENT_EVIDENCE",
+      "justification": "preencher com evidência verificável",
+      "evidence": [],
+      "weight": 1
+    },
+    "contribution_fit": {
+      "rating": "INSUFFICIENT_EVIDENCE",
+      "justification": "preencher com evidência verificável",
+      "evidence": [],
+      "weight": 1
+    },
+    "empirical_fit": {
+      "rating": "INSUFFICIENT_EVIDENCE",
+      "justification": "preencher com evidência verificável",
+      "evidence": [],
+      "weight": 1
+    },
+    "audience_fit": {
+      "rating": "INSUFFICIENT_EVIDENCE",
+      "justification": "preencher com evidência verificável",
+      "evidence": [],
+      "weight": 1
+    },
+    "recent_publication_fit": {
+      "rating": "INSUFFICIENT_EVIDENCE",
+      "justification": "preencher com evidência verificável",
+      "evidence": [],
+      "weight": 1
+    },
+    "article_type_fit": {
+      "rating": "INSUFFICIENT_EVIDENCE",
+      "justification": "preencher com evidência verificável",
+      "evidence": [],
+      "weight": 1
+    }
+  },
+  "open_access": {
+    "status": "NOT_VERIFIED",
+    "note": "preencher com fonte oficial + data"
+  },
+  "apc": {
+    "status": "NOT_VERIFIED",
+    "note": "preencher com fonte oficial + data"
+  },
+  "indexing": {
+    "status": "NOT_VERIFIED",
+    "note": "preencher com fonte oficial + data"
+  },
+  "review_time": {
+    "status": "NOT_VERIFIED",
+    "note": "preencher com fonte oficial + data"
+  },
+  "publication_time": {
+    "status": "NOT_VERIFIED",
+    "note": "preencher com fonte oficial + data"
+  },
+  "metrics": {
+    "status": "NOT_VERIFIED",
+    "note": "preencher com fonte oficial + data"
+  },
+  "key_requirements": [
+    "NOT VERIFIED"
+  ],
+  "similar_articles": [],
+  "risks": [
+    "preencher"
+  ],
+  "due_diligence_conclusion": "NOT_ASSESSED",
+  "date_verified": "2026-01-01",
+  "notes": "Modelo. Nunca incluir probabilidade de aceitação."
+}

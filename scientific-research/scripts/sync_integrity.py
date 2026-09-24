@@ -1,38 +1,57 @@
 #!/usr/bin/env python3
-"""Sincroniza o bloco canônico de integridade em skills e agentes.
+"""Sincroniza blocos canônicos de integridade em skills e agentes.
 
-Fonte única: docs/partials/integrity-block.md
-Alvo: trecho entre <!-- integrity:start --> e <!-- integrity:end --> em
-skills/*/SKILL.md e agents/*.md.
+Fontes únicas (docs/partials/):
+  integrity-block.md             → <!-- integrity:start --> ... <!-- integrity:end -->
+                                   em todas as skills (núcleo e módulos) e agentes
+  publication-integrity-block.md → <!-- pubintegrity:start --> ... <!-- pubintegrity:end -->
+                                   nas skills do módulo Publication Strategy e no agente
+                                   publication-strategist
 
 Uso:
     python3 scripts/sync_integrity.py          # reescreve os blocos
-    python3 scripts/sync_integrity.py --check  # só verifica (exit 1 se divergente)
+    python3 scripts/sync_integrity.py --check  # só verifica (exit 1 se divergente/ausente)
 """
 import pathlib
 import re
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-BLOCK = (ROOT / "docs" / "partials" / "integrity-block.md").read_text(encoding="utf-8").strip()
-PATTERN = re.compile(r"<!-- integrity:start -->.*?<!-- integrity:end -->", re.S)
-REPLACEMENT = f"<!-- integrity:start -->\n{BLOCK}\n<!-- integrity:end -->"
+PARTIALS = ROOT / "docs" / "partials"
+PUB_AGENTS = {"publication-strategist.md"}
+
+
+def block(marker: str, filename: str):
+    text = (PARTIALS / filename).read_text(encoding="utf-8").strip()
+    pattern = re.compile(rf"<!-- {marker}:start -->.*?<!-- {marker}:end -->", re.S)
+    return marker, pattern, f"<!-- {marker}:start -->\n{text}\n<!-- {marker}:end -->"
+
+
+CORE = block("integrity", "integrity-block.md")
+PUB = block("pubintegrity", "publication-integrity-block.md")
 
 
 def targets():
-    yield from sorted((ROOT / "skills").glob("*/SKILL.md"))
-    yield from sorted((ROOT / "agents").glob("*.md"))
+    """Gera (caminho, blocos exigidos)."""
+    for p in sorted((ROOT / "skills").glob("*/SKILL.md")):
+        yield p, [CORE]
+    for p in sorted((ROOT / "modules").glob("*/skills/*/SKILL.md")):
+        yield p, [CORE, PUB]
+    for p in sorted((ROOT / "agents").glob("*.md")):
+        yield p, [CORE, PUB] if p.name in PUB_AGENTS else [CORE]
 
 
 def main(argv):
     check = "--check" in argv
     problems = []
-    for path in targets():
+    for path, blocks in targets():
         text = path.read_text(encoding="utf-8")
-        if not PATTERN.search(text):
-            problems.append(f"{path.relative_to(ROOT)}: marcadores integrity:start/end ausentes")
-            continue
-        new = PATTERN.sub(lambda _m: REPLACEMENT, text)
+        new = text
+        for marker, pattern, replacement in blocks:
+            if not pattern.search(new):
+                problems.append(f"{path.relative_to(ROOT)}: marcadores {marker}:start/end ausentes")
+                continue
+            new = pattern.sub(lambda _m, r=replacement: r, new)
         if new != text:
             if check:
                 problems.append(f"{path.relative_to(ROOT)}: bloco de integridade desatualizado")

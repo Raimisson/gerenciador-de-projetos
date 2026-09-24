@@ -1,0 +1,21 @@
+{
+  "journal": "PREENCHER",
+  "manuscript_id": "PREENCHER",
+  "round": 1,
+  "decision_letter_date": "PREENCHER",
+  "decision": "major revision",
+  "comments": [
+    {
+      "id": "R1.1",
+      "reviewer": "Reviewer 1",
+      "comment": "texto literal do comentário",
+      "interpretation": "o que é pedido",
+      "decision": "ACCEPTED",
+      "action": "o que foi feito",
+      "manuscript_change": "alteração",
+      "location": "Seção X, p. Y",
+      "response": "resposta",
+      "results_changed": false
+    }
+  ]
+}

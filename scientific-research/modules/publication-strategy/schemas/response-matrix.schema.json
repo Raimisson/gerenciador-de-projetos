@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Matriz de resposta a revisores",
+  "type": "object",
+  "required": [
+    "journal",
+    "manuscript_id",
+    "round",
+    "decision_letter_date",
+    "comments"
+  ],
+  "properties": {
+    "journal": {
+      "type": "string",
+      "minLength": 1
+    },
+    "manuscript_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "round": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "decision_letter_date": {
+      "type": "string",
+      "minLength": 1
+    },
+    "decision": {
+      "type": "string"
+    },
+    "comments": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "reviewer",
+          "comment",
+          "interpretation",
+          "decision",
+          "action",
+          "manuscript_change",
+          "location",
+          "response",
+          "results_changed"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reviewer": {
+            "type": "string",
+            "minLength": 1
+          },
+          "comment": {
+            "type": "string",
+            "minLength": 1
+          },
+          "interpretation": {
+            "type": "string",
+            "minLength": 1
+          },
+          "decision": {
+            "type": "string",
+            "enum": [
+              "ACCEPTED",
+              "PARTIALLY_ACCEPTED",
+              "NOT_ACCEPTED"
+            ]
+          },
+          "action": {
+            "type": "string",
+            "minLength": 1
+          },
+          "manuscript_change": {
+            "type": "string",
+            "minLength": 1
+          },
+          "location": {
+            "type": "string",
+            "minLength": 1
+          },
+          "response": {
+            "type": "string",
+            "minLength": 1
+          },
+          "justification": {
+            "type": "string"
+          },
+          "results_changed": {
+            "type": "boolean"
+          },
+          "results_change_reason": {
+            "type": "string"
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "$id": "response-matrix.schema.json"
+}

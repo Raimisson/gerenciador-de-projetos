@@ -1,0 +1,127 @@
+{
+  "journal": "PREENCHER",
+  "publisher": "PREENCHER",
+  "issn": "PREENCHER",
+  "sources": [
+    {
+      "url": "PREENCHER — URL oficial do guide for authors",
+      "accessed_on": "2026-01-01",
+      "guideline_version": "",
+      "origin": "official_site"
+    }
+  ],
+  "accessed_on": "2026-01-01",
+  "access_status": "blocked",
+  "guideline_version": "",
+  "article_type": "research article",
+  "rules": [
+    {
+      "rule_id": "R-WORDS",
+      "category": "limite de palavras",
+      "requirement": "PREENCHER (trecho literal do guia)",
+      "status": "NOT_VERIFIED",
+      "check": "max_words",
+      "value": null,
+      "count_scope": "unspecified",
+      "excerpt": "",
+      "source_url": "",
+      "accessed_on": "2026-01-01"
+    },
+    {
+      "rule_id": "R-ABSTRACT",
+      "category": "abstract",
+      "requirement": "PREENCHER",
+      "status": "NOT_VERIFIED",
+      "check": "max_abstract_words",
+      "value": null
+    },
+    {
+      "rule_id": "R-KEYWORDS",
+      "category": "keywords",
+      "requirement": "PREENCHER",
+      "status": "NOT_VERIFIED",
+      "check": "keywords_range",
+      "value": null
+    },
+    {
+      "rule_id": "R-HIGHLIGHTS",
+      "category": "highlights",
+      "requirement": "PREENCHER",
+      "status": "NOT_VERIFIED",
+      "check": "highlights",
+      "value": null,
+      "file_required": "highlights.md"
+    },
+    {
+      "rule_id": "R-DATA",
+      "category": "data availability statement",
+      "requirement": "PREENCHER",
+      "status": "NOT_VERIFIED",
+      "check": "required_statement",
+      "statement_kind": "data_availability"
+    },
+    {
+      "rule_id": "R-COI",
+      "category": "conflict of interest",
+      "requirement": "PREENCHER",
+      "status": "NOT_VERIFIED",
+      "check": "required_statement",
+      "statement_kind": "competing_interests"
+    },
+    {
+      "rule_id": "R-FUNDING",
+      "category": "funding",
+      "requirement": "PREENCHER",
+      "status": "NOT_VERIFIED",
+      "check": "required_statement",
+      "statement_kind": "funding"
+    },
+    {
+      "rule_id": "R-CREDIT",
+      "category": "CRediT",
+      "requirement": "PREENCHER",
+      "status": "NOT_VERIFIED",
+      "check": "required_statement",
+      "statement_kind": "credit"
+    },
+    {
+      "rule_id": "R-AI",
+      "category": "uso de IA generativa",
+      "requirement": "PREENCHER",
+      "status": "NOT_VERIFIED",
+      "check": "required_statement",
+      "statement_kind": "ai_use"
+    },
+    {
+      "rule_id": "R-REFSTYLE",
+      "category": "estilo de referências",
+      "requirement": "PREENCHER",
+      "status": "NOT_VERIFIED",
+      "check": "manual"
+    },
+    {
+      "rule_id": "R-BLIND",
+      "category": "blind review",
+      "requirement": "PREENCHER",
+      "status": "NOT_VERIFIED",
+      "check": "manual",
+      "file_required": "manuscript-blinded.md"
+    },
+    {
+      "rule_id": "R-COVER",
+      "category": "cover letter",
+      "requirement": "PREENCHER",
+      "status": "NOT_VERIFIED",
+      "check": "manual",
+      "file_required": "cover-letter.md"
+    },
+    {
+      "rule_id": "R-TITLEPAGE",
+      "category": "title page",
+      "requirement": "PREENCHER",
+      "status": "NOT_VERIFIED",
+      "check": "manual",
+      "file_required": "title-page.md"
+    }
+  ]
+}

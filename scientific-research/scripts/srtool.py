@@ -155,9 +155,17 @@ class Report:
 _SCHEMA_CACHE: dict[str, dict] = {}
 
 
+SCHEMA_DIRS = [SCHEMA_DIR]  # módulos acrescentam seus diretórios de schema
+
+
 def _load_schema(name: str) -> dict:
     if name not in _SCHEMA_CACHE:
-        _SCHEMA_CACHE[name] = load_json(SCHEMA_DIR / name)
+        for d in SCHEMA_DIRS:
+            if (d / name).exists():
+                _SCHEMA_CACHE[name] = load_json(d / name)
+                break
+        else:
+            raise FileNotFoundError(f"schema {name} não encontrado em {SCHEMA_DIRS}")
     return _SCHEMA_CACHE[name]
 
 

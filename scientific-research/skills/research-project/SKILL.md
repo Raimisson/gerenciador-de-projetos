@@ -1,6 +1,6 @@
 ---
 name: research-project
-description: Workflow principal do plugin Scientific Research. Use quando o usuário quiser conduzir ou organizar um projeto de pesquisa/artigo científico de ponta a ponta ("iniciar projeto de pesquisa", "montar revisão de literatura para um artigo", "research project", "do zero até o manuscrito"), ou quando não souber qual etapa executar. Orienta pergunta → protocolo → busca → triagem → extração → Evidence Ledger → matriz → avaliação metodológica → síntese → redação → auditorias, sem obrigar a executar todas as etapas.
+description: Workflow principal do plugin Scientific Research. Use quando o usuário quiser conduzir ou organizar um projeto de pesquisa/artigo científico de ponta a ponta ("iniciar projeto de pesquisa", "montar revisão de literatura para um artigo", "research project", "do zero até a publicação"), ou quando não souber qual etapa executar. Orienta pergunta → protocolo → busca → triagem → extração → Evidence Ledger → matriz → avaliação metodológica → redação → auditorias → escolha de periódico → Target Journal Mode → compliance → auditoria pré-submissão → submissão → resposta a pareceres → publicação/ressubmissão, sem obrigar a executar todas as etapas.
 argument-hint: "[tema ou pergunta de pesquisa] [--dir caminho-do-projeto]"
 ---
 
@@ -73,6 +73,25 @@ Cada etapa é **opcional**; pergunte o que o usuário já tem e pule o que não 
 | 10 | Redação | `scientific-writing` | `manuscript/manuscript.md` com marcadores `[E-0001]` |
 | 11 | Auditoria de citações | `citation-audit`, `bibliography-audit` | `audit/citation-audit.md`, `audit/bibliography-audit.md` |
 | 12 | Auditoria final | `manuscript-review`, `replication-check` | `audit/manuscript-audit.md` |
+| | **Módulo Publication Strategy** | (subagente `publication-strategist` coordena) | `research/publication/` |
+| 13 | Journal Search | `journal-search` (+ `journal-recent-content-analysis`) | `publication/journals/candidates.json` |
+| 14 | Journal Fit Analysis | `journal-fit-analysis`, `journal-due-diligence`, `journal-requirements` | `journals/<slug>/fit.json`, `fit-report.md`, `due-diligence.json`, `requirements.json` |
+| 15 | Journal Selection | `publication-strategy` | `publication/strategy.md` (decisão do autor) |
+| 16 | Target Journal Mode | `publication-strategy` → `pubtool.py target set` | `publication/target-journal.json` |
+| 17 | Manuscript Compliance | `manuscript-compliance`, `submission-preparation`, `cover-letter` | `compliance/<slug>.{json,md}`, `submission/<slug>/` |
+| 18 | Pre-Submission Audit | `pre-submission-audit` | READY TO SUBMIT ou ACTION REQUIRED |
+| 19 | Submission | (feita pelos autores no sistema do periódico) | registro da data e versão submetida |
+| 20 | Peer Review Response | `peer-review-response` | `peer-review/round-<n>/response-matrix.json`, carta de resposta |
+| 21 | Publication / Resubmission | `resubmission-strategy` (se rejeitado) | `resubmission/plan-<data>.md` |
+
+Fluxo resumido: Research Question → Protocol → Literature Search → Screening → Evidence Extraction →
+Evidence Ledger → Evidence Matrix → Methodology Review → Scientific Writing → Citation Audit →
+Manuscript Review → Journal Search → Journal Fit Analysis → Journal Selection → Target Journal Mode →
+Manuscript Compliance → Pre-Submission Audit → Submission → Peer Review Response → Publication / Resubmission.
+
+O módulo Publication Strategy reutiliza o manuscrito, o Evidence Ledger e as auditorias do mesmo
+projeto; ele **não** reconstrói a evidência. Regras editoriais nunca justificam alterar resultados.
+Detalhes: `${CLAUDE_PLUGIN_ROOT}/docs/publication-strategy.md`.
 
 ### Passo a passo
 
@@ -85,6 +104,7 @@ Cada etapa é **opcional**; pergunte o que o usuário já tem e pule o que não 
 4. **Portões de qualidade** antes de avançar:
    - Antes da redação: toda evidência que sustentará o texto está no ledger com status ≠ `UNVERIFIED`?
    - Antes de entregar: `citation-audit` e `manuscript-review` executados?
+   - Antes de submeter: `pre-submission-audit` com resultado READY TO SUBMIT?
 5. **Validação automática** (se Bash disponível):
    ```bash
    python3 "${CLAUDE_PLUGIN_ROOT}/scripts/srtool.py" validate project <caminho>/research
@@ -95,7 +115,8 @@ Cada etapa é **opcional**; pergunte o que o usuário já tem e pule o que não 
 Use subagentes apenas quando houver ganho real (ver `${CLAUDE_PLUGIN_ROOT}/docs/architecture.md`):
 - `literature-researcher` para buscas amplas em paralelo com a leitura do usuário;
 - `methodology-reviewer` e `citation-auditor` como verificações **independentes**;
-- `scientific-editor` só depois que o ledger estiver validado.
+- `scientific-editor` só depois que o ledger estiver validado;
+- `publication-strategist` para conduzir a etapa de publicação em contexto isolado.
 Nunca dispare vários agentes para a mesma busca.
 
 ## Output esperado

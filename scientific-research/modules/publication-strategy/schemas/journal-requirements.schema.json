@@ -1,0 +1,182 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Requisitos de submissão do periódico (research/publication/journals/<slug>/requirements.json)",
+  "type": "object",
+  "required": [
+    "journal",
+    "publisher",
+    "sources",
+    "accessed_on",
+    "access_status",
+    "article_type",
+    "rules"
+  ],
+  "properties": {
+    "journal": {
+      "type": "string",
+      "minLength": 1
+    },
+    "publisher": {
+      "type": "string",
+      "minLength": 1
+    },
+    "issn": {
+      "type": "string",
+      "minLength": 1
+    },
+    "synthetic": {
+      "type": "boolean"
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "url",
+          "accessed_on"
+        ],
+        "properties": {
+          "url": {
+            "type": "string",
+            "minLength": 1
+          },
+          "accessed_on": {
+            "type": "string",
+            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+          },
+          "guideline_version": {
+            "type": "string"
+          },
+          "origin": {
+            "type": "string",
+            "enum": [
+              "official_site",
+              "provided_by_user",
+              "publisher_general"
+            ]
+          }
+        }
+      }
+    },
+    "accessed_on": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "access_status": {
+      "type": "string",
+      "enum": [
+        "ok",
+        "partial",
+        "blocked"
+      ]
+    },
+    "guideline_version": {
+      "type": "string"
+    },
+    "article_type": {
+      "type": "string",
+      "minLength": 1
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "rule_id",
+          "category",
+          "requirement",
+          "status",
+          "check"
+        ],
+        "properties": {
+          "rule_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "category": {
+            "type": "string",
+            "minLength": 1
+          },
+          "requirement": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "VERIFIED",
+              "NOT_VERIFIED",
+              "NOT_FOUND"
+            ]
+          },
+          "check": {
+            "type": "string",
+            "enum": [
+              "max_words",
+              "max_abstract_words",
+              "keywords_range",
+              "max_title_words",
+              "max_title_chars",
+              "max_figures",
+              "max_tables",
+              "required_section",
+              "required_statement",
+              "highlights",
+              "manual"
+            ]
+          },
+          "value": {},
+          "count_scope": {
+            "type": "string",
+            "enum": [
+              "main_text_excluding_references",
+              "all_text",
+              "unspecified"
+            ]
+          },
+          "statement_kind": {
+            "type": "string",
+            "enum": [
+              "data_availability",
+              "code_availability",
+              "funding",
+              "competing_interests",
+              "credit",
+              "ethics",
+              "consent",
+              "ai_use",
+              "acknowledgments"
+            ]
+          },
+          "section_pattern": {
+            "type": "string"
+          },
+          "excerpt": {
+            "type": "string"
+          },
+          "source_url": {
+            "type": "string"
+          },
+          "accessed_on": {
+            "type": "string",
+            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+          },
+          "applies_to": {
+            "type": "string"
+          },
+          "applicable": {
+            "type": "boolean"
+          },
+          "file_required": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "$id": "journal-requirements.schema.json"
+}

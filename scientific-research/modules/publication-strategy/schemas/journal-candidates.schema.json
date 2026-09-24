@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Periódicos candidatos (research/publication/journals/candidates.json)",
+  "type": "object",
+  "required": [
+    "generated_on",
+    "candidates"
+  ],
+  "properties": {
+    "generated_on": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "manuscript_profile": {
+      "type": "string"
+    },
+    "search_notes": {
+      "type": "string"
+    },
+    "candidates": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "slug",
+          "journal",
+          "publisher",
+          "origin",
+          "aims_scope",
+          "next_step"
+        ],
+        "properties": {
+          "slug": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          },
+          "journal": {
+            "type": "string",
+            "minLength": 1
+          },
+          "publisher": {
+            "type": "string",
+            "minLength": 1
+          },
+          "issn": {
+            "type": "string",
+            "minLength": 1
+          },
+          "origin": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "aims_scope": {
+            "type": "object",
+            "required": [
+              "status"
+            ],
+            "properties": {
+              "status": {
+                "type": "string",
+                "enum": [
+                  "VERIFIED",
+                  "NOT_VERIFIED"
+                ]
+              },
+              "excerpt": {
+                "type": "string",
+                "minLength": 1
+              },
+              "url": {
+                "type": "string",
+                "minLength": 1
+              },
+              "checked_on": {
+                "type": "string",
+                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+              }
+            }
+          },
+          "comparable_articles": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "article_types": {
+            "type": "string",
+            "minLength": 1
+          },
+          "notes": {
+            "type": "string"
+          },
+          "next_step": {
+            "type": "string",
+            "enum": [
+              "full_analysis",
+              "hold",
+              "discard"
+            ]
+          },
+          "next_step_reason": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "$id": "journal-candidates.schema.json"
+}

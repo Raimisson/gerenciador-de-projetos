@@ -1,0 +1,152 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Perfil do manuscrito (research/publication/manuscript-profile.json)",
+  "type": "object",
+  "required": [
+    "title",
+    "abstract",
+    "keywords",
+    "research_question",
+    "methodology",
+    "main_results",
+    "contribution",
+    "key_references",
+    "article_type",
+    "counts",
+    "generated_on"
+  ],
+  "properties": {
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "abstract": {
+      "type": "string",
+      "minLength": 1
+    },
+    "keywords": {
+      "type": [
+        "array",
+        "string"
+      ],
+      "minLength": 1
+    },
+    "research_question": {
+      "type": "string",
+      "minLength": 1
+    },
+    "methodology": {
+      "type": "string",
+      "minLength": 1
+    },
+    "main_results": {
+      "type": "string",
+      "minLength": 1
+    },
+    "contribution": {
+      "type": "string",
+      "minLength": 1
+    },
+    "key_references": {
+      "type": [
+        "array",
+        "string"
+      ],
+      "minLength": 1
+    },
+    "article_type": {
+      "type": "string",
+      "minLength": 1
+    },
+    "target_audience": {
+      "type": "string",
+      "minLength": 1
+    },
+    "jurisdiction": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sector": {
+      "type": "string",
+      "minLength": 1
+    },
+    "data": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_ledger": {
+      "type": "string"
+    },
+    "counts": {
+      "type": "object",
+      "required": [
+        "words_main_text",
+        "words_with_references",
+        "abstract_words",
+        "keywords",
+        "title_words",
+        "title_chars",
+        "figures",
+        "tables"
+      ],
+      "properties": {
+        "words_main_text": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "words_with_references": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "abstract_words": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "keywords": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "title_words": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "title_chars": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "figures": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "tables": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "highlights": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "sections_found": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "statements_found": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "constraints": {
+      "type": "object"
+    },
+    "generated_on": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    }
+  },
+  "$id": "manuscript-profile.schema.json"
+}

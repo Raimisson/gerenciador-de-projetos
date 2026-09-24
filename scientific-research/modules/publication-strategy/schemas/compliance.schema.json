@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Relatório de compliance manuscrito × periódico",
+  "type": "object",
+  "required": [
+    "journal",
+    "manuscript",
+    "requirements_file",
+    "generated_on",
+    "items"
+  ],
+  "properties": {
+    "journal": {
+      "type": "string",
+      "minLength": 1
+    },
+    "manuscript": {
+      "type": "string",
+      "minLength": 1
+    },
+    "requirements_file": {
+      "type": "string",
+      "minLength": 1
+    },
+    "generated_on": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "target_journal_mode": {
+      "type": "boolean"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "rule_id",
+          "category",
+          "status",
+          "requirement",
+          "current_state",
+          "source"
+        ],
+        "properties": {
+          "rule_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "category": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "COMPLIANT",
+              "ACTION_REQUIRED",
+              "NOT_APPLICABLE",
+              "UNABLE_TO_VERIFY"
+            ]
+          },
+          "requirement": {
+            "type": "string",
+            "minLength": 1
+          },
+          "current_state": {
+            "type": "string",
+            "minLength": 1
+          },
+          "gap": {
+            "type": "string"
+          },
+          "action": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string",
+            "minLength": 1
+          },
+          "integrity_note": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "$id": "compliance.schema.json"
+}

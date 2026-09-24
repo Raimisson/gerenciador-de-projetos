@@ -12,8 +12,8 @@
       "name": "scientific-research",
       "displayName": "Scientific Research",
       "source": "./scientific-research",
-      "description": "Pesquisa científica e redação de artigos com rastreabilidade de evidências, auditoria de citações e regras contra fabricação.",
-      "version": "0.1.0",
+      "description": "Pesquisa científica e publicação de artigos com rastreabilidade de evidências, auditoria de citações, estratégia de publicação e regras contra fabricação.",
+      "version": "0.2.0",
       "category": "research",
       "license": "MIT"
     }

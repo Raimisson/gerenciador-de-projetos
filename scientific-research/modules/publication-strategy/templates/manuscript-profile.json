@@ -1,0 +1,31 @@
+{
+  "title": "NR — não reportado",
+  "abstract": "NR — não reportado",
+  "keywords": "NR — não reportado",
+  "research_question": "NR — não reportado",
+  "methodology": "NR — não reportado",
+  "main_results": "NR — não reportado",
+  "contribution": "NR — não reportado",
+  "key_references": "NR — não reportado",
+  "article_type": "NR — não reportado",
+  "target_audience": "NR — não reportado",
+  "evidence_ledger": "research/ledger/evidence.jsonl",
+  "counts": {
+    "words_main_text": 0,
+    "words_with_references": 0,
+    "abstract_words": 0,
+    "keywords": 0,
+    "title_words": 0,
+    "title_chars": 0,
+    "figures": 0,
+    "tables": 0,
+    "highlights": 0
+  },
+  "constraints": {
+    "apc_budget": "NR — não reportado",
+    "open_access_required": "NR — não reportado",
+    "indexing_required": "NR — não reportado",
+    "deadline": "NR — não reportado"
+  },
+  "generated_on": "2026-01-01"
+}

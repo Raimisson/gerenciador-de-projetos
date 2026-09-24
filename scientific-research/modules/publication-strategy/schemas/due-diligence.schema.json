@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Due diligence do periódico",
+  "type": "object",
+  "required": [
+    "journal",
+    "checked_on",
+    "items",
+    "alerts",
+    "conclusion"
+  ],
+  "properties": {
+    "journal": {
+      "type": "string",
+      "minLength": 1
+    },
+    "issn": {
+      "type": "string",
+      "minLength": 1
+    },
+    "checked_on": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "framework": {
+      "type": "string"
+    },
+    "items": {
+      "type": "object",
+      "required": [
+        "publisher",
+        "issn",
+        "peer_review",
+        "editorial_board",
+        "crossref_doi",
+        "doaj",
+        "cope",
+        "scielo",
+        "scopus",
+        "web_of_science",
+        "redalyc",
+        "latindex",
+        "archiving",
+        "apc",
+        "copyright_license",
+        "open_access_policy",
+        "ethics_policies"
+      ],
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "status"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "CONFIRMED",
+              "NOT_FOUND",
+              "NOT_VERIFIED",
+              "NOT_APPLICABLE"
+            ]
+          },
+          "value": {
+            "type": "string"
+          },
+          "evidence_url": {
+            "type": "string",
+            "minLength": 1
+          },
+          "checked_on": {
+            "type": "string",
+            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+          },
+          "note": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "alerts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "alert",
+          "evidence"
+        ],
+        "properties": {
+          "alert": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence": {
+            "type": "string",
+            "minLength": 1
+          },
+          "severity": {
+            "type": "string",
+            "enum": [
+              "low",
+              "medium",
+              "high"
+            ]
+          }
+        }
+      }
+    },
+    "conclusion": {
+      "type": "string",
+      "enum": [
+        "NO_RELEVANT_ALERTS",
+        "ALERTS_TO_CLARIFY",
+        "SERIOUS_ALERTS",
+        "NOT_ASSESSED"
+      ]
+    },
+    "conclusion_note": {
+      "type": "string"
+    }
+  },
+  "$id": "due-diligence.schema.json"
+}

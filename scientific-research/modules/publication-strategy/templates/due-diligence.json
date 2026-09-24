@@ -1,0 +1,79 @@
+{
+  "journal": "PREENCHER",
+  "issn": "PREENCHER",
+  "checked_on": "2026-01-01",
+  "framework": "Think. Check. Submit. (thinkchecksubmit.org) como roteiro",
+  "items": {
+    "publisher": {
+      "status": "NOT_VERIFIED",
+      "note": "onde verificar: ver skill journal-due-diligence"
+    },
+    "issn": {
+      "status": "NOT_VERIFIED",
+      "note": "onde verificar: ver skill journal-due-diligence"
+    },
+    "peer_review": {
+      "status": "NOT_VERIFIED",
+      "note": "onde verificar: ver skill journal-due-diligence"
+    },
+    "editorial_board": {
+      "status": "NOT_VERIFIED",
+      "note": "onde verificar: ver skill journal-due-diligence"
+    },
+    "crossref_doi": {
+      "status": "NOT_VERIFIED",
+      "note": "onde verificar: ver skill journal-due-diligence"
+    },
+    "doaj": {
+      "status": "NOT_VERIFIED",
+      "note": "onde verificar: ver skill journal-due-diligence"
+    },
+    "cope": {
+      "status": "NOT_VERIFIED",
+      "note": "onde verificar: ver skill journal-due-diligence"
+    },
+    "scielo": {
+      "status": "NOT_VERIFIED",
+      "note": "onde verificar: ver skill journal-due-diligence"
+    },
+    "scopus": {
+      "status": "NOT_VERIFIED",
+      "note": "onde verificar: ver skill journal-due-diligence"
+    },
+    "web_of_science": {
+      "status": "NOT_VERIFIED",
+      "note": "onde verificar: ver skill journal-due-diligence"
+    },
+    "redalyc": {
+      "status": "NOT_VERIFIED",
+      "note": "onde verificar: ver skill journal-due-diligence"
+    },
+    "latindex": {
+      "status": "NOT_VERIFIED",
+      "note": "onde verificar: ver skill journal-due-diligence"
+    },
+    "archiving": {
+      "status": "NOT_VERIFIED",
+      "note": "onde verificar: ver skill journal-due-diligence"
+    },
+    "apc": {
+      "status": "NOT_VERIFIED",
+      "note": "onde verificar: ver skill journal-due-diligence"
+    },
+    "copyright_license": {
+      "status": "NOT_VERIFIED",
+      "note": "onde verificar: ver skill journal-due-diligence"
+    },
+    "open_access_policy": {
+      "status": "NOT_VERIFIED",
+      "note": "onde verificar: ver skill journal-due-diligence"
+    },
+    "ethics_policies": {
+      "status": "NOT_VERIFIED",
+      "note": "onde verificar: ver skill journal-due-diligence"
+    }
+  },
+  "alerts": [],
+  "conclusion": "NOT_ASSESSED",
+  "conclusion_note": ""
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Target Journal Mode (research/publication/target-journal.json)",
+  "type": "object",
+  "required": [
+    "active",
+    "journal",
+    "slug",
+    "activated_on",
+    "requirements_file",
+    "integrity_limits"
+  ],
+  "properties": {
+    "active": {
+      "type": "boolean"
+    },
+    "journal": {
+      "type": "string",
+      "minLength": 1
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "activated_on": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "requirements_file": {
+      "type": "string",
+      "minLength": 1
+    },
+    "article_type": {
+      "type": "string"
+    },
+    "integrity_limits": {
+      "type": "array",
+      "minItems": 5,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "$id": "target-journal.schema.json"
+}
