@@ -1,0 +1,42 @@
+{
+  "question": "q",
+  "inclusion_criteria": [
+    "a"
+  ],
+  "exclusion_criteria": [
+    "b"
+  ],
+  "searches": [
+    {
+      "search_id": "B1",
+      "date": "2026-09-24",
+      "database": "X",
+      "query": "q",
+      "filters": "nenhum",
+      "period": "x",
+      "results_found": 10,
+      "executed": true
+    },
+    {
+      "search_id": "B2",
+      "date": "2026-09-24",
+      "database": "Y",
+      "query": "q",
+      "filters": "nenhum",
+      "period": "x",
+      "results_found": 5,
+      "executed": false
+    }
+  ],
+  "screening": {
+    "records_identified": 10,
+    "duplicates_removed": 2,
+    "screened": 9,
+    "excluded_title_abstract": 4,
+    "full_text_assessed": 5,
+    "excluded_full_text": {
+      "EX-OUTCOME": 1
+    },
+    "included": 3
+  }
+}

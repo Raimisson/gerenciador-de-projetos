@@ -1,0 +1,70 @@
+{
+  "source_id": "S-0002",
+  "extracted_on": "2026-09-24",
+  "extracted_by": "fixture",
+  "access_level": "full_text",
+  "pagination_reliable": true,
+  "fields": {
+    "reference": "Tester & Fixture (2020) — registro sintético",
+    "research_question": "NR — não reportado",
+    "country_jurisdiction": "NR — não reportado",
+    "population": "NR — não reportado",
+    "unit_of_analysis": "NR — não reportado",
+    "period": "NR — não reportado",
+    "data_source": "NR — não reportado",
+    "sample_size": "NR — não reportado",
+    "intervention": "NR — não reportado",
+    "comparison": "NR — não reportado",
+    "outcome": "NR — não reportado",
+    "method": "NR — não reportado",
+    "empirical_strategy": "NR — não reportado",
+    "causal_identification": "NR — não reportado",
+    "model_equation": "NR — não reportado",
+    "variables": "NR — não reportado",
+    "main_result": "NR — não reportado",
+    "robustness": "NR — não reportado",
+    "limitations": "NR — não reportado",
+    "doi": "NR — não reportado",
+    "url": "NR — não reportado"
+  },
+  "field_locations": {},
+  "estimates": [
+    {
+      "estimate_id": "R1",
+      "description": "coeficiente sintético",
+      "estimate": -0.021,
+      "unit": "log kWh",
+      "se": 0.008,
+      "ci_low": "NR — não reportado",
+      "ci_high": "NR — não reportado",
+      "p_value": "NR — não reportado",
+      "significance": "** (convenção do artigo)",
+      "n": 1200,
+      "identification": "DiD",
+      "location": {
+        "page": "12",
+        "table": "3",
+        "section": "Results"
+      },
+      "excerpt": "Table 3 reports a coefficient of -0.021 (0.008)."
+    },
+    {
+      "estimate_id": "R2",
+      "description": "efeito descrito apenas qualitativamente",
+      "estimate": "NR — não reportado",
+      "unit": "NR — não reportado",
+      "se": "NR — não reportado",
+      "ci_low": "NR — não reportado",
+      "ci_high": "NR — não reportado",
+      "p_value": "NR — não reportado",
+      "significance": "descrito como 'significant improvement' (sem valor reportado)",
+      "n": "NR — não reportado",
+      "identification": "NR — não reportado",
+      "location": {
+        "page": "3",
+        "section": "Abstract"
+      },
+      "excerpt": "results show a significant improvement"
+    }
+  ]
+}

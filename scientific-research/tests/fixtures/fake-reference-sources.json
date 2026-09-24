@@ -1,0 +1,51 @@
+{
+  "project": "fixture — referência propositalmente falsa",
+  "updated": "2026-09-24",
+  "sources": [
+    {
+      "source_id": "S-0001",
+      "source_type": "peer_reviewed_article",
+      "authors": [
+        "Silva, J.",
+        "Pereira, M."
+      ],
+      "year": 2019,
+      "title": "Revenue decoupling and utility energy efficiency spending: a global meta-analysis",
+      "container": "Journal of Imaginary Energy Economics",
+      "volume": "12",
+      "issue": "3",
+      "pages": "45-67",
+      "doi": "10.9999/jiee.2019.0457",
+      "url": "https://doi.org/10.9999/jiee.2019.0457",
+      "peer_reviewed": true,
+      "access_level": "not_accessed",
+      "metadata_verification": {
+        "status": "UNVERIFIED",
+        "checked_against": [],
+        "checked_on": "2026-09-24",
+        "notes": "REFERÊNCIA FALSA DE TESTE — deve ser rejeitada."
+      }
+    },
+    {
+      "source_id": "S-0002",
+      "source_type": "peer_reviewed_article",
+      "authors": [
+        "Tester, Alice",
+        "Fixture, Bob"
+      ],
+      "year": 2020,
+      "title": "Synthetic test record for the Scientific Research plugin",
+      "container": "Journal of Test Fixtures",
+      "doi": "10.5555/sr-test.0001",
+      "url": "https://doi.org/10.5555/sr-test.0001",
+      "peer_reviewed": true,
+      "access_level": "metadata_only",
+      "metadata_verification": {
+        "status": "UNVERIFIED",
+        "checked_against": [],
+        "checked_on": "2026-09-24",
+        "notes": "registro sintético (fixture)"
+      }
+    }
+  ]
+}
