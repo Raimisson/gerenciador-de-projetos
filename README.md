@@ -249,3 +249,18 @@ Com o modelo de processo filho o `server.js` roda como Node puro (Electron
 define `ELECTRON_RUN_AS_NODE`), então o `better-sqlite3` usa o ABI do Node e o
 `electron-rebuild` não é estritamente necessário para ele — fica como
 precaução para eventuais módulos nativos carregados no processo principal.
+
+
+---
+
+## Plugin Claude: Scientific Research
+
+Este repositório também hospeda o plugin **Scientific Research** para Claude Code
+(pesquisa científica e redação de artigos com rastreabilidade de evidências), em
+[`scientific-research/`](scientific-research/README.md), e um marketplace em
+`.claude-plugin/marketplace.json`:
+
+```bash
+claude plugin marketplace add Raimisson/gerenciador-de-projetos
+claude plugin install scientific-research@raimisson-research
+```

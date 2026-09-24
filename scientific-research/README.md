@@ -240,7 +240,8 @@ bash tests/cli_smoke_test.sh                 # carrega o plugin num claude -p re
 claude plugin eval . --runs 1                # casos de comportamento em evals/ (consome chamadas de modelo)
 ```
 
-Ver [`tests/README.md`](tests/README.md) para o que cada teste cobre.
+Ver [`tests/README.md`](tests/README.md) para o que cada teste cobre e
+[`docs/validation-report.md`](docs/validation-report.md) para os resultados da validação da v0.1.0.
 
 ## Limitações
 
