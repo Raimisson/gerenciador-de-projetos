@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "extraction.schema.json",
+  "title": "Ficha de extração de evidências (research/extraction/<S-id>.json)",
+  "description": "Todo campo contém o valor como reportado, 'NR — não reportado' ou 'NA — não se aplica'. Strings vazias e null são inválidos.",
+  "type": "object",
+  "required": ["source_id", "extracted_on", "extracted_by", "access_level", "pagination_reliable", "fields", "estimates"],
+  "properties": {
+    "source_id": { "type": "string", "pattern": "^S-[0-9]{4,}$" },
+    "extracted_on": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+    "extracted_by": { "type": "string", "minLength": 1 },
+    "access_level": { "type": "string", "enum": ["full_text", "abstract_only", "metadata_only"] },
+    "text_source": { "type": "string", "minLength": 1, "description": "De onde veio o texto lido (ex.: PDF do usuário, Scite read_fulltext, site do editor)" },
+    "pagination_reliable": { "type": "boolean" },
+    "fields": {
+      "type": "object",
+      "required": ["reference", "research_question", "country_jurisdiction", "population", "unit_of_analysis", "period", "data_source", "sample_size", "intervention", "comparison", "outcome", "method", "empirical_strategy", "causal_identification", "model_equation", "variables", "main_result", "robustness", "limitations", "doi", "url"],
+      "additionalProperties": { "type": ["string", "number"], "minLength": 1 }
+    },
+    "field_locations": {
+      "type": "object",
+      "additionalProperties": { "type": "string", "minLength": 1 }
+    },
+    "estimates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["estimate_id", "description", "estimate", "unit", "se", "ci_low", "ci_high", "p_value", "significance", "n", "identification", "location", "excerpt"],
+        "properties": {
+          "estimate_id": { "type": "string", "minLength": 1 },
+          "description": { "type": "string", "minLength": 1 },
+          "estimate": { "type": ["number", "string"], "minLength": 1 },
+          "unit": { "type": "string", "minLength": 1 },
+          "denominator": { "type": "string", "minLength": 1 },
+          "se": { "type": ["number", "string"], "minLength": 1 },
+          "ci_low": { "type": ["number", "string"], "minLength": 1 },
+          "ci_high": { "type": ["number", "string"], "minLength": 1 },
+          "ci_level": { "type": ["number", "string"], "minLength": 1 },
+          "p_value": { "type": ["number", "string"], "minLength": 1 },
+          "significance": { "type": "string", "minLength": 1 },
+          "n": { "type": ["number", "string"], "minLength": 1 },
+          "period": { "type": "string", "minLength": 1 },
+          "model": { "type": "string", "minLength": 1 },
+          "specification": { "type": "string", "minLength": 1 },
+          "dependent_variable": { "type": "string", "minLength": 1 },
+          "explanatory_variable": { "type": "string", "minLength": 1 },
+          "treatment_group": { "type": "string", "minLength": 1 },
+          "control_group": { "type": "string", "minLength": 1 },
+          "identification": { "type": "string", "minLength": 1 },
+          "is_main_specification": { "type": "boolean" },
+          "location": { "$ref": "common.schema.json#/$defs/location" },
+          "excerpt": { "type": "string", "minLength": 1 },
+          "notes": { "type": "string" }
+        }
+      }
+    },
+    "notes": { "type": "string" }
+  }
+}

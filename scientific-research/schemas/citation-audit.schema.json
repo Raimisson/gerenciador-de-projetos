@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "citation-audit.schema.json",
+  "title": "Resultado de auditoria de citações (research/audit/citation-audit.json)",
+  "type": "object",
+  "required": ["manuscript", "audited_on", "claims"],
+  "properties": {
+    "manuscript": { "type": "string", "minLength": 1 },
+    "audited_on": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+    "coverage": { "type": "string" },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["claim_id", "sentence", "location", "cited_refs", "reference_existence", "classification", "issues", "justification"],
+        "properties": {
+          "claim_id": { "type": "string", "minLength": 1 },
+          "sentence": { "type": "string", "minLength": 1 },
+          "location": { "type": "string", "minLength": 1 },
+          "cited_refs": { "type": "array", "items": { "type": "string" } },
+          "reference_existence": { "type": "string", "enum": ["VERIFIED", "PARTIALLY_VERIFIED", "UNVERIFIED", "CONTRADICTED", "NOT_REPORTED", "NO_CITATION"] },
+          "classification": { "type": "string", "enum": ["SUPORTADA", "PARCIALMENTE SUPORTADA", "NÃO SUPORTADA", "NÃO VERIFICÁVEL"] },
+          "issues": { "type": "array", "items": { "type": "string", "enum": ["EXAGERO", "CAUSAL-INDEVIDA", "GENERALIZACAO", "FONTE-SECUNDARIA", "NUMERO-SEM-FONTE", "REF-INEXISTENTE", "REF-INADEQUADA", "PAGINA-AUSENTE", "RETRATADO", "POSSIVELMENTE-INVENTADA"] } },
+          "support_location": { "type": "string" },
+          "support_excerpt": { "type": "string" },
+          "justification": { "type": "string", "minLength": 1 },
+          "recommended_action": { "type": "string" }
+        }
+      }
+    }
+  }
+}

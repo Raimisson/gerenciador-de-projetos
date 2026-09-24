@@ -1,0 +1,12 @@
+{
+  "_comment": "EXEMPLO (MCP comunitário, não mantido pela Anthropic nem pelo Zotero). Servidor kujenga/zotero-mcp (PyPI 'zotero-mcp'), que expõe apenas ferramentas de LEITURA: zotero_search_items, zotero_item_metadata, zotero_item_fulltext. Requer 'uv' instalado e Zotero desktop aberto com 'Allow other applications on this computer to communicate with Zotero' habilitado. Modo local não exige chave. Revise o código-fonte antes de instalar: https://github.com/kujenga/zotero-mcp",
+  "mcpServers": {
+    "zotero": {
+      "command": "uvx",
+      "args": ["zotero-mcp@latest"],
+      "env": {
+        "ZOTERO_LOCAL": "true"
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "search-log.schema.json",
+  "title": "Registro reproduzível de busca (research/search/search-log.json)",
+  "type": "object",
+  "required": ["question", "inclusion_criteria", "exclusion_criteria", "searches", "screening"],
+  "properties": {
+    "question": { "type": "string", "minLength": 1 },
+    "protocol_ref": { "type": "string" },
+    "inclusion_criteria": { "type": "array", "items": { "type": "string", "minLength": 1 }, "minItems": 1 },
+    "exclusion_criteria": { "type": "array", "items": { "type": "string", "minLength": 1 }, "minItems": 1 },
+    "searches": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["search_id", "date", "database", "query", "filters", "period", "results_found", "executed"],
+        "properties": {
+          "search_id": { "type": "string", "minLength": 1 },
+          "date": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+          "database": { "type": "string", "minLength": 1 },
+          "interface": { "type": "string", "minLength": 1 },
+          "query": { "type": "string", "minLength": 1 },
+          "filters": { "type": "string", "minLength": 1 },
+          "period": { "type": "string", "minLength": 1 },
+          "results_found": { "type": ["integer", "string"], "minLength": 1 },
+          "records_retrieved": { "type": ["integer", "string"], "minLength": 1 },
+          "executed": { "type": "boolean" },
+          "notes": { "type": "string" }
+        }
+      }
+    },
+    "screening": {
+      "type": "object",
+      "required": ["records_identified", "duplicates_removed", "screened", "excluded_title_abstract", "full_text_assessed", "excluded_full_text", "included"],
+      "properties": {
+        "records_identified": { "type": "integer", "minimum": 0 },
+        "duplicates_removed": { "type": "integer", "minimum": 0 },
+        "screened": { "type": "integer", "minimum": 0 },
+        "excluded_title_abstract": { "type": "integer", "minimum": 0 },
+        "full_text_not_retrieved": { "type": "integer", "minimum": 0 },
+        "full_text_assessed": { "type": "integer", "minimum": 0 },
+        "excluded_full_text": { "type": "object", "additionalProperties": { "type": "integer", "minimum": 0 } },
+        "included": { "type": "integer", "minimum": 0 },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}

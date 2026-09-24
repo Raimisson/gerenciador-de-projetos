@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "sources.schema.json",
+  "title": "Registro de fontes do projeto (research/sources/sources.json)",
+  "type": "object",
+  "required": ["sources"],
+  "properties": {
+    "project": { "type": "string" },
+    "updated": { "type": "string" },
+    "sources": { "type": "array", "items": { "$ref": "source.schema.json" } }
+  }
+}

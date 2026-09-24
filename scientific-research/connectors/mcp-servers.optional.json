@@ -1,0 +1,21 @@
+{
+  "_comment": "NÃO é carregado automaticamente pelo plugin. Copie os servidores desejados para o seu .mcp.json (projeto) ou use os comandos 'claude mcp add' de docs/connectors.md. Não use se você já conectou os mesmos serviços como conectores do claude.ai (evita ferramentas duplicadas). Nenhuma credencial é armazenada aqui: os servidores remotos usam OAuth no navegador.",
+  "mcpServers": {
+    "consensus": {
+      "type": "http",
+      "url": "https://mcp.consensus.app/mcp"
+    },
+    "scite": {
+      "type": "http",
+      "url": "https://api.scite.ai/mcp"
+    },
+    "elicit": {
+      "type": "http",
+      "url": "https://elicit.com/api/mcp"
+    },
+    "google-drive": {
+      "type": "http",
+      "url": "https://drivemcp.googleapis.com/mcp/v1"
+    }
+  }
+}

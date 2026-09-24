@@ -1,0 +1,32 @@
+{
+  "question": "PREENCHER — pergunta de pesquisa",
+  "protocol_ref": "../protocol.md",
+  "inclusion_criteria": ["PREENCHER"],
+  "exclusion_criteria": ["PREENCHER"],
+  "searches": [
+    {
+      "search_id": "B1",
+      "date": "2026-01-01",
+      "database": "PREENCHER — base ou ferramenta",
+      "interface": "PREENCHER — ex.: conector Scite, API OpenAlex, site",
+      "query": "PREENCHER — string exata",
+      "filters": "nenhum",
+      "period": "PREENCHER",
+      "results_found": "NR — não reportado",
+      "records_retrieved": "NR — não reportado",
+      "executed": false,
+      "notes": "Modelo: substitua a data e os campos ao executar a busca."
+    }
+  ],
+  "screening": {
+    "records_identified": 0,
+    "duplicates_removed": 0,
+    "screened": 0,
+    "excluded_title_abstract": 0,
+    "full_text_not_retrieved": 0,
+    "full_text_assessed": 0,
+    "excluded_full_text": {},
+    "included": 0,
+    "notes": "Preencher após a triagem."
+  }
+}
