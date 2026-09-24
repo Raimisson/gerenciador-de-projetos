@@ -1,0 +1,56 @@
+{
+  "source_id": "S-0001",
+  "extracted_on": "2026-09-24",
+  "extracted_by": "claude (exemplo)",
+  "access_level": "abstract_only",
+  "text_source": "Scite read_fulltext (source=abstract, contentDenied=true)",
+  "pagination_reliable": false,
+  "fields": {
+    "reference": "Kahn-Lang, J. (2016). Effects of Electric Utility Decoupling on Energy Efficiency. The Energy Journal, 37(4), 297–314.",
+    "research_question": "Se utilidades com decoupling têm incentivo a promover eficiência energética (modelo de jogo repetido regulador–utilidade + análise empírica).",
+    "country_jurisdiction": "NR — não reportado",
+    "population": "NR — não reportado",
+    "unit_of_analysis": "NR — não reportado",
+    "period": "NR — não reportado",
+    "data_source": "NR — não reportado",
+    "sample_size": "NR — não reportado",
+    "intervention": "Revenue decoupling de utilidades elétricas (conforme abstract).",
+    "comparison": "NR — não reportado",
+    "outcome": "Consumo residencial de eletricidade; gasto em DSM; eficácia do investimento em DSM (conforme abstract).",
+    "method": "Modelo teórico (jogo repetido) e análise empírica — desenho empírico não descrito no abstract.",
+    "empirical_strategy": "NR — não reportado",
+    "causal_identification": "NR — não reportado",
+    "model_equation": "NR — não reportado",
+    "variables": "NR — não reportado",
+    "main_result": "[FONTE, abstract] 'decoupling is historically associated with significant residential electricity consumption reductions, augmented DSM spending levels, and increased DSM investment efficacy.' Magnitudes não reportadas no abstract.",
+    "robustness": "NR — não reportado",
+    "limitations": "NR — não reportado",
+    "doi": "10.5547/01956574.37.4.jkah",
+    "url": "https://doi.org/10.5547/01956574.37.4.jkah"
+  },
+  "field_locations": {
+    "main_result": "Abstract",
+    "research_question": "Abstract"
+  },
+  "estimates": [
+    {
+      "estimate_id": "S-0001-R1",
+      "description": "Associação entre decoupling e consumo residencial de eletricidade",
+      "estimate": "NR — não reportado",
+      "unit": "NR — não reportado",
+      "se": "NR — não reportado",
+      "ci_low": "NR — não reportado",
+      "ci_high": "NR — não reportado",
+      "p_value": "NR — não reportado",
+      "significance": "descrito como 'significant' no abstract (sem valor reportado)",
+      "n": "NR — não reportado",
+      "identification": "NR — não reportado",
+      "location": {
+        "page": "página não identificável de forma confiável",
+        "section": "Abstract"
+      },
+      "excerpt": "decoupling is historically associated with significant residential electricity consumption reductions"
+    }
+  ],
+  "notes": "Extração limitada ao abstract. 'Significant' NÃO foi convertido em número. Obter o texto integral (DOI) para extrair coeficientes, amostra e desenho."
+}

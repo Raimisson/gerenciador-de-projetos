@@ -1,0 +1,16 @@
+{
+  "doi": "10.9999/jiee.2019.0457",
+  "checked_on": "2026-09-24",
+  "checked_against": [
+    "Crossref (404)",
+    "doi.org handle API (404)"
+  ],
+  "flags": [
+    "DOI_NAO_RESOLVE",
+    "POSSIVELMENTE_INVENTADA"
+  ],
+  "comparisons": {},
+  "registry_metadata": null,
+  "status": "CONTRADICTED",
+  "verdict": "DOI não registrado — referência possivelmente inventada ou DOI incorreto"
+}

@@ -1,0 +1,132 @@
+{
+  "project": "Exemplo 2 — programas compulsórios de eficiência energética",
+  "updated": "2026-09-24",
+  "sources": [
+    {
+      "source_id": "S-0001",
+      "source_type": "peer_reviewed_article",
+      "authors": [
+        "Blumberga, Andra",
+        "Āzis, Reinis",
+        "Reinbergs, Dāvis"
+      ],
+      "year": 2021,
+      "title": "The Bright and Dark Sides of Energy Efficiency Obligation Scheme: The Case of Latvia",
+      "container": "Energies",
+      "volume": "14",
+      "issue": "15",
+      "pages": "4467",
+      "doi": "10.3390/en14154467",
+      "url": "https://doi.org/10.3390/en14154467",
+      "accessed": "2026-09-24",
+      "peer_reviewed": true,
+      "access_level": "full_text",
+      "found_via": "Scite B1",
+      "metadata_verification": {
+        "status": "PARTIALLY_VERIFIED",
+        "checked_against": [
+          "Scite MCP (search_literature), 2026-09-24"
+        ],
+        "checked_on": "2026-09-24",
+        "discrepancies": [],
+        "notes": "Metadados conferidos só no índice Scite (Crossref inacessível no ambiente de geração)."
+      },
+      "notes": "OA (CC BY). Lidos abstract e trechos do texto integral via Scite; leitura completa pendente. Scite lista 3 autores (pode estar truncado)."
+    },
+    {
+      "source_id": "S-0002",
+      "source_type": "peer_reviewed_article",
+      "authors": [
+        "Xylia, Maria",
+        "Silveira, Semida",
+        "Morfeldt, Johannes"
+      ],
+      "year": 2016,
+      "title": "Implications of an energy efficiency obligation scheme for the Swedish energy-intensive industries: an evaluation of costs and benefits",
+      "container": "Energy Efficiency",
+      "volume": "10",
+      "issue": "1",
+      "pages": "151-169",
+      "doi": "10.1007/s12053-016-9446-7",
+      "url": "https://doi.org/10.1007/s12053-016-9446-7",
+      "accessed": "2026-09-24",
+      "peer_reviewed": true,
+      "access_level": "abstract_only",
+      "found_via": "Scite B1",
+      "metadata_verification": {
+        "status": "PARTIALLY_VERIFIED",
+        "checked_against": [
+          "Scite MCP (search_literature), 2026-09-24"
+        ],
+        "checked_on": "2026-09-24",
+        "discrepancies": [
+          "Scite: date 2016, volume 10(1) — volume 10 corresponde a 2017 no periódico? Não foi possível verificar esta informação nas fontes consultadas."
+        ],
+        "notes": "Metadados conferidos só no índice Scite (Crossref inacessível no ambiente de geração)."
+      },
+      "notes": "Scite lista 3 autores (pode estar truncado). Ano no volume 10 (2017) vs. data online 2016: conferir no Crossref."
+    },
+    {
+      "source_id": "S-0003",
+      "source_type": "peer_reviewed_article",
+      "authors": [
+        "Giraudet, Louis-Gaëtan",
+        "Bodineau, Luc",
+        "Finon, Dominique"
+      ],
+      "year": 2011,
+      "title": "The costs and benefits of white certificates schemes",
+      "container": "Energy Efficiency",
+      "volume": "5",
+      "issue": "2",
+      "pages": "179-199",
+      "doi": "10.1007/s12053-011-9134-6",
+      "url": "https://doi.org/10.1007/s12053-011-9134-6",
+      "accessed": "2026-09-24",
+      "peer_reviewed": true,
+      "access_level": "abstract_only",
+      "found_via": "Scite B1",
+      "metadata_verification": {
+        "status": "PARTIALLY_VERIFIED",
+        "checked_against": [
+          "Scite MCP (search_literature), 2026-09-24"
+        ],
+        "checked_on": "2026-09-24",
+        "discrepancies": [],
+        "notes": "Metadados conferidos só no índice Scite (Crossref inacessível no ambiente de geração)."
+      },
+      "notes": "Abstract recuperado sem o símbolo monetário nos valores de custo."
+    },
+    {
+      "source_id": "S-0004",
+      "source_type": "peer_reviewed_article",
+      "authors": [
+        "Fawcett, Tina",
+        "Rosenow, Jan",
+        "Bertoldi, Paolo"
+      ],
+      "year": 2018,
+      "title": "Energy efficiency obligation schemes: their future in the EU",
+      "container": "Energy Efficiency",
+      "volume": "12",
+      "issue": "1",
+      "pages": "57-71",
+      "doi": "10.1007/s12053-018-9657-1",
+      "url": "https://doi.org/10.1007/s12053-018-9657-1",
+      "accessed": "2026-09-24",
+      "peer_reviewed": true,
+      "access_level": "full_text",
+      "found_via": "Scite B1",
+      "metadata_verification": {
+        "status": "PARTIALLY_VERIFIED",
+        "checked_against": [
+          "Scite MCP (search_literature), 2026-09-24"
+        ],
+        "checked_on": "2026-09-24",
+        "discrepancies": [],
+        "notes": "Metadados conferidos só no índice Scite (Crossref inacessível no ambiente de geração)."
+      },
+      "notes": "OA; trechos do texto integral via Scite."
+    }
+  ]
+}

@@ -131,8 +131,9 @@ class Report:
         self.warnings.append(f"{where}: {msg}")
 
     def merge(self, other: "Report"):
-        self.errors += other.errors
-        self.warnings += other.warnings
+        prefix = f"[{other.label}] " if other.label and other.label != self.label else ""
+        self.errors += [prefix + e for e in other.errors]
+        self.warnings += [prefix + w for w in other.warnings]
 
     def render(self) -> str:
         out = [f"== {self.label}"]
@@ -242,6 +243,10 @@ def _number_in_text(value, text: str) -> bool:
         return False
     t = text.replace("−", "-").replace("–", "-")
     raw = str(value).replace("−", "-")
+    if isinstance(value, str):
+        parts = re.findall(r"-?\d+(?:[.,]\d+)?", raw)
+        if len(parts) > 1:
+            return all(_number_in_text(p, text) for p in parts)
     candidates = {raw, raw.replace(".", ","), raw.lstrip("+")}
     if isinstance(value, (int, float)) and not isinstance(value, bool):
         candidates |= {f"{value:g}", f"{value:g}".replace(".", ",")}
@@ -472,7 +477,7 @@ def _location(est: dict) -> str:
     for key, label in (("page", "p."), ("table", "Tab."), ("figure", "Fig."), ("appendix", "Ap."), ("section", "§")):
         val = loc.get(key)
         if val and not is_nr(val):
-            parts.append(f"{label} {val}")
+            parts.append(val if val == PAGE_UNRELIABLE else f"{label} {val}")
     return "; ".join(parts) if parts else NR
 
 
@@ -736,8 +741,11 @@ CAUSAL = re.compile(
     r"\b(caus(?:a|ou|aram|am|ado|ada)|provoc(?:a|ou|aram)|levou a|levaram a|result(?:a|ou|aram) em|"
     r"reduz(?:iu|iram)|aument(?:ou|aram)|diminu(?:iu|íram|iram)|elev(?:ou|aram)|impacto (?:de|do|da)|"
     r"efeito (?:de|do|da|causal)|gra[cç]as a|em raz[aã]o d[eoa]|"
+    r"elevaria|aumentaria|reduziria|diminuiria|levaria a|resultaria em|provocaria|"
     r"caused|causes|led to|leads to|resulted in|results in|reduced|increased|decreased|"
     r"effect of|impact of|drove|drives|due to)\b", re.I)
+NEGATED_CAUSAL = re.compile(
+    r"\b(n[aã]o|nenhum[a]?|sem|aus[eê]ncia|no|not|without|absence)\b[^.;]{0,90}\b(efeitos?|impactos?|effects?|impacts?|causa)", re.I)
 UNIVERSAL = re.compile(r"\b(sempre|todos os|todas as|universalmente|em qualquer|always|universally|in all)\b", re.I)
 COUNTRY_TERMS = {
     "brasil": ["brasil", "brazil", "brasileir"],
@@ -787,6 +795,8 @@ def manuscript_paragraphs(text: str):
             stripped = P_MARK.sub("", stripped).strip()
             if not stripped:
                 continue
+        if re.match(r"^#{1,6}\s*(refer[eê]ncias|references|bibliografia|bibliography|works cited)\b", stripped, re.I):
+            break  # lista de referências é auditada por bibliography-audit, não pelo scan
         if in_code or stripped.startswith("#") or stripped.startswith("|") or stripped.startswith("<!--"):
             if para:
                 pid += 1
@@ -802,6 +812,9 @@ def manuscript_paragraphs(text: str):
         if not para:
             start = i
         para.append(stripped)
+    if para:
+        pid += 1
+        yield (current_pid or f"¶{pid}", start, " ".join(para))
 
 
 def _numbers_needing_source(sentence: str) -> list[str]:
@@ -853,14 +866,22 @@ def scan_manuscript(text: str, ledger: dict | None = None, sources: dict | None 
                         add("EVIDENCIA-NAO-VERIFICADA", "CRÍTICO", f"{eid} tem status {st}")
                     if entry.get("evidence_type") == "analytic_inference" and has_cite:
                         add("INFERENCIA-ATRIBUIDA", "MAIOR", f"{eid} é inferência analítica, mas a frase cita estudo")
-            if CAUSAL.search(sent):
+            if CAUSAL.search(sent) and not NEGATED_CAUSAL.search(sent):
                 classes = {e.get("design_class") for e in entries}
-                if entries and classes - {"causal", "normative"}:
+                weak = classes - {"causal", "normative"}
+                if entries and weak and weak <= {NR, None}:
+                    add("CAUSAL-VERIFICAR", "AVISO",
+                        f"linguagem causal ('{CAUSAL.search(sent).group(0)}'); desenho da evidência não reportado")
+                elif entries and weak:
                     add("CAUSAL-INDEVIDA", "MAIOR",
-                        f"linguagem causal ('{CAUSAL.search(sent).group(0)}') apoiada em evidência {sorted(c for c in classes if c)}")
+                        f"linguagem causal ('{CAUSAL.search(sent).group(0)}') apoiada em evidência {sorted(c for c in weak if c)}")
                 elif not entries and (has_cite or nums):
                     add("CAUSAL-VERIFICAR", "AVISO",
                         f"linguagem causal ('{CAUSAL.search(sent).group(0)}'); confirme que o desenho citado identifica causalidade")
+                elif not entries and not has_cite:
+                    add("AFIRMACAO-SEM-FONTE", "MAIOR",
+                        f"afirmação causal/preditiva ('{CAUSAL.search(sent).group(0)}') sem fonte nem [E-…]; "
+                        "se for inferência própria, rotule como tal")
             mentioned = _countries_in(sent) | target
             if entries and mentioned:
                 ev_countries = set()
@@ -941,7 +962,7 @@ def trace(target: str, ledger: dict, sources: dict | None, manuscript: str | Non
             f"- DOI: {e.get('doi')} · URL: {e.get('url')}",
             f"- Metadados: {src.get('metadata_verification', {}).get('status', NR)} · tipo: {src.get('source_type', NR)} · revisado por pares: {src.get('peer_reviewed', NR)} · acesso: {src.get('access_level', NR)}",
             "**2. Evidência extraída**",
-            f"- Local: página {e.get('page')}; seção {e.get('section')}"
+            f"- Local: {e.get('page') if e.get('page') == PAGE_UNRELIABLE else 'página ' + str(e.get('page'))}; seção {e.get('section')}"
             + (f"; tabela {e['table']}" if e.get("table") else "") + (f"; figura {e['figure']}" if e.get("figure") else ""),
             f"- Trecho: \"{e.get('excerpt')}\"",
             f"- Resultado quantitativo: {json.dumps(e.get('quantitative_result'), ensure_ascii=False)}",

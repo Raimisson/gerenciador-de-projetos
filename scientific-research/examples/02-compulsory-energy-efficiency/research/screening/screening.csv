@@ -1,0 +1,9 @@
+record_id,source_id,title,year,doi,stage,decision,reason_code,reviewer,notes
+R1,S-0004,Energy efficiency obligation schemes: their future in the EU,2018,10.1007/s12053-018-9657-1,title_abstract,include,,claude-proposal,análise de política; contexto
+R2,,Tradable white certificates: experiences and perspectives,2011,10.1007/s12053-010-9104-4,title_abstract,exclude,EX-DESIGN,claude-proposal,resumo de painel
+R3,S-0003,The costs and benefits of white certificates schemes,2011,10.1007/s12053-011-9134-6,title_abstract,include,,claude-proposal,"custos/benefícios GB, IT, FR"
+R4,S-0001,The Bright and Dark Sides of Energy Efficiency Obligation Scheme: The Case of Latvia,2021,10.3390/en14154467,title_abstract,include,,claude-proposal,avaliação ex post
+R5,S-0002,Implications of an energy efficiency obligation scheme for the Swedish energy-intensive industries,2016,10.1007/s12053-016-9446-7,title_abstract,include,,claude-proposal,CBA ex ante
+R6,,How much market do market-based instruments create? An analysis for the case of white certificates,2006,10.1016/j.enpol.2004.08.025,title_abstract,exclude,EX-DESIGN,claude-proposal,análise conceitual de mercado
+R7,,White Certificates in the Italian Energy Oligopoly Market,2012,10.1080/15567240902839286,title_abstract,exclude,EX-DESIGN,claude-proposal,modelo teórico de oligopólio
+R8,,06/01465 How much market do market-based instruments create? (Fuel and Energy Abstracts),2006,10.1016/s0140-6701(06)81469-4,dedup,exclude,EX-DUP,claude-proposal,registro de índice de resumos de R6

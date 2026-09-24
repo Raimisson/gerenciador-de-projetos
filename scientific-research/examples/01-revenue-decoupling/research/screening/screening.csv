@@ -1,0 +1,31 @@
+record_id,source_id,title,year,doi,stage,decision,reason_code,reviewer,notes
+R01,,Effects of Electric Utility Decoupling on Energy Efficiency,2016,10.5547/01956574.37.4.jkah,title_abstract,include,,claude-proposal,vai a texto completo; abstract relata associação empírica
+R02,,The distribution of U.S. electric utility revenue decoupling rate impacts from 2005 to 2017,2020,10.1016/j.tej.2020.106858,title_abstract,maybe,,claude-proposal,decoupling explícito; desfecho incerto
+R03,,Energy efficiency via incentive design and utility learning,2014,10.1145/2566468.2576849,title_abstract,exclude,EX-DESIGN,claude-proposal,modelo teórico principal-agente; sem estimativa do efeito do decoupling
+R04,,Cost-Effectiveness of Electricity Energy Efficiency Programs,2012,10.5547/01956574.33.2.4,title_abstract,maybe,,claude-proposal,abstract truncado; verificar se decoupling é regressor
+R05,,Traditional Ratemaking and Rates for Energy Efficiency Vary,2016,10.1002/gas.21936,title_abstract,exclude,EX-DESIGN,claude-proposal,levantamento descritivo de técnicas tarifárias
+R06,,South Africa: Framework for Energy Efficiency Demand Side Management,2023,10.2172/2308756,title_abstract,exclude,EX-DESIGN,claude-proposal,relatório de arcabouço; sem estimativa própria
+R07,,The Distribution of U.S. Electric Utility Revenue Decoupling Rate Impacts from 2005 to 2017 (OSTI),2021,10.2172/1764571,dedup,exclude,EX-DUP,claude-proposal,versão relatório de R02
+R08,,"State Energy Efficiency Resource Standards: Design, Status, and Impacts",2014,10.2172/1134131,title_abstract,exclude,EX-OUTCOME,claude-proposal,foco em EERS; decoupling apenas descrito
+R09,,Decoupling Policies: Options to Encourage Energy Efficiency Policies for Utilities (NREL brochure),2009,10.2172/969719,title_abstract,exclude,EX-DESIGN,claude-proposal,material de divulgação
+R10,,Energy efficiency as a preferred resource: evidence from utility resource plans in the Western US and Canada,2008,10.1007/s12053-008-9030-x,title_abstract,exclude,EX-OUTCOME,claude-proposal,abstract: efeitos do decoupling 'not easily measured'
+R11,,Cost-Effectiveness of Electricity Energy Efficiency Programs (B2),2012,10.5547/01956574.33.2.4,dedup,exclude,EX-DUP,claude-proposal,duplicata de R04
+R12,,Demand-Side Management via Distributed Energy Generation and Storage Optimization,2013,10.1109/tsg.2012.2206060,title_abstract,exclude,EX-INT,claude-proposal,otimização de DSM; sem decoupling
+R13,,Enhancing demand side management: A field study on flexibility and personal thermal control,2025,10.1177/1420326x251378316,title_abstract,exclude,EX-INT,claude-proposal,
+R14,,Focusing on Demand Side Management in the Future of the Electric Grid,2010,10.5195/pjephl.2010.19,title_abstract,exclude,EX-DESIGN,claude-proposal,artigo jurídico conceitual
+R15,,Social License to Automate: Emerging Approaches to Demand Side Management,2021,10.47568/4xr122,title_abstract,exclude,EX-INT,claude-proposal,
+R16,,Demand-Side Management Method for Households with Self-Generation and Storage of Electricity,2024,10.3390/buildings14010276,title_abstract,exclude,EX-INT,claude-proposal,
+R17,,Decoupling and demand-side management: Evidence from the US electric industry,2019,10.1016/j.enpol.2019.05.005,title_abstract,include,,claude-proposal,só título (C1); altamente relevante
+R18,,"Green innovation transformation, economic sustainability and energy consumption during China's new normal stage",2020,10.1016/j.jclepro.2020.123044,title_abstract,exclude,EX-INT,claude-proposal,só título
+R19,,The effects of utility revenue decoupling on electricity prices,2021,10.1016/j.eneco.2021.105440,title_abstract,exclude,EX-OUTCOME,claude-proposal,só título; desfecho = preços (relevante para pergunta secundária)
+R20,,"Revenue decoupling, energy demand, and energy efficiency: Empirical evidence from the U.S. electricity sector",2022,10.1016/j.jup.2022.101416,title_abstract,include,,claude-proposal,só título (C1); altamente relevante
+R21,,The Rationale for Reforming Utility Business Models,2023,10.5547/01956574.44.2.dkop,title_abstract,exclude,EX-DESIGN,claude-proposal,só título; conceitual
+R22,,"Global Dynamics of Energy Use Sustainability, and R&D: Unlocking Green Innovation Through Environmental Regulations",2025,10.71085/sss.04.02.261,title_abstract,exclude,EX-INT,claude-proposal,só título
+R23,,Factors Influencing Recent Trends in Retail Electricity Prices in the United States (SSRN),2025,10.2139/ssrn.5337664,dedup,exclude,EX-DUP,claude-proposal,versão de R24
+R24,,Factors influencing recent trends in retail electricity prices in the United States,2025,10.1016/j.tej.2025.107516,title_abstract,exclude,EX-OUTCOME,claude-proposal,só título
+R25,,Unpacking the Disconnect Between Wholesale and Retail Electric Rates [PowerPoint],2019,10.2172/1550910,title_abstract,exclude,EX-DESIGN,claude-proposal,apresentação
+R02b,S-0002,The distribution of U.S. electric utility revenue decoupling rate impacts from 2005 to 2017,2020,10.1016/j.tej.2020.106858,full_text,exclude,EX-OUTCOME,claude-proposal,"mede ajustes tarifários do decoupling, não efeitos sobre programas de EE; mantido como contexto"
+R01b,S-0001,Effects of Electric Utility Decoupling on Energy Efficiency,2016,10.5547/01956574.37.4.jkah,full_text,maybe,NO-FULLTEXT,claude-proposal,acesso restrito
+R04b,S-0003,Cost-Effectiveness of Electricity Energy Efficiency Programs,2012,10.5547/01956574.33.2.4,full_text,maybe,NO-FULLTEXT,claude-proposal,acesso restrito
+R17b,S-0004,Decoupling and demand-side management: Evidence from the US electric industry,2019,10.1016/j.enpol.2019.05.005,full_text,maybe,NO-FULLTEXT,claude-proposal,sem texto legível no Scite
+R20b,S-0005,"Revenue decoupling, energy demand, and energy efficiency: Empirical evidence from the U.S. electricity sector",2022,10.1016/j.jup.2022.101416,full_text,maybe,NO-FULLTEXT,claude-proposal,"OA segundo Scite, mas sem texto retornado; baixar pelo DOI"

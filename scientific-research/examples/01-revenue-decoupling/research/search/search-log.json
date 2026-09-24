@@ -1,0 +1,94 @@
+{
+  "question": "Quais estudos mensuraram quantitativamente os efeitos de mecanismos de revenue decoupling sobre programas de eficiência energética?",
+  "protocol_ref": "../protocol.md",
+  "inclusion_criteria": [
+    "IN-INT: mecanismo de revenue decoupling (desacoplamento receita-volume) de concessionárias de energia",
+    "IN-OUT: desfecho relacionado a programas de eficiência energética/DSM (gasto, economia de energia, custo-efetividade) ou consumo de energia atribuído a esses programas",
+    "IN-DES: estimativa quantitativa empírica (ex post) ou modelo com parâmetro estimado",
+    "IN-LANG: inglês, português, espanhol"
+  ],
+  "exclusion_criteria": [
+    "EX-OUTCOME: desfecho não relacionado a programas de EE (ex.: só impacto tarifário)",
+    "EX-DESIGN: sem estimativa quantitativa (conceitual, opinião, apresentação)",
+    "EX-INT: não trata de revenue decoupling",
+    "EX-DUP: duplicata/versão"
+  ],
+  "searches": [
+    {
+      "search_id": "B1",
+      "date": "2026-09-24",
+      "database": "Scite",
+      "interface": "Scite MCP search_literature (limit=10, ordenação por relevância)",
+      "query": "(\"revenue decoupling\" OR decoupling) AND utility AND \"energy efficiency\"",
+      "filters": "nenhum",
+      "period": "sem restrição",
+      "results_found": 29849,
+      "records_retrieved": 10,
+      "executed": true,
+      "notes": "Consulta ampla; apenas os 10 primeiros por relevância foram exportados (demonstração, não revisão exaustiva)."
+    },
+    {
+      "search_id": "B2",
+      "date": "2026-09-24",
+      "database": "Scite",
+      "interface": "Scite MCP search_literature (limit=6)",
+      "query": "decoupling AND (\"demand-side management\" OR \"energy efficiency program\") AND (spending OR savings) AND (panel OR regression OR \"fixed effects\")",
+      "filters": "date_from=2005",
+      "period": "2005–",
+      "results_found": 806,
+      "records_retrieved": 6,
+      "executed": true,
+      "notes": "Maioria dos resultados sobre DSM em engenharia (fora do escopo)."
+    },
+    {
+      "search_id": "B3",
+      "date": "2026-09-24",
+      "database": "Elicit",
+      "interface": "Elicit MCP search_papers",
+      "query": "effect of revenue decoupling on utility energy efficiency program spending and savings",
+      "filters": "nenhum",
+      "period": "sem restrição",
+      "results_found": "NR — não reportado",
+      "executed": false,
+      "notes": "Falhou: api_access_denied (plano sem acesso à API). Registrado; não compensado de memória."
+    },
+    {
+      "search_id": "B4",
+      "date": "2026-09-24",
+      "database": "Consensus",
+      "interface": "Consensus MCP search",
+      "query": "revenue decoupling effect on utility demand-side management energy efficiency spending empirical",
+      "filters": "nenhum",
+      "period": "sem restrição",
+      "results_found": "NR — não reportado",
+      "executed": false,
+      "notes": "Falhou: cota mensal de buscas esgotada."
+    },
+    {
+      "search_id": "C1",
+      "date": "2026-09-24",
+      "database": "Scite (forward citation chasing)",
+      "interface": "Scite MCP citation_graph direction=in, semente 10.5547/01956574.37.4.jkah",
+      "query": "citantes de Kahn-Lang (2016)",
+      "filters": "depth=1",
+      "period": "sem restrição",
+      "results_found": 9,
+      "records_retrieved": 9,
+      "executed": true,
+      "notes": "citation_graph retorna só título e ano: triagem destes registros feita por título."
+    }
+  ],
+  "screening": {
+    "records_identified": 25,
+    "duplicates_removed": 3,
+    "screened": 22,
+    "excluded_title_abstract": 17,
+    "full_text_not_retrieved": 4,
+    "full_text_assessed": 1,
+    "excluded_full_text": {
+      "EX-OUTCOME": 1
+    },
+    "included": 0,
+    "notes": "4 estudos potencialmente elegíveis (S-0001, S-0003, S-0004, S-0005) aguardam texto integral; nenhum pôde ser incluído formalmente. S-0002 foi avaliado no texto integral e excluído (desfecho = impacto tarifário), mas é mantido como evidência contextual."
+  }
+}

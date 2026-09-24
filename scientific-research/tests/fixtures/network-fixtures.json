@@ -1,0 +1,169 @@
+{
+  "_comment": "Respostas SIMULADAS para testes offline do srtool.py. Nenhuma corresponde a um trabalho real: DOIs 10.5555/* usam o prefixo de teste do Crossref e os registros são sintéticos; 10.9999/jiee.2019.0457 é a referência propositalmente falsa (resposta 404 simulada, coerente com a verificação real feita no Scite em 2026-09-24, que não encontrou o DOI).",
+  "https://api.crossref.org/works/10.9999/jiee.2019.0457": {
+    "__status__": 404
+  },
+  "https://doi.org/api/handles/10.9999/jiee.2019.0457": {
+    "__status__": 404
+  },
+  "https://api.crossref.org/works/10.5555/sr-test.0001": {
+    "status": "ok",
+    "message": {
+      "DOI": "10.5555/sr-test.0001",
+      "type": "journal-article",
+      "title": [
+        "Synthetic test record for the Scientific Research plugin"
+      ],
+      "author": [
+        {
+          "family": "Tester",
+          "given": "Alice"
+        },
+        {
+          "family": "Fixture",
+          "given": "Bob"
+        }
+      ],
+      "issued": {
+        "date-parts": [
+          [
+            2020,
+            5
+          ]
+        ]
+      },
+      "container-title": [
+        "Journal of Test Fixtures"
+      ],
+      "volume": "1",
+      "issue": "2",
+      "page": "10-20",
+      "publisher": "Test Publisher (synthetic)"
+    }
+  },
+  "https://api.crossref.org/works/10.5555/sr-test.0002": {
+    "__status__": "error",
+    "message": "timeout simulado"
+  },
+  "https://api.crossref.org/works/10.5555/sr-test.0003": {
+    "__status__": 404
+  },
+  "https://doi.org/api/handles/10.5555/sr-test.0003": {
+    "responseCode": 1,
+    "handle": "10.5555/sr-test.0003"
+  },
+  "https://api.openalex.org/works/doi:10.5555/sr-test.0001": {
+    "id": "https://openalex.org/W0000000001",
+    "display_name": "Synthetic test record for the Scientific Research plugin",
+    "doi": "https://doi.org/10.5555/sr-test.0001",
+    "publication_year": 2020,
+    "type": "article",
+    "cited_by_count": 1,
+    "authorships": [
+      {
+        "author": {
+          "display_name": "Alice Tester"
+        }
+      }
+    ],
+    "primary_location": {
+      "source": {
+        "display_name": "Journal of Test Fixtures"
+      }
+    },
+    "referenced_works": [
+      "https://openalex.org/W0000000002"
+    ],
+    "related_works": [
+      "https://openalex.org/W0000000003"
+    ]
+  },
+  "https://api.openalex.org/works?filter=openalex_id%3AW0000000002&per-page=50": {
+    "results": [
+      {
+        "id": "https://openalex.org/W0000000002",
+        "display_name": "Synthetic cited record",
+        "doi": null,
+        "publication_year": 2010,
+        "type": "article",
+        "cited_by_count": 5,
+        "authorships": [
+          {
+            "author": {
+              "display_name": "Carol Synthetic"
+            }
+          }
+        ],
+        "primary_location": null
+      }
+    ]
+  },
+  "https://api.openalex.org/works?filter=openalex_id%3AW0000000003&per-page=50": {
+    "results": [
+      {
+        "id": "https://openalex.org/W0000000003",
+        "display_name": "Synthetic related record",
+        "doi": null,
+        "publication_year": 2021,
+        "type": "article",
+        "cited_by_count": 0,
+        "authorships": [],
+        "primary_location": null
+      }
+    ]
+  },
+  "https://api.openalex.org/works?filter=cites%3AW0000000001&per-page=25": {
+    "meta": {
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W0000000004",
+        "display_name": "Synthetic citing record",
+        "doi": "https://doi.org/10.5555/sr-test.0004",
+        "publication_year": 2023,
+        "type": "article",
+        "cited_by_count": 0,
+        "authorships": [
+          {
+            "author": {
+              "display_name": "Dan Mock"
+            }
+          }
+        ],
+        "primary_location": {
+          "source": {
+            "display_name": "Journal of Test Fixtures"
+          }
+        }
+      }
+    ]
+  },
+  "https://api.openalex.org/works?search=synthetic+query&per-page=25": {
+    "meta": {
+      "count": 1
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W0000000001",
+        "display_name": "Synthetic test record for the Scientific Research plugin",
+        "doi": "https://doi.org/10.5555/sr-test.0001",
+        "publication_year": 2020,
+        "type": "article",
+        "cited_by_count": 1,
+        "authorships": [
+          {
+            "author": {
+              "display_name": "Alice Tester"
+            }
+          }
+        ],
+        "primary_location": {
+          "source": {
+            "display_name": "Journal of Test Fixtures"
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "source_id": "S-0001",
+  "extracted_on": "2026-09-24",
+  "extracted_by": "claude (exemplo)",
+  "access_level": "full_text",
+  "text_source": "abstract + trechos do texto integral (Scite fulltextExcerpts); leitura completa pendente",
+  "pagination_reliable": false,
+  "fields": {
+    "reference": "Blumberga, A., Āzis, R., & Reinbergs, D. (2021). The Bright and Dark Sides of Energy Efficiency Obligation Scheme: The Case of Latvia. Energies, 14(15), 4467.",
+    "research_question": "Avaliar ex post se o EEOS da Letônia entregou as economias previstas na fase inicial; construir ferramenta de otimização.",
+    "country_jurisdiction": "Letônia",
+    "population": "Partes obrigadas do EEOS",
+    "unit_of_analysis": "Esquema nacional (agregado)",
+    "period": "2014–2017 (fase inicial)",
+    "data_source": "Relatório de progresso nacional rumo à meta de eficiência energética para 2020 (ref. [25] do artigo) — fonte primária governamental não consultada",
+    "sample_size": "NR — não reportado",
+    "intervention": "Energy Efficiency Obligation Scheme (EEOS)",
+    "comparison": "Economias planejadas pelos formuladores (meta), não um contrafactual",
+    "outcome": "Economias de energia cumulativas estimadas (GWh)",
+    "method": "Avaliação ex post descritiva + modelo de dinâmica de sistemas para cenários",
+    "empirical_strategy": "Comparação entre economias estimadas reportadas e meta planejada",
+    "causal_identification": "Não identifica efeito causal (sem contrafactual; economias estimadas/reportadas)",
+    "model_equation": "NA — não se aplica",
+    "variables": "NR — não reportado",
+    "main_result": "[FONTE] Economias cumulativas estimadas na fase inicial: 329.2 GWh, 68% acima do planejado para 2020 (234 GWh); ~95% das economias via medidas de informação. [AUTORES] sucesso associado à abordagem 'stick-type'.",
+    "robustness": "NR — não reportado",
+    "limitations": "NR — não reportado",
+    "doi": "10.3390/en14154467",
+    "url": "https://doi.org/10.3390/en14154467"
+  },
+  "field_locations": {
+    "main_result": "Abstract; Seção com Table 1 (texto integral)",
+    "data_source": "Texto integral, referência [25]"
+  },
+  "estimates": [
+    {
+      "estimate_id": "S-0001-R1",
+      "description": "Economias cumulativas estimadas na fase inicial do EEOS",
+      "estimate": 329.2,
+      "unit": "GWh (cumulativo)",
+      "se": "NR — não reportado",
+      "ci_low": "NR — não reportado",
+      "ci_high": "NR — não reportado",
+      "p_value": "NA — não se aplica",
+      "significance": "NA — não se aplica",
+      "n": "NA — não se aplica",
+      "period": "2014–2017",
+      "model": "soma de economias estimadas reportadas",
+      "identification": "descritivo (sem contrafactual)",
+      "is_main_specification": true,
+      "location": {
+        "page": "página não identificável de forma confiável",
+        "table": "Table 1",
+        "section": "Resultados (trecho do texto integral)"
+      },
+      "excerpt": "Estimated cumulative savings obtained during starting phase are 68% higher (329.2 GWh) than the cumulative savings planned for 2020 (234 GWh).",
+      "notes": "Número originado do relatório governamental [25]: citar também a fonte primária."
+    },
+    {
+      "estimate_id": "S-0001-R2",
+      "description": "Custo médio das medidas de informação vs. contribuição ao Fundo",
+      "estimate": "4 / 70",
+      "unit": "EUR/MWh",
+      "se": "NR — não reportado",
+      "ci_low": "NR — não reportado",
+      "ci_high": "NR — não reportado",
+      "p_value": "NA — não se aplica",
+      "significance": "NA — não se aplica",
+      "n": "NR — não reportado",
+      "identification": "descritivo",
+      "location": {
+        "page": "página não identificável de forma confiável",
+        "section": "Abstract"
+      },
+      "excerpt": "the cost of information measures (on average 4 EUR/MWh) is significantly lower than the contribution to the Fund (70 EUR/MWh)"
+    }
+  ],
+  "notes": "Economias 'estimadas' não equivalem a efeito causal (adicionalidade não demonstrada nos trechos lidos)."
+}

@@ -1,0 +1,75 @@
+{
+  "source_id": "S-0003",
+  "extracted_on": "2026-09-24",
+  "extracted_by": "claude (exemplo)",
+  "access_level": "abstract_only",
+  "text_source": "abstract via Scite",
+  "pagination_reliable": false,
+  "fields": {
+    "reference": "Giraudet, L.-G., Bodineau, L., & Finon, D. (2011). The costs and benefits of white certificates schemes. Energy Efficiency, 5(2), 179–199.",
+    "research_question": "NR — não reportado",
+    "country_jurisdiction": "Grã-Bretanha (2002), Itália (2005), França (2006)",
+    "population": "NR — não reportado",
+    "unit_of_analysis": "NR — não reportado",
+    "period": "NR — não reportado",
+    "data_source": "NR — não reportado",
+    "sample_size": "NR — não reportado",
+    "intervention": "Esquemas de certificados brancos (obrigação + comércio)",
+    "comparison": "NR — não reportado",
+    "outcome": "Custo por negawatt-hora; custos vs. benefícios",
+    "method": "Estrutura unificada de custo-benefício",
+    "empirical_strategy": "NR — não reportado",
+    "causal_identification": "Não identifica efeito causal (contabilidade de custos/benefícios)",
+    "model_equation": "NR — não reportado",
+    "variables": "NR — não reportado",
+    "main_result": "[AUTORES] Os esquemas 'pay for themselves'; custo do negawatt-hora 0.009/kWh (GB) e 0.037/kWh (FR) — moeda não recuperada no texto.",
+    "robustness": "NR — não reportado",
+    "limitations": "NR — não reportado",
+    "doi": "10.1007/s12053-011-9134-6",
+    "url": "https://doi.org/10.1007/s12053-011-9134-6"
+  },
+  "field_locations": {
+    "main_result": "Abstract"
+  },
+  "estimates": [
+    {
+      "estimate_id": "S-0003-R1",
+      "description": "Custo do negawatt-hora — Grã-Bretanha",
+      "estimate": 0.009,
+      "unit": "NR — não reportado",
+      "se": "NR — não reportado",
+      "ci_low": "NR — não reportado",
+      "ci_high": "NR — não reportado",
+      "p_value": "NA — não se aplica",
+      "significance": "NA — não se aplica",
+      "n": "NA — não se aplica",
+      "identification": "contabilidade de custos",
+      "location": {
+        "page": "página não identificável de forma confiável",
+        "section": "Abstract"
+      },
+      "excerpt": "'Negawatt-hour cost' estimates reach 0. 009/kWh saved in Great Britain and 0.037/kWh saved in France",
+      "notes": "Unidade = moeda por kWh economizado, mas o símbolo monetário não aparece no texto recuperado ('0. 009/kWh'): moeda NR — não supor €."
+    },
+    {
+      "estimate_id": "S-0003-R2",
+      "description": "Custo do negawatt-hora — França",
+      "estimate": 0.037,
+      "unit": "NR — não reportado",
+      "se": "NR — não reportado",
+      "ci_low": "NR — não reportado",
+      "ci_high": "NR — não reportado",
+      "p_value": "NA — não se aplica",
+      "significance": "NA — não se aplica",
+      "n": "NA — não se aplica",
+      "identification": "contabilidade de custos",
+      "location": {
+        "page": "página não identificável de forma confiável",
+        "section": "Abstract"
+      },
+      "excerpt": "0.037/kWh saved in France",
+      "notes": "Moeda NR (ver R1)."
+    }
+  ],
+  "notes": "Conferir moeda e ano-base no texto integral."
+}

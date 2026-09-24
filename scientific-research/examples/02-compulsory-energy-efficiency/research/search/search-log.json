@@ -1,0 +1,52 @@
+{
+  "question": "Qual é a evidência empírica sobre os efeitos de programas compulsórios de eficiência energética?",
+  "protocol_ref": "../protocol.md",
+  "inclusion_criteria": [
+    "IN-INT: obrigações de eficiência energética (EEOS, EERS, white certificates) impostas a empresas de energia",
+    "IN-OUT: economia de energia, custos, custo-efetividade, efeitos distributivos",
+    "IN-DES: avaliação empírica ex post OU análise quantitativa ex ante (classificadas separadamente)"
+  ],
+  "exclusion_criteria": [
+    "EX-DESIGN: modelo puramente teórico ou relato sem dados",
+    "EX-INT: outro instrumento",
+    "EX-DUP: duplicata/registro de índice de resumos"
+  ],
+  "searches": [
+    {
+      "search_id": "B1",
+      "date": "2026-09-24",
+      "database": "Scite",
+      "interface": "Scite MCP search_literature (limit=8)",
+      "query": "(\"energy efficiency obligation\" OR \"energy efficiency resource standard\" OR \"white certificates\") AND (impact OR effect) AND (electricity OR energy) AND (difference-in-differences OR panel OR econometric)",
+      "filters": "nenhum",
+      "period": "sem restrição",
+      "results_found": 898,
+      "records_retrieved": 8,
+      "executed": true,
+      "notes": "Os termos de desenho (difference-in-differences/panel/econometric) não garantiram estudos econométricos: a maioria dos 8 primeiros é CBA ou avaliação descritiva."
+    },
+    {
+      "search_id": "B2",
+      "date": "2026-09-24",
+      "database": "Consensus",
+      "interface": "Consensus MCP",
+      "query": "energy efficiency obligation schemes impact evaluation energy savings",
+      "filters": "nenhum",
+      "period": "sem restrição",
+      "results_found": "NR — não reportado",
+      "executed": false,
+      "notes": "Não executada: cota do Consensus esgotada na sessão."
+    }
+  ],
+  "screening": {
+    "records_identified": 8,
+    "duplicates_removed": 1,
+    "screened": 7,
+    "excluded_title_abstract": 3,
+    "full_text_not_retrieved": 4,
+    "full_text_assessed": 0,
+    "excluded_full_text": {},
+    "included": 0,
+    "notes": "Nenhum texto integral foi lido por completo nesta demonstração; 4 estudos seguem como 'incluídos provisoriamente' com extração baseada em abstract/trechos."
+  }
+}

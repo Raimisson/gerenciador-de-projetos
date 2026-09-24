@@ -1,0 +1,154 @@
+{
+  "project": "Exemplo 1 — revenue decoupling e programas de eficiência energética",
+  "updated": "2026-09-24",
+  "sources": [
+    {
+      "source_id": "S-0001",
+      "source_type": "peer_reviewed_article",
+      "authors": [
+        "Kahn-Lang, Jenya"
+      ],
+      "year": 2016,
+      "title": "Effects of Electric Utility Decoupling on Energy Efficiency",
+      "container": "The Energy Journal",
+      "doi": "10.5547/01956574.37.4.jkah",
+      "url": "https://doi.org/10.5547/01956574.37.4.jkah",
+      "accessed": "2026-09-24",
+      "peer_reviewed": true,
+      "access_level": "abstract_only",
+      "found_via": "Scite B1",
+      "metadata_verification": {
+        "status": "PARTIALLY_VERIFIED",
+        "checked_against": [
+          "Scite MCP (search_literature/citation_graph), 2026-09-24"
+        ],
+        "checked_on": "2026-09-24",
+        "discrepancies": [],
+        "notes": "Crossref/doi.org inacessíveis no ambiente em que o exemplo foi gerado (bloqueio de rede); metadados conferidos apenas no índice Scite. Rodar `srtool.py refs-check` com rede para promover a VERIFIED."
+      },
+      "volume": "37",
+      "issue": "4",
+      "pages": "297-314",
+      "notes": "Texto integral com acesso restrito (Scite read_fulltext retornou source=abstract)."
+    },
+    {
+      "source_id": "S-0002",
+      "source_type": "peer_reviewed_article",
+      "authors": [
+        "Cappers, Peter",
+        "Satchwell, Andrew",
+        "Dupuy, Max"
+      ],
+      "year": 2020,
+      "title": "The distribution of U.S. electric utility revenue decoupling rate impacts from 2005 to 2017",
+      "container": "The Electricity Journal",
+      "doi": "10.1016/j.tej.2020.106858",
+      "url": "https://doi.org/10.1016/j.tej.2020.106858",
+      "accessed": "2026-09-24",
+      "peer_reviewed": true,
+      "access_level": "full_text",
+      "found_via": "Scite B1",
+      "metadata_verification": {
+        "status": "PARTIALLY_VERIFIED",
+        "checked_against": [
+          "Scite MCP (search_literature/citation_graph), 2026-09-24"
+        ],
+        "checked_on": "2026-09-24",
+        "discrepancies": [],
+        "notes": "Crossref/doi.org inacessíveis no ambiente em que o exemplo foi gerado (bloqueio de rede); metadados conferidos apenas no índice Scite. Rodar `srtool.py refs-check` com rede para promover a VERIFIED."
+      },
+      "volume": "33",
+      "issue": "10",
+      "pages": "106858",
+      "notes": "Texto integral OA lido parcialmente via Scite read_fulltext (caracteres 0–14.000 de 20.108); sem paginação. Versão relatório OSTI 10.2172/1764571 tratada como duplicata/versão."
+    },
+    {
+      "source_id": "S-0003",
+      "source_type": "peer_reviewed_article",
+      "authors": [
+        "Arimura, Toshi H.",
+        "Li, Shanjun",
+        "Newell, Richard G."
+      ],
+      "year": 2012,
+      "title": "Cost-Effectiveness of Electricity Energy Efficiency Programs",
+      "container": "The Energy Journal",
+      "doi": "10.5547/01956574.33.2.4",
+      "url": "https://doi.org/10.5547/01956574.33.2.4",
+      "accessed": "2026-09-24",
+      "peer_reviewed": true,
+      "access_level": "abstract_only",
+      "found_via": "Scite B1",
+      "metadata_verification": {
+        "status": "PARTIALLY_VERIFIED",
+        "checked_against": [
+          "Scite MCP (search_literature/citation_graph), 2026-09-24"
+        ],
+        "checked_on": "2026-09-24",
+        "discrepancies": [],
+        "notes": "Crossref/doi.org inacessíveis no ambiente em que o exemplo foi gerado (bloqueio de rede); metadados conferidos apenas no índice Scite. Rodar `srtool.py refs-check` com rede para promover a VERIFIED."
+      },
+      "volume": "33",
+      "issue": "2",
+      "pages": "63-100",
+      "notes": "Abstract recuperado truncado; texto integral com acesso restrito."
+    },
+    {
+      "source_id": "S-0004",
+      "source_type": "peer_reviewed_article",
+      "authors": [
+        "Datta, Souvik"
+      ],
+      "year": 2019,
+      "title": "Decoupling and demand-side management: Evidence from the US electric industry",
+      "container": "Energy Policy",
+      "doi": "10.1016/j.enpol.2019.05.005",
+      "url": "https://doi.org/10.1016/j.enpol.2019.05.005",
+      "accessed": "2026-09-24",
+      "peer_reviewed": true,
+      "access_level": "metadata_only",
+      "found_via": "Scite citation_graph C1 (forward de S-0001)",
+      "metadata_verification": {
+        "status": "PARTIALLY_VERIFIED",
+        "checked_against": [
+          "Scite MCP (search_literature/citation_graph), 2026-09-24"
+        ],
+        "checked_on": "2026-09-24",
+        "discrepancies": [],
+        "notes": "Crossref/doi.org inacessíveis no ambiente em que o exemplo foi gerado (bloqueio de rede); metadados conferidos apenas no índice Scite. Rodar `srtool.py refs-check` com rede para promover a VERIFIED."
+      },
+      "volume": "132",
+      "pages": "175-184",
+      "notes": "Encontrado por forward citation chasing a partir de S-0001. Nenhum texto legível no Scite."
+    },
+    {
+      "source_id": "S-0005",
+      "source_type": "peer_reviewed_article",
+      "authors": [
+        "von Loessl, Victor",
+        "Wetzel, Heike"
+      ],
+      "year": 2022,
+      "title": "Revenue decoupling, energy demand, and energy efficiency: Empirical evidence from the U.S. electricity sector",
+      "container": "Utilities Policy",
+      "doi": "10.1016/j.jup.2022.101416",
+      "url": "https://doi.org/10.1016/j.jup.2022.101416",
+      "accessed": "2026-09-24",
+      "peer_reviewed": true,
+      "access_level": "metadata_only",
+      "found_via": "Scite citation_graph C1 (forward de S-0001)",
+      "metadata_verification": {
+        "status": "PARTIALLY_VERIFIED",
+        "checked_against": [
+          "Scite MCP (search_literature/citation_graph), 2026-09-24"
+        ],
+        "checked_on": "2026-09-24",
+        "discrepancies": [],
+        "notes": "Crossref/doi.org inacessíveis no ambiente em que o exemplo foi gerado (bloqueio de rede); metadados conferidos apenas no índice Scite. Rodar `srtool.py refs-check` com rede para promover a VERIFIED."
+      },
+      "volume": "79",
+      "pages": "101416",
+      "notes": "Encontrado por forward citation chasing a partir de S-0001. Scite indica acesso aberto (hybrid, CC BY-NC-ND), mas read_fulltext não retornou texto: obter o PDF pelo DOI."
+    }
+  ]
+}

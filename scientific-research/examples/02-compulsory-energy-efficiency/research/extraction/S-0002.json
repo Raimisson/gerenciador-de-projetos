@@ -1,0 +1,73 @@
+{
+  "source_id": "S-0002",
+  "extracted_on": "2026-09-24",
+  "extracted_by": "claude (exemplo)",
+  "access_level": "abstract_only",
+  "text_source": "abstract e highlights via Scite",
+  "pagination_reliable": false,
+  "fields": {
+    "reference": "Xylia, M., Silveira, S., & Morfeldt, J. (2016). Implications of an energy efficiency obligation scheme for the Swedish energy-intensive industries: an evaluation of costs and benefits. Energy Efficiency, 10(1), 151–169.",
+    "research_question": "Impacto de implementar um EEO sueco para indústrias energointensivas.",
+    "country_jurisdiction": "Suécia",
+    "population": "Indústrias energointensivas",
+    "unit_of_analysis": "NR — não reportado",
+    "period": "NR — não reportado",
+    "data_source": "NR — não reportado",
+    "sample_size": "NR — não reportado",
+    "intervention": "EEO hipotético (não implementado)",
+    "comparison": "Sem EEO (cenários)",
+    "outcome": "Razão benefício-custo; custo de break-even; potencial de economia",
+    "method": "Análise custo-benefício ex ante com análise de sensibilidade",
+    "empirical_strategy": "NR — não reportado",
+    "causal_identification": "Não se aplica — projeção (simulação/CBA), não efeito observado",
+    "model_equation": "NR — não reportado",
+    "variables": "NR — não reportado",
+    "main_result": "[FONTE] BCR entre 1.56 e 2.17; break-even entre 83.3 €/MWh e 86.9 €/MWh; potencial de 1.25 TWh/year.",
+    "robustness": "NR — não reportado",
+    "limitations": "NR — não reportado",
+    "doi": "10.1007/s12053-016-9446-7",
+    "url": "https://doi.org/10.1007/s12053-016-9446-7"
+  },
+  "field_locations": {
+    "main_result": "Abstract / Highlights"
+  },
+  "estimates": [
+    {
+      "estimate_id": "S-0002-R1",
+      "description": "Razão benefício-custo (faixa entre cenários)",
+      "estimate": "1.56 – 2.17",
+      "unit": "razão (adimensional)",
+      "se": "NA — não se aplica",
+      "ci_low": "NA — não se aplica",
+      "ci_high": "NA — não se aplica",
+      "p_value": "NA — não se aplica",
+      "significance": "NA — não se aplica",
+      "n": "NA — não se aplica",
+      "identification": "projeção ex ante (CBA)",
+      "location": {
+        "page": "página não identificável de forma confiável",
+        "section": "Abstract"
+      },
+      "excerpt": "The Benefit to Cost Ratio (BCR) ranges from 1.56 to 2.17"
+    },
+    {
+      "estimate_id": "S-0002-R2",
+      "description": "Custo de break-even",
+      "estimate": "83.3 – 86.9",
+      "unit": "€/MWh",
+      "se": "NA — não se aplica",
+      "ci_low": "NA — não se aplica",
+      "ci_high": "NA — não se aplica",
+      "p_value": "NA — não se aplica",
+      "significance": "NA — não se aplica",
+      "n": "NA — não se aplica",
+      "identification": "projeção ex ante (CBA)",
+      "location": {
+        "page": "página não identificável de forma confiável",
+        "section": "Abstract"
+      },
+      "excerpt": "the break-even cost ranges from 83.3 €/MWh to 86.9 €/MWh"
+    }
+  ],
+  "notes": "Faixas refletem cenários de preço (sensibilidade), não intervalos de confiança."
+}

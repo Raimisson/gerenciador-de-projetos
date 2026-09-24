@@ -1,0 +1,122 @@
+{
+  "manuscript": "examples/03-manuscript-audit/manuscript.md",
+  "audited_on": "2026-09-24",
+  "coverage": "Completa (todas as frases verificáveis de P-001 a P-004).",
+  "claims": [
+    {
+      "claim_id": "C1",
+      "sentence": "O revenue decoupling causou uma redução de 20% no consumo residencial de eletricidade nos Estados Unidos (Kahn-Lang, 2016).",
+      "location": "P-001, frase 1",
+      "cited_refs": [
+        "S-0002"
+      ],
+      "reference_existence": "PARTIALLY_VERIFIED",
+      "classification": "NÃO VERIFICÁVEL",
+      "issues": [
+        "CAUSAL-INDEVIDA",
+        "EXAGERO",
+        "PAGINA-AUSENTE"
+      ],
+      "support_location": "Abstract (único texto acessível)",
+      "support_excerpt": "decoupling is historically associated with significant residential electricity consumption reductions",
+      "justification": "O texto integral não está acessível (Scite read_fulltext retornou só o abstract). O abstract descreve ASSOCIAÇÃO e não reporta magnitude: o valor de 20% não foi localizado. A linguagem 'causou' é mais forte que a do próprio autor.",
+      "recommended_action": "Informar a página/tabela do texto integral que contém 20%; caso não exista, remover o número. Reescrever como associação."
+    },
+    {
+      "claim_id": "C2",
+      "sentence": "Entre 2005 e 2017, os ajustes tarifários do decoupling foram em média de 0,4% da tarifa média de varejo (Cappers et al., 2020).",
+      "location": "P-001, frase 2",
+      "cited_refs": [
+        "S-0001"
+      ],
+      "reference_existence": "PARTIALLY_VERIFIED",
+      "classification": "SUPORTADA",
+      "issues": [
+        "PAGINA-AUSENTE"
+      ],
+      "support_location": "Results and Discussion; Table 2 (página não identificável de forma confiável)",
+      "support_excerpt": "On average, decoupling mechanisms across our sample resulted in rate adjustments of 0.4 percent of all-in average retail rates",
+      "justification": "Trecho do texto integral sustenta valor, unidade e período. Recomenda-se explicitar a amostra (21 utilidades, 11 estados + DC).",
+      "recommended_action": "Adicionar a amostra e a página na versão final."
+    },
+    {
+      "claim_id": "C3",
+      "sentence": "Uma meta-análise global mostrou que o decoupling aumenta o gasto em eficiência energética em 35% (Silva & Pereira, 2019).",
+      "location": "P-002, frase 1",
+      "cited_refs": [
+        "S-0003"
+      ],
+      "reference_existence": "CONTRADICTED",
+      "classification": "NÃO SUPORTADA",
+      "issues": [
+        "REF-INEXISTENTE",
+        "POSSIVELMENTE-INVENTADA",
+        "CAUSAL-INDEVIDA"
+      ],
+      "justification": "DOI 10.9999/jiee.2019.0457 e título exato não encontrados no Scite (verificação real, 2026-09-24); periódico 'Journal of Imaginary Energy Economics' não localizado. doi-check simulado (fixture) reproduz a resposta 404 esperada; a checagem Crossref ao vivo deve ser repetida com rede.",
+      "recommended_action": "Remover a frase e a referência. Não substituir por outra fonte sem verificação: nesta auditoria não foi localizada meta-análise sobre o tema — 'Não foi encontrada evidência quantitativa que permita estimar este parâmetro.'"
+    },
+    {
+      "claim_id": "C4",
+      "sentence": "Em 2017, 16 estados norte-americanos possuíam mecanismos de decoupling (Cappers et al., 2020).",
+      "location": "P-002, frase 2",
+      "cited_refs": [
+        "S-0001"
+      ],
+      "reference_existence": "PARTIALLY_VERIFIED",
+      "classification": "PARCIALMENTE SUPORTADA",
+      "issues": [
+        "FONTE-SECUNDARIA"
+      ],
+      "support_location": "Introduction",
+      "support_excerpt": "In 2017, 16 states had some form of a decoupling mechanism in place for electric utilities (Berg et al., 2019)",
+      "justification": "O número aparece em Cappers et al., mas como citação de Berg et al. (2019); a fonte primária não foi verificada. 'Possuíam mecanismos' simplifica 'some form of a decoupling mechanism ... for electric utilities'.",
+      "recommended_action": "Citar a fonte primária (Berg et al., 2019) após verificá-la; manter 'algum mecanismo ... para utilidades elétricas'."
+    },
+    {
+      "claim_id": "C5",
+      "sentence": "Obrigações de eficiência energética reduziram o consumo de energia na Suécia, com razão benefício-custo de até 2,17 (Xylia et al., 2016).",
+      "location": "P-003, frase 1",
+      "cited_refs": [
+        "S-0004"
+      ],
+      "reference_existence": "PARTIALLY_VERIFIED",
+      "classification": "PARCIALMENTE SUPORTADA",
+      "issues": [
+        "CAUSAL-INDEVIDA",
+        "EXAGERO"
+      ],
+      "support_location": "Abstract",
+      "support_excerpt": "The Benefit to Cost Ratio (BCR) ranges from 1.56 to 2.17",
+      "justification": "O valor 2,17 é o limite superior de uma análise custo-benefício EX ANTE de um esquema sueco HIPOTÉTICO ('would result'); o estudo não observa redução de consumo.",
+      "recommended_action": "Reescrever: 'uma análise custo-benefício ex ante projeta, para um esquema sueco hipotético, razão benefício-custo entre 1,56 e 2,17'."
+    },
+    {
+      "claim_id": "C6",
+      "sentence": "Estima-se que o potencial de economia no Brasil seja de 12% do consumo nacional.",
+      "location": "P-003, frase 2",
+      "cited_refs": [],
+      "reference_existence": "NO_CITATION",
+      "classification": "NÃO SUPORTADA",
+      "issues": [
+        "NUMERO-SEM-FONTE"
+      ],
+      "justification": "Número sem qualquer fonte ou marcador de evidência.",
+      "recommended_action": "Indicar a fonte (ex.: estudo oficial de potencial) ou remover. Não estimar o valor."
+    },
+    {
+      "claim_id": "C7",
+      "sentence": "No Brasil, portanto, a adoção do decoupling elevaria os investimentos das distribuidoras em eficiência energética.",
+      "location": "P-004",
+      "cited_refs": [],
+      "reference_existence": "NO_CITATION",
+      "classification": "NÃO SUPORTADA",
+      "issues": [
+        "GENERALIZACAO",
+        "CAUSAL-INDEVIDA"
+      ],
+      "justification": "Inferência do autor apresentada como conclusão; a evidência mobilizada é dos EUA e não identifica efeito causal; o desenho regulatório brasileiro não é discutido.",
+      "recommended_action": "Reformular como hipótese ('sugere-se investigar se...'), discutindo validade externa e diferenças institucionais."
+    }
+  ]
+}
