@@ -1,6 +1,6 @@
 ---
 name: bibliography-audit
-description: Verifica metadados bibliográficos (DOI, autores, título, periódico, volume, número, páginas, ano, URL), detecta duplicatas e referências possivelmente inventadas, e produz referências em ABNT, APA, Chicago e BibTeX somente quando os metadados puderem ser verificados. Use para "conferir referências", "formatar referências ABNT/APA", "gerar BibTeX", "verificar DOI", "lista de referências", "bibliography audit", "referências duplicadas".
+description: "Confere DOI e metadados, detecta duplicatas e referências inventadas e formata ABNT, APA, Chicago ou BibTeX só se verificadas. Use para \"conferir referências\", \"formatar ABNT/APA\", \"gerar BibTeX\"."
 argument-hint: "[arquivo de referências .bib/.ris/.md/.json] [--estilo abnt|apa|chicago|bibtex]"
 ---
 

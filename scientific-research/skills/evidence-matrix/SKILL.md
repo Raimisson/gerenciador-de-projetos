@@ -1,6 +1,6 @@
 ---
 name: evidence-matrix
-description: Constrói matriz comparativa de evidências entre estudos (versão compacta Study | Country | Period | Unit | N | Method | Treatment | Outcome | Estimate | SE/CI | Identification | Page | DOI, e versão detalhada com amostra, desenho institucional, métricas, robustez, limitações e validade externa) e exporta para Markdown, CSV e JSON a partir das fichas de extração. Use para "matriz de evidências", "evidence matrix", "tabela comparativa de estudos", "comparar estudos", "tabela de literatura".
+description: "Matriz comparativa de estudos (compacta e detalhada) exportável em Markdown, CSV e JSON a partir das fichas. Use para \"matriz de evidências\", \"tabela comparativa de estudos\"."
 argument-hint: "[--formato md|csv|json] [--detalhada]"
 ---
 

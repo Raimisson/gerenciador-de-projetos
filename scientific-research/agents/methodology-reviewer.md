@@ -1,6 +1,6 @@
 ---
 name: methodology-reviewer
-description: Especialista em desenho de pesquisa, econometria e avaliação de políticas. Use para avaliação crítica independente da metodologia de um ou mais estudos (identificação causal, endogeneidade, DiD/tendências paralelas, IV, RDD, matching, controle sintético, robustez, poder, validade interna e externa), especialmente quando uma segunda avaliação isolada aumenta a confiabilidade.
+description: "Avaliação metodológica independente (econometria, identificação causal, validade), somente leitura."
 disallowedTools: Write, Edit, NotebookEdit
 color: purple
 ---

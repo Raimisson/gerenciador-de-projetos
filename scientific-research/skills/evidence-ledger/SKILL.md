@@ -1,6 +1,6 @@
 ---
 name: evidence-ledger
-description: Mantém o Evidence Ledger — registro JSONL de cada evidência usada no projeto (evidence_id, source_id, citação, DOI, URL, página, tabela, trecho, afirmação sustentada, tipo de evidência, método, resultado quantitativo, contexto, status de verificação, uso no manuscrito) — e responde "de onde exatamente veio esta afirmação?". Use para "registrar evidência", "evidence ledger", "proveniência", "rastrear afirmação", "de onde veio este número", "validar o ledger".
+description: "Registro de evidências (JSONL) e proveniência fonte → evidência → parágrafo. Use para \"registrar evidência\", \"de onde veio esta afirmação\", \"rastrear número\", \"evidence ledger\"."
 argument-hint: "[add|validate|trace|status] [argumentos]"
 ---
 

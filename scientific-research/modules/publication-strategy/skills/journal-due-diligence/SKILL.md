@@ -1,6 +1,6 @@
 ---
 name: journal-due-diligence
-description: Módulo Publication Strategy — verifica legitimidade e transparência de um periódico (publisher, ISSN, peer review, conselho editorial, indexação em Crossref, DOAJ, COPE, SciELO, Scopus, Web of Science, Redalyc, Latindex, política de arquivamento, DOI, APC, copyright, open access, ética) com evidências datadas e alertas objetivos, seguindo princípios do Think. Check. Submit., sem rotular como predatório apenas pela ausência de uma indexação. Use para "esse periódico é confiável?", "revista predatória?", "due diligence do periódico", "indexação da revista".
+description: "Publication Strategy: legitimidade do periódico (ISSN, peer review, indexações, COPE, DOAJ, APC, ética) com evidências datadas. Use para \"revista confiável?\", \"predatória?\", \"indexação\"."
 argument-hint: "[periódico] [--issn XXXX-XXXX]"
 ---
 

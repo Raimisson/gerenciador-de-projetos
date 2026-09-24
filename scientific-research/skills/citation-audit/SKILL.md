@@ -1,6 +1,6 @@
 ---
 name: citation-audit
-description: Auditoria frase por frase das afirmações e citações de um manuscrito — identifica a referência de cada afirmação verificável, confirma que a referência existe (DOI/metadados), verifica se a fonte efetivamente sustenta a frase (com página), detecta exageros, causalidade indevida, generalização e fonte secundária desnecessária, e classifica cada afirmação como SUPORTADA, PARCIALMENTE SUPORTADA, NÃO SUPORTADA ou NÃO VERIFICÁVEL. Use para "auditar citações", "checar referências do texto", "verificar se as fontes sustentam", "citation audit", "fact-check do artigo", "referência inventada".
+description: "Auditoria frase a frase: a referência existe e sustenta a afirmação? Classifica SUPORTADA/PARCIALMENTE/NÃO SUPORTADA/NÃO VERIFICÁVEL. Use para \"auditar citações\", \"fact-check\", \"referência inventada\"."
 argument-hint: "[arquivo do manuscrito] [--secoes introducao,discussao]"
 ---
 

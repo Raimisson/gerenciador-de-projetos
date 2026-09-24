@@ -3,6 +3,14 @@
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/); versões seguem
 [SemVer](https://semver.org/lang/pt-BR/).
 
+## [0.2.1] - 2026-09-24
+
+### Alterado
+- Descrições das 30 skills e dos 7 agentes encurtadas (máx. ~215 caracteres), mantendo os gatilhos
+  principais, para reduzir o custo fixo de contexto por sessão (antes ≈ 7,3 mil tokens).
+- Descrições do frontmatter entre aspas (YAML válido em parsers estritos).
+- Manual do usuário: `MANUAL.md`.
+
 ## [0.2.0] - 2026-09-24
 
 ### Adicionado — módulo Publication Strategy

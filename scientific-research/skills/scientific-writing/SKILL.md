@@ -1,6 +1,6 @@
 ---
 name: scientific-writing
-description: Redação acadêmica de seções de artigo (introdução, referencial teórico, metodologia, resultados, discussão, conclusão, resumo) usando apenas evidências validadas do Evidence Ledger, com marcadores de proveniência [E-0001], linguagem causal calibrada ao desenho, distinção entre associação e efeito, e consistência terminológica. Use para "escrever a introdução", "redigir seção", "melhorar o texto", "revisar a redação", "scientific writing", "escrever a discussão".
+description: "Redige seções de artigo usando só evidência validada do ledger, com marcadores [E-…] e linguagem causal calibrada. Use para \"escrever a introdução\", \"redigir seção\", \"melhorar o texto\"."
 argument-hint: "[seção] [--estilo abnt|apa] [--idioma pt|en]"
 ---
 

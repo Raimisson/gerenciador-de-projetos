@@ -1,6 +1,6 @@
 ---
 name: submission-preparation
-description: Módulo Publication Strategy — após a escolha do periódico, gera checklist operacional completo de submissão e prepara ou orienta a preparação de manuscrito, versão anonimizada, title page, cover letter, highlights, graphical abstract (se exigido), material suplementar, declarações de disponibilidade de dados e código, financiamento, conflitos de interesse, CRediT, agradecimentos, metadados e ORCID dos autores e revisores sugeridos (se permitido), sem inventar informações dos autores. Use para "preparar submissão", "checklist de submissão", "title page", "highlights", "declarações", "arquivos para submeter".
+description: "Publication Strategy: checklist e arquivos de submissão (title page, versão cega, highlights, declarações) sem inventar dados de autores. Use para \"preparar submissão\", \"checklist de submissão\"."
 argument-hint: "[periódico-alvo] [research/]"
 ---
 

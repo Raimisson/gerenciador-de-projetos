@@ -1,6 +1,6 @@
 ---
 name: pre-submission-audit
-description: Módulo Publication Strategy — workflow de auditoria pré-submissão para o periódico-alvo, encadeando requisitos atuais do periódico, compliance do manuscrito, auditoria de citações, auditoria de referências, disponibilidade de dados e código, declarações éticas, arquivos exigidos e checklist de submissão, e concluindo READY TO SUBMIT ou ACTION REQUIRED com todas as pendências. Use para "auditoria pré-submissão", "posso submeter?", "pre-submission audit", "revisão final antes de enviar para a revista".
+description: "Publication Strategy: auditoria antes de submeter (regras, compliance, citações, referências, declarações, arquivos) → READY TO SUBMIT ou ACTION REQUIRED. Use para \"posso submeter?\", \"auditoria pré-submissão\"."
 argument-hint: "[research/] [--journal slug]"
 ---
 

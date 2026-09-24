@@ -1,6 +1,6 @@
 ---
 name: cover-letter
-description: Módulo Publication Strategy — redige cover letter específica para o periódico selecionado explicando problema, contribuição, principais resultados, relevância para os leitores, aderência ao aims & scope e originalidade, usando apenas evidência do manuscrito e do Evidence Ledger, sem elogios genéricos ao periódico e sem afirmar "primeiro estudo" sem verificação. Use para "cover letter", "carta ao editor", "carta de submissão".
+description: "Publication Strategy: cover letter específica ao periódico, com contribuição e aderência ao escopo, sem elogios genéricos nem \"primeiro estudo\" sem verificação. Use para \"cover letter\", \"carta ao editor\"."
 argument-hint: "[periódico-alvo] [research/]"
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: literature-researcher
-description: Especialista em descoberta bibliográfica rastreável. Use para buscas amplas ou em paralelo — busca por palavras-chave em múltiplas bases, citation chasing (backward, forward, similar), identificação de trabalhos seminais, revisões e literatura recente — quando a busca for extensa o bastante para justificar contexto isolado. Não use para buscas simples de um único artigo.
+description: "Descoberta bibliográfica rastreável em contexto isolado: buscas extensas e citation chasing. Não usar para achar um único artigo."
 color: blue
 ---
 

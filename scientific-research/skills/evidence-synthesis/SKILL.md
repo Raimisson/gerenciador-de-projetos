@@ -1,6 +1,6 @@
 ---
 name: evidence-synthesis
-description: Síntese da literatura a partir da matriz e do Evidence Ledger — síntese narrativa estruturada por pergunta, direção/magnitude/qualidade da evidência, consistência, lacunas, e portão de viabilidade de meta-análise (comparabilidade de outcome, unidade, desenho, população, intervenção, heterogeneidade) sem combinar coeficientes incompatíveis. Use para "sintetizar a literatura", "o que a evidência diz", "estado da arte", "síntese narrativa", "dá para fazer meta-análise?", "evidence synthesis".
+description: "Síntese da literatura por desfecho, força da evidência e portão de viabilidade de meta-análise (sem combinar coeficientes incompatíveis). Use para \"sintetizar a literatura\", \"o que a evidência diz\", \"meta-análise?\"."
 argument-hint: "[pergunta] [--meta-feasibility]"
 ---
 

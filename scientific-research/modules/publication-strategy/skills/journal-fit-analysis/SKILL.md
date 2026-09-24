@@ -1,6 +1,6 @@
 ---
 name: journal-fit-analysis
-description: Módulo Publication Strategy — avalia em detalhe a aderência (journal fit) entre o manuscrito e cada periódico candidato em sete dimensões (Topic, Method, Contribution, Empirical, Audience, Recent Publication e Article-Type Fit), com justificativas verificáveis, fontes e data, e um índice de aderência transparente que NÃO é probabilidade de aceitação. Use para "journal fit", "esse periódico combina com meu artigo?", "comparar revistas", "aderência ao escopo".
+description: "Publication Strategy: aderência manuscrito × periódico em 7 dimensões com evidências e índice transparente (não é probabilidade). Use para \"journal fit\", \"esse periódico combina?\", \"comparar revistas\"."
 argument-hint: "[periódico ou candidates.json] [--manuscrito research/]"
 ---
 

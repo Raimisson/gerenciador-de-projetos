@@ -1,6 +1,6 @@
 ---
 name: publication-strategist
-description: Coordenador da etapa de publicação (módulo Publication Strategy). Use quando o manuscrito estiver concluído e for preciso conduzir em contexto isolado a busca e comparação de periódicos (journal search, recent content, journal fit, due diligence, requisitos), a adequação do manuscrito ao periódico-alvo, a preparação da submissão, a auditoria pré-submissão ou a resposta a pareceres e ressubmissão. Reutiliza o Evidence Ledger e o manuscrito existentes.
+description: "Coordena a etapa de publicação (periódicos, fit, requisitos, compliance, submissão, pareceres) reutilizando o Evidence Ledger."
 color: cyan
 ---
 

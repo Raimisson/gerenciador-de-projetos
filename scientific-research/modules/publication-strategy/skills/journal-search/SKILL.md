@@ -1,6 +1,6 @@
 ---
 name: journal-search
-description: Módulo Publication Strategy — identifica periódicos potencialmente adequados para um manuscrito concluído a partir de título, abstract, keywords, pergunta, metodologia, resultados, contribuição e referências principais, combinando análise de aims & scope, artigos recentes, tipos de artigo, público e métodos publicados, sem se limitar a palavras-chave nem a uma única editora. Use para "onde publicar", "sugerir periódicos", "journal search", "qual revista", "periódicos para submeter".
+description: "Publication Strategy: encontra periódicos candidatos por aims & scope, artigos recentes, métodos e público, em várias editoras. Use para \"onde publicar\", \"sugerir periódicos\", \"qual revista\"."
 argument-hint: "[manuscrito.md ou research/] [--areas economia,energia] [--idiomas en,pt]"
 ---
 

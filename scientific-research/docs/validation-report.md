@@ -1,4 +1,4 @@
-# Relatório de validação — v0.2.0 (24/09/2026)
+# Relatório de validação — v0.2.1 (24/09/2026)
 
 Ambiente: Claude Code 2.1.282 (Linux), Python 3.11. Rede do ambiente de construção **bloqueava**
 `api.crossref.org`, `api.openalex.org`, `api.semanticscholar.org` e `doi.org` (proxy 403).
@@ -47,3 +47,13 @@ diligence de periódicos reais não puderam ser verificados; o exemplo os marca 
   `claude plugin eval . --runs 3` para medir o ganho atribuível ao plugin.
 - Conectores Elicit e Consensus da conta usada na construção falharam (plano sem API / cota) —
   comportamento de falha registrado nos exemplos.
+
+## v0.2.1 — correções finais
+
+- Descrições das skills e agentes encurtadas e colocadas entre aspas (YAML válido em parsers estritos,
+  conferido com `yaml.safe_load` nos 37 arquivos).
+- `claude plugin validate --strict` (manifesto, skills do núcleo, skills do módulo, agentes): ✔ passou.
+- Instalação real: `scientific-research@raimisson-research` 0.2.1, escopo user, habilitado; 30 skills,
+  7 agentes, 2 hooks. **Custo fixo projetado caiu de ≈ 7,3 mil para ≈ 3,1 mil tokens/sessão.**
+- Por solicitação do usuário, a suíte de testes e os evals **não** foram reexecutados nesta versão
+  (mudanças restritas a descrições de frontmatter e documentação).

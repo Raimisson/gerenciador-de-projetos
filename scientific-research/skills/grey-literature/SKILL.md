@@ -1,6 +1,6 @@
 ---
 name: grey-literature
-description: Busca e classifica literatura cinzenta — documentos de governos, agências reguladoras, organizações internacionais (IEA, OCDE, Banco Mundial, BID, CEPAL), think tanks, universidades, working papers (NBER, SSRN, RePEc), avaliações de programas e relatórios técnicos — sem tratá-la como revisada por pares. Use para "literatura cinzenta", "grey literature", "relatórios técnicos", "working papers", "avaliações de programas", "relatório do governo sobre".
+description: "Busca e classifica literatura cinzenta (governos, reguladores, organismos internacionais, working papers, avaliações) sem tratá-la como revisada por pares. Use para \"literatura cinzenta\", \"relatórios técnicos\"."
 argument-hint: "[tema] [--jurisdicoes BR,US,EU] [--organizacoes lista]"
 ---
 

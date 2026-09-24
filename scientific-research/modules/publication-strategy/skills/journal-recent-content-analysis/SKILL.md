@@ -1,6 +1,6 @@
 ---
 name: journal-recent-content-analysis
-description: Módulo Publication Strategy — levanta artigos publicados por um periódico nos últimos 3 a 5 anos que sejam comparáveis ao manuscrito em tema, pergunta, metodologia, dados, setor, abordagem regulatória e contribuição, e gera tabela rastreável (título, autores, ano, DOI, URL, método, relação com o manuscrito) usada como evidência empírica de journal fit. Use para "artigos recentes do periódico", "o que a revista publicou sobre", "artigos semelhantes na revista", "recent content".
+description: "Publication Strategy: artigos comparáveis publicados pelo periódico nos últimos 3–5 anos (título, autores, DOI, método, relação). Use para \"artigos recentes da revista\", \"o que a revista publicou sobre\"."
 argument-hint: "[periódico] [--anos 5] [--manuscrito research/]"
 ---
 

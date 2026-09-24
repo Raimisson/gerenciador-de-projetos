@@ -1,6 +1,6 @@
 ---
 name: manuscript-compliance
-description: Módulo Publication Strategy — compara o manuscrito atual com as regras atuais do periódico e produz relatório COMPLIANT / ACTION REQUIRED / NOT APPLICABLE / UNABLE TO VERIFY, detalhando para cada ação exigência, estado atual, diferença, o que fazer e fonte; checa automaticamente contagens (palavras, abstract, keywords, título, figuras, tabelas), seções e declarações obrigatórias, sem alterar conteúdo científico para satisfazer preferência editorial. Use para "meu artigo está nas normas?", "compliance com a revista", "checar formatação para submissão".
+description: "Publication Strategy: compara manuscrito × regras do periódico (COMPLIANT, ACTION REQUIRED, NOT APPLICABLE, UNABLE TO VERIFY) sem alterar a ciência. Use para \"está nas normas?\", \"compliance\"."
 argument-hint: "[manuscrito.md] [requirements.json]"
 ---
 

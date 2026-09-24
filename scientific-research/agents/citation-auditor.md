@@ -1,6 +1,6 @@
 ---
 name: citation-auditor
-description: Auditor conservador de rastreabilidade bibliográfica. Use para verificar DOIs e metadados, detectar referências possivelmente inventadas, conferir correspondência afirmação-fonte (com página), identificar fonte primária e classificar afirmações como SUPORTADA, PARCIALMENTE SUPORTADA, NÃO SUPORTADA ou NÃO VERIFICÁVEL — especialmente em auditorias independentes de manuscritos ou listas de referências longas.
+description: "Auditor conservador de DOIs, metadados e correspondência afirmação-fonte, somente leitura; útil para manuscritos longos."
 disallowedTools: Write, Edit, NotebookEdit
 color: red
 ---

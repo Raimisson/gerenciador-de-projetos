@@ -1,6 +1,6 @@
 ---
 name: literature-search
-description: Constrói e executa estratégia de busca bibliográfica reproduzível — conceitos, sinônimos (PT/EN/ES), strings booleanas adaptadas por base (Scopus, Web of Science, Google Scholar, OpenAlex, Semantic Scholar, SciELO, RePEc/IDEAS, SSRN), execução via conectores disponíveis (Consensus, Elicit, Scite, OpenAlex/Crossref) e registro em search log (query, base, data, filtros, resultados). Use para "buscar literatura", "estratégia de busca", "string booleana", "literature search", "revisão de literatura", "o que já foi publicado sobre".
+description: "Estratégia de busca bibliográfica reproduzível: sinônimos, strings booleanas por base, execução nos conectores e search log. Use para \"buscar literatura\", \"string de busca\", \"revisão de literatura\"."
 argument-hint: "[pergunta ou tema] [--periodo AAAA-AAAA] [--idiomas pt,en]"
 ---
 

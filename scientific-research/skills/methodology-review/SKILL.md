@@ -1,6 +1,6 @@
 ---
 name: methodology-review
-description: Avaliação crítica da metodologia de estudos empíricos — seleção, endogeneidade, causalidade reversa, viés de variável omitida, erro de mensuração, tendências paralelas, suporte comum, validade de instrumentos, robustez, heterogeneidade, poder estatístico, validade interna e externa — com justificativa técnica para cada problema apontado. Use para "avaliar metodologia", "risco de viés", "critical appraisal", "o desenho identifica causalidade?", "revisar estratégia empírica", "methodology review".
+description: "Avaliação crítica de desenho e econometria (endogeneidade, DiD, IV, RDD, robustez, validade) com justificativa técnica. Use para \"avaliar metodologia\", \"risco de viés\", \"o desenho é causal?\"."
 argument-hint: "[estudo/ficha S-0001 ou manuscrito] [--profundidade rapida|completa]"
 ---
 

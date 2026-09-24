@@ -1,6 +1,6 @@
 ---
 name: citation-chasing
-description: Expande a literatura a partir de um ou mais artigos semente por backward search (referências citadas), forward search (trabalhos que citaram) e similar papers (relação metodológica ou substantiva), em rodadas controladas e rastreáveis. Use para "citation chasing", "snowballing", "quem citou este artigo", "referências deste artigo", "artigos semelhantes", "partir de um artigo seminal".
+description: "Expande a literatura a partir de artigos semente: referências (backward), citantes (forward) e similares. Use para \"quem citou\", \"snowballing\", \"citation chasing\", \"artigo seminal\"."
 argument-hint: "[DOI ou título do artigo semente] [--rodadas N]"
 ---
 

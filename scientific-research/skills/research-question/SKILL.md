@@ -1,6 +1,6 @@
 ---
 name: research-question
-description: Transforma um tema amplo em pergunta de pesquisa operacional — constructos, população/unidade de análise, intervenção/exposição, comparação, desfechos, dados necessários, hipóteses (rotuladas como hipóteses) e estratégias de identificação candidatas. Use para "definir pergunta de pesquisa", "delimitar o tema", "formular hipóteses", "research question", "PICO/PECO", "estratégia de identificação".
+description: "Transforma um tema em pergunta de pesquisa: constructos, população, desfechos, dados, hipóteses rotuladas e estratégias de identificação. Use para \"definir pergunta\", \"formular hipóteses\", \"PICO\"."
 argument-hint: "[tema ou pergunta preliminar]"
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: replication-check
-description: Verifica se um estudo ou o manuscrito do usuário apresenta informação suficiente para reprodução — disponibilidade de dados e código, parâmetros, transformações, filtros, construção da amostra, especificações, software e versões, seeds — e produz checklist com lacunas localizadas. Use para "reprodutibilidade", "dá para replicar?", "replication check", "pacote de replicação", "checklist de transparência", "dados e código disponíveis?".
+description: "Checklist de reprodutibilidade: dados, código, amostra, filtros, especificações, software e seeds. Use para \"dá para replicar?\", \"reprodutibilidade\", \"pacote de replicação\"."
 argument-hint: "[estudo/manuscrito] [--com-codigo caminho]"
 ---
 

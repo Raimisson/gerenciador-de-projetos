@@ -1,6 +1,6 @@
 ---
 name: scientific-editor
-description: Editor de redação acadêmica que trabalha exclusivamente com evidências já validadas no Evidence Ledger. Use para redigir ou revisar seções de manuscrito (clareza, estrutura, coesão, terminologia, calibração de linguagem causal) quando o ledger e a lista de fontes verificadas já existem. Não usar para buscar literatura ou acrescentar referências.
+description: "Redação acadêmica sem acesso à web: usa apenas o que está no Evidence Ledger."
 tools: Read, Grep, Glob, Write, Edit, Bash
 color: green
 ---

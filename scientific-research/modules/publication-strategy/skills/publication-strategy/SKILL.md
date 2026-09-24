@@ -1,6 +1,6 @@
 ---
 name: publication-strategy
-description: Módulo Publication Strategy — monta a estratégia de submissão com uma lista curta de periódicos compatíveis, comparados por aderência temática e metodológica, público, características editoriais, requisitos, custos, open access, prazos editoriais publicados, indexação e métricas (sem que métricas substituam a aderência), com NOT VERIFIED onde faltar fonte; ativa o Target Journal Mode após a escolha. Use para "estratégia de publicação", "em qual revista submeter primeiro", "ordem de submissão", "plano de publicação", "target journal".
+description: "Publication Strategy: lista curta comparada de periódicos, ordem sugerida, riscos e ativação do Target Journal Mode. Use para \"estratégia de publicação\", \"em qual revista submeter primeiro\"."
 argument-hint: "[research/] [--restricoes oa,apc-max,indexacao]"
 ---
 

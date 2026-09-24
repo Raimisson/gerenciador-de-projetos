@@ -1,6 +1,6 @@
 ---
 name: evidence-extraction
-description: Extração estruturada de evidências de um documento (artigo, working paper, relatório, norma) para uma ficha padronizada — referência, pergunta, jurisdição, população, unidade de análise, período, dados, amostra, intervenção, comparação, desfecho, método, estratégia empírica, identificação causal, modelo, variáveis, coeficiente, EP, IC, p-valor, resultado principal, robustez, limitações, página e trecho de suporte. Campos ausentes ficam "NR — não reportado". Use para "extrair evidências", "ficha de extração", "extract evidence", "data extraction", "preencher tabela do estudo".
+description: "Ficha estruturada de evidências por documento (método, amostra, resultados, página, trecho), com campos ausentes como NR. Use para \"extrair evidências\", \"ficha de extração\", \"data extraction\"."
 argument-hint: "[PDF/DOI/arquivo] [--source-id S-0001]"
 ---
 

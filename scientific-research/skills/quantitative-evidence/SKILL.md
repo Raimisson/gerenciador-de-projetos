@@ -1,6 +1,6 @@
 ---
 name: quantitative-evidence
-description: Localiza e extrai evidência quantitativa de estudos — equações, fórmulas, parâmetros, elasticidades, coeficientes, erros-padrão, intervalos, testes, resultados de regressão, relações custo-benefício, estatísticas descritivas — sempre com página/tabela/figura, unidade e especificação; também define regras para análises reproduzíveis de dados. Use para "extrair coeficientes", "elasticidade", "resultados de regressão", "tabela de resultados", "quanto reduziu", "custo por kWh economizado", "números do estudo", "quantitative evidence".
+description: "Extrai coeficientes, EP, IC, elasticidades, equações e tabelas com página/tabela, sem converter texto qualitativo em número; regras de análise reproduzível. Use para \"extrair coeficientes\", \"números do estudo\"."
 argument-hint: "[estudo/PDF/DOI] [--parametro nome]"
 ---
 

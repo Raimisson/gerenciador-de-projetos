@@ -1,6 +1,6 @@
 ---
 name: research-project
-description: Workflow principal do plugin Scientific Research. Use quando o usuário quiser conduzir ou organizar um projeto de pesquisa/artigo científico de ponta a ponta ("iniciar projeto de pesquisa", "montar revisão de literatura para um artigo", "research project", "do zero até a publicação"), ou quando não souber qual etapa executar. Orienta pergunta → protocolo → busca → triagem → extração → Evidence Ledger → matriz → avaliação metodológica → redação → auditorias → escolha de periódico → Target Journal Mode → compliance → auditoria pré-submissão → submissão → resposta a pareceres → publicação/ressubmissão, sem obrigar a executar todas as etapas.
+description: "Workflow principal: conduz um projeto de pesquisa da pergunta à publicação, propondo só as etapas necessárias. Use para \"iniciar projeto de pesquisa\", \"do zero ao artigo\", ou quando não souber qual etapa usar."
 argument-hint: "[tema ou pergunta de pesquisa] [--dir caminho-do-projeto]"
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: manuscript-review
-description: Auditoria final de manuscrito científico — coerência pergunta → método → resultado → conclusão, consistência dos números entre resumo, texto, tabelas e figuras, referências, afirmações causais, generalizações, limitações, transparência e reprodutibilidade — com relatório priorizado de problemas e localização. Use para "revisar o artigo inteiro", "auditoria do manuscrito", "revisão final antes de submeter", "manuscript review", "checar inconsistências entre texto e tabelas", "parecer do artigo".
+description: "Auditoria final do manuscrito: coerência pergunta→método→conclusão, números × tabelas × figuras, causalidade, limitações, transparência. Use para \"revisar o artigo inteiro\", \"revisão final\"."
 argument-hint: "[arquivo do manuscrito] [--profundidade rapida|completa]"
 ---
 

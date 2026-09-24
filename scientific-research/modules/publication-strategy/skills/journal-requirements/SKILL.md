@@ -1,6 +1,6 @@
 ---
 name: journal-requirements
-description: Módulo Publication Strategy — obtém as regras de submissão atuais diretamente da fonte oficial do periódico (guide for authors), registrando URL, data da consulta e versão, e as estrutura em JSON (tipos de artigo, limites de palavras e abstract, keywords, título, figuras, tabelas, estrutura, referências, blind review, highlights, graphical abstract, declarações de dados, código, financiamento, conflitos, CRediT, ética, IA, preprints, copyright, APC, cover letter, ORCID, revisores sugeridos, reporting guidelines, checklist). Use para "regras da revista", "guide for authors", "normas de submissão", "requisitos do periódico".
+description: "Publication Strategy: regras atuais de submissão tiradas do guia oficial, com URL e data. Use para \"regras da revista\", \"guide for authors\", \"normas de submissão\"."
 argument-hint: "[periódico] [--url guia-oficial] [--tipo research-article]"
 ---
 

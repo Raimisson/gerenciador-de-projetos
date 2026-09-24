@@ -1,6 +1,6 @@
 ---
 name: peer-review-response
-description: Módulo Publication Strategy — organiza pareceres de revisores em matriz Reviewer Comment → Interpretation → Action → Manuscript Change → Location → Response, classificando cada item como ACCEPTED, PARTIALLY ACCEPTED ou NOT ACCEPTED, redigindo justificativas científicas respeitosas quando não aceito, e nunca alterando resultado científico para satisfazer revisor. Use para "responder revisores", "response to reviewers", "carta de resposta", "revisão major/minor", "pareceres".
+description: "Publication Strategy: matriz de resposta a revisores (ACCEPTED/PARTIALLY/NOT ACCEPTED) e carta de resposta, sem alterar resultados. Use para \"responder revisores\", \"response to reviewers\"."
 argument-hint: "[arquivo com pareceres] [--rodada 1]"
 ---
 

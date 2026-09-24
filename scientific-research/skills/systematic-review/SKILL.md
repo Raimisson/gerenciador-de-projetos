@@ -1,6 +1,6 @@
 ---
 name: systematic-review
-description: Apoia revisão sistemática ou estruturada — protocolo, critérios de inclusão/exclusão, registro de triagem (título/resumo e texto completo) com motivos, deduplicação, fluxo inspirado em PRISMA 2020 e checklist de itens reportados, sem afirmar conformidade PRISMA sem verificar todos os requisitos. Use para "revisão sistemática", "scoping review", "triagem", "screening", "critérios de inclusão e exclusão", "fluxograma PRISMA".
+description: "Revisão sistemática/estruturada: protocolo, critérios, triagem com motivos, deduplicação e fluxo inspirado em PRISMA. Use para \"revisão sistemática\", \"scoping review\", \"triagem\", \"PRISMA\"."
 argument-hint: "[pergunta] [--tipo sistematica|scoping|estruturada]"
 ---
 

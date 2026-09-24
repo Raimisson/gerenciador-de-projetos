@@ -1,6 +1,6 @@
 ---
 name: regulatory-researcher
-description: Especialista em pesquisa regulatória e de políticas públicas. Use quando a pergunta exigir, em paralelo à busca acadêmica, levantamento de legislação, atos normativos, AIR, ARR, consultas públicas, notas técnicas, decisões regulatórias, dados oficiais e benchmark internacional, com verificação de vigência e separação entre norma vigente, proposta, interpretação e evidência empírica.
+description: "Levantamento normativo e regulatório (leis, normas, AIR, ARR, consultas) em paralelo à busca acadêmica."
 color: yellow
 ---
 

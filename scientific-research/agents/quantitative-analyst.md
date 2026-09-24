@@ -1,6 +1,6 @@
 ---
 name: quantitative-analyst
-description: Especialista em evidência quantitativa e análise reproduzível. Use para extrair com precisão coeficientes, erros-padrão, intervalos, elasticidades, equações e tabelas de regressão de estudos complexos (muitas especificações/apêndices), para checar comparabilidade de unidades entre estudos (portão de meta-análise) e para análises de dados reproduzíveis que preservem scripts, insumos, parâmetros, seeds e versões.
+description: "Extração quantitativa de estudos complexos, comparabilidade de unidades e análises reproduzíveis."
 color: orange
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: resubmission-strategy
-description: Módulo Publication Strategy — após rejeição, analisa o motivo informado pelo editor, os pareceres e as alterações necessárias, decide entre revisar e ressubmeter ou trocar de periódico, reutiliza a pesquisa anterior de periódicos e atualiza as regras antes de recomendar nova submissão. Use para "artigo rejeitado", "desk rejection", "ressubmeter", "próxima revista", "rejeição".
+description: "Publication Strategy: após rejeição, analisa motivos, planeja mudanças e escolhe outro periódico com regras reconsultadas. Use para \"artigo rejeitado\", \"desk rejection\", \"próxima revista\"."
 argument-hint: "[carta de decisão] [research/]"
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: regulatory-research
-description: Modo de pesquisa regulatória e de políticas públicas — localiza e distingue legislação, regulamentação/atos normativos, AIR (análise de impacto regulatório), ARR (avaliação de resultado regulatório), consultas e audiências públicas, notas técnicas, decisões regulatórias, guidelines, relatórios de avaliação, documentos de governo, literatura acadêmica, literatura cinzenta, dados e benchmark internacional; separa norma vigente, proposta normativa, interpretação e evidência empírica. Use para "pesquisa regulatória", "AIR", "ARR", "regulação", "ANEEL", "ANA", "agência reguladora", "consulta pública", "benchmark internacional", "política pública", "o que diz a norma".
+description: "Pesquisa regulatória: legislação, normas, AIR, ARR, consultas públicas, decisões e benchmark, separando norma vigente, proposta, interpretação e evidência. Use para \"regulação\", \"AIR\", \"ARR\", \"agência reguladora\"."
 argument-hint: "[tema regulatório] [--jurisdicao BR|US|EU|...] [--setor energia|saneamento|...]"
 ---
 
