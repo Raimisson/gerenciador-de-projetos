@@ -1,0 +1,179 @@
+{
+  "journal": "Utilities Policy",
+  "manuscript": "research/manuscript/manuscript.md",
+  "requirements_file": "research/publication/journals/utilities-policy/requirements.json",
+  "generated_on": "2026-09-24",
+  "target_journal_mode": true,
+  "items": [
+    {
+      "rule_id": "R-TYPES",
+      "category": "tipos de artigo",
+      "requirement": "NOT VERIFIED — guia oficial inacessível; preencher com trecho literal do guide for authors",
+      "source": "https://www.sciencedirect.com/journal/utilities-policy/publish/guide-for-authors (consultado em 2026-09-24)",
+      "status": "UNABLE_TO_VERIFY",
+      "current_state": "regra com status NOT_VERIFIED — não confirmada na fonte oficial atual",
+      "gap": "",
+      "action": "Consultar o guia oficial do periódico e registrar trecho, URL e data (journal-requirements)."
+    },
+    {
+      "rule_id": "R-WORDS",
+      "category": "limite de palavras",
+      "requirement": "NOT VERIFIED — guia oficial inacessível; preencher com trecho literal do guide for authors",
+      "source": "https://www.sciencedirect.com/journal/utilities-policy/publish/guide-for-authors (consultado em 2026-09-24)",
+      "status": "UNABLE_TO_VERIFY",
+      "current_state": "regra com status NOT_VERIFIED — não confirmada na fonte oficial atual",
+      "gap": "",
+      "action": "Consultar o guia oficial do periódico e registrar trecho, URL e data (journal-requirements)."
+    },
+    {
+      "rule_id": "R-ABSTRACT",
+      "category": "limite do abstract",
+      "requirement": "NOT VERIFIED — guia oficial inacessível; preencher com trecho literal do guide for authors",
+      "source": "https://www.sciencedirect.com/journal/utilities-policy/publish/guide-for-authors (consultado em 2026-09-24)",
+      "status": "UNABLE_TO_VERIFY",
+      "current_state": "regra com status NOT_VERIFIED — não confirmada na fonte oficial atual",
+      "gap": "",
+      "action": "Consultar o guia oficial do periódico e registrar trecho, URL e data (journal-requirements)."
+    },
+    {
+      "rule_id": "R-KEYWORDS",
+      "category": "keywords",
+      "requirement": "NOT VERIFIED — guia oficial inacessível; preencher com trecho literal do guide for authors",
+      "source": "https://www.sciencedirect.com/journal/utilities-policy/publish/guide-for-authors (consultado em 2026-09-24)",
+      "status": "UNABLE_TO_VERIFY",
+      "current_state": "regra com status NOT_VERIFIED — não confirmada na fonte oficial atual",
+      "gap": "",
+      "action": "Consultar o guia oficial do periódico e registrar trecho, URL e data (journal-requirements)."
+    },
+    {
+      "rule_id": "R-HIGHLIGHTS",
+      "category": "highlights",
+      "requirement": "NOT VERIFIED — guia oficial inacessível; preencher com trecho literal do guide for authors",
+      "source": "https://www.sciencedirect.com/journal/utilities-policy/publish/guide-for-authors (consultado em 2026-09-24)",
+      "status": "UNABLE_TO_VERIFY",
+      "current_state": "regra com status NOT_VERIFIED — não confirmada na fonte oficial atual",
+      "gap": "",
+      "action": "Consultar o guia oficial do periódico e registrar trecho, URL e data (journal-requirements)."
+    },
+    {
+      "rule_id": "R-GA",
+      "category": "graphical abstract",
+      "requirement": "NOT VERIFIED — guia oficial inacessível; preencher com trecho literal do guide for authors",
+      "source": "https://www.sciencedirect.com/journal/utilities-policy/publish/guide-for-authors (consultado em 2026-09-24)",
+      "status": "UNABLE_TO_VERIFY",
+      "current_state": "regra com status NOT_VERIFIED — não confirmada na fonte oficial atual",
+      "gap": "",
+      "action": "Consultar o guia oficial do periódico e registrar trecho, URL e data (journal-requirements)."
+    },
+    {
+      "rule_id": "R-REFSTYLE",
+      "category": "estilo de referências",
+      "requirement": "NOT VERIFIED — guia oficial inacessível; preencher com trecho literal do guide for authors",
+      "source": "https://www.sciencedirect.com/journal/utilities-policy/publish/guide-for-authors (consultado em 2026-09-24)",
+      "status": "UNABLE_TO_VERIFY",
+      "current_state": "regra com status NOT_VERIFIED — não confirmada na fonte oficial atual",
+      "gap": "",
+      "action": "Consultar o guia oficial do periódico e registrar trecho, URL e data (journal-requirements)."
+    },
+    {
+      "rule_id": "R-BLIND",
+      "category": "tipo de peer review / anonimização",
+      "requirement": "NOT VERIFIED — guia oficial inacessível; preencher com trecho literal do guide for authors",
+      "source": "https://www.sciencedirect.com/journal/utilities-policy/publish/guide-for-authors (consultado em 2026-09-24)",
+      "status": "UNABLE_TO_VERIFY",
+      "current_state": "regra com status NOT_VERIFIED — não confirmada na fonte oficial atual",
+      "gap": "",
+      "action": "Consultar o guia oficial do periódico e registrar trecho, URL e data (journal-requirements)."
+    },
+    {
+      "rule_id": "R-DATA",
+      "category": "data availability statement",
+      "requirement": "NOT VERIFIED — guia oficial inacessível; preencher com trecho literal do guide for authors",
+      "source": "https://www.sciencedirect.com/journal/utilities-policy/publish/guide-for-authors (consultado em 2026-09-24)",
+      "status": "UNABLE_TO_VERIFY",
+      "current_state": "regra com status NOT_VERIFIED — não confirmada na fonte oficial atual",
+      "gap": "",
+      "action": "Consultar o guia oficial do periódico e registrar trecho, URL e data (journal-requirements)."
+    },
+    {
+      "rule_id": "R-FUNDING",
+      "category": "funding",
+      "requirement": "NOT VERIFIED — guia oficial inacessível; preencher com trecho literal do guide for authors",
+      "source": "https://www.sciencedirect.com/journal/utilities-policy/publish/guide-for-authors (consultado em 2026-09-24)",
+      "status": "UNABLE_TO_VERIFY",
+      "current_state": "regra com status NOT_VERIFIED — não confirmada na fonte oficial atual",
+      "gap": "",
+      "action": "Consultar o guia oficial do periódico e registrar trecho, URL e data (journal-requirements)."
+    },
+    {
+      "rule_id": "R-COI",
+      "category": "competing interests",
+      "requirement": "NOT VERIFIED — guia oficial inacessível; preencher com trecho literal do guide for authors",
+      "source": "https://www.sciencedirect.com/journal/utilities-policy/publish/guide-for-authors (consultado em 2026-09-24)",
+      "status": "UNABLE_TO_VERIFY",
+      "current_state": "regra com status NOT_VERIFIED — não confirmada na fonte oficial atual",
+      "gap": "",
+      "action": "Consultar o guia oficial do periódico e registrar trecho, URL e data (journal-requirements)."
+    },
+    {
+      "rule_id": "R-CREDIT",
+      "category": "CRediT",
+      "requirement": "NOT VERIFIED — guia oficial inacessível; preencher com trecho literal do guide for authors",
+      "source": "https://www.sciencedirect.com/journal/utilities-policy/publish/guide-for-authors (consultado em 2026-09-24)",
+      "status": "UNABLE_TO_VERIFY",
+      "current_state": "regra com status NOT_VERIFIED — não confirmada na fonte oficial atual",
+      "gap": "",
+      "action": "Consultar o guia oficial do periódico e registrar trecho, URL e data (journal-requirements)."
+    },
+    {
+      "rule_id": "R-AI",
+      "category": "declaração de uso de IA generativa",
+      "requirement": "NOT VERIFIED — guia oficial inacessível; preencher com trecho literal do guide for authors",
+      "source": "https://www.sciencedirect.com/journal/utilities-policy/publish/guide-for-authors (consultado em 2026-09-24)",
+      "status": "UNABLE_TO_VERIFY",
+      "current_state": "regra com status NOT_VERIFIED — não confirmada na fonte oficial atual",
+      "gap": "",
+      "action": "Consultar o guia oficial do periódico e registrar trecho, URL e data (journal-requirements)."
+    },
+    {
+      "rule_id": "R-COVER",
+      "category": "cover letter",
+      "requirement": "NOT VERIFIED — guia oficial inacessível; preencher com trecho literal do guide for authors",
+      "source": "https://www.sciencedirect.com/journal/utilities-policy/publish/guide-for-authors (consultado em 2026-09-24)",
+      "status": "UNABLE_TO_VERIFY",
+      "current_state": "regra com status NOT_VERIFIED — não confirmada na fonte oficial atual",
+      "gap": "",
+      "action": "Consultar o guia oficial do periódico e registrar trecho, URL e data (journal-requirements)."
+    },
+    {
+      "rule_id": "R-TITLEPAGE",
+      "category": "title page",
+      "requirement": "NOT VERIFIED — guia oficial inacessível; preencher com trecho literal do guide for authors",
+      "source": "https://www.sciencedirect.com/journal/utilities-policy/publish/guide-for-authors (consultado em 2026-09-24)",
+      "status": "UNABLE_TO_VERIFY",
+      "current_state": "regra com status NOT_VERIFIED — não confirmada na fonte oficial atual",
+      "gap": "",
+      "action": "Consultar o guia oficial do periódico e registrar trecho, URL e data (journal-requirements)."
+    },
+    {
+      "rule_id": "R-REVIEWERS",
+      "category": "suggested reviewers",
+      "requirement": "NOT VERIFIED — guia oficial inacessível; preencher com trecho literal do guide for authors",
+      "source": "https://www.sciencedirect.com/journal/utilities-policy/publish/guide-for-authors (consultado em 2026-09-24)",
+      "status": "UNABLE_TO_VERIFY",
+      "current_state": "regra com status NOT_VERIFIED — não confirmada na fonte oficial atual",
+      "gap": "",
+      "action": "Consultar o guia oficial do periódico e registrar trecho, URL e data (journal-requirements)."
+    },
+    {
+      "rule_id": "R-APC",
+      "category": "APC / open access",
+      "requirement": "NOT VERIFIED — guia oficial inacessível; preencher com trecho literal do guide for authors",
+      "source": "https://www.sciencedirect.com/journal/utilities-policy/publish/guide-for-authors (consultado em 2026-09-24)",
+      "status": "UNABLE_TO_VERIFY",
+      "current_state": "regra com status NOT_VERIFIED — não confirmada na fonte oficial atual",
+      "gap": "",
+      "action": "Consultar o guia oficial do periódico e registrar trecho, URL e data (journal-requirements)."
+    }
+  ]
+}

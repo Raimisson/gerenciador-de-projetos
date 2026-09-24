@@ -1,0 +1,123 @@
+{
+  "journal": "Utilities Policy",
+  "slug": "utilities-policy",
+  "publisher": "Elsevier BV (metadados Scite; site não consultado)",
+  "aims_scope": {
+    "status": "NOT_VERIFIED"
+  },
+  "dimensions": {
+    "topic_fit": {
+      "rating": "MODERATE",
+      "justification": "O periódico publicou em 2022 artigo sobre revenue decoupling e eficiência energética no setor elétrico dos EUA e, em 2024–2026, artigos sobre ratemaking e eficiência energética em utilities. Aims & scope não verificado impede classificação STRONG.",
+      "evidence": [
+        {
+          "source": "Scite MCP search_literature (índice Scite), 2026-09-24",
+          "checked_on": "2026-09-24",
+          "doi": "10.1016/j.jup.2022.101416"
+        },
+        {
+          "source": "Scite MCP search_literature (índice Scite), 2026-09-24",
+          "checked_on": "2026-09-24",
+          "doi": "10.1016/j.jup.2026.102199"
+        },
+        {
+          "source": "Scite MCP search_literature (índice Scite), 2026-09-24",
+          "checked_on": "2026-09-24",
+          "doi": "10.1016/j.jup.2024.101721"
+        }
+      ]
+    },
+    "method_fit": {
+      "rating": "INSUFFICIENT_EVIDENCE",
+      "justification": "Métodos dos artigos recentes não verificados (abstracts não retornados); não se sabe se o periódico publica revisões estruturadas.",
+      "evidence": []
+    },
+    "contribution_fit": {
+      "rating": "INSUFFICIENT_EVIDENCE",
+      "justification": "Tipo de contribuição publicada (revisões × estudos empíricos) depende do aims & scope, não verificado.",
+      "evidence": []
+    },
+    "empirical_fit": {
+      "rating": "MODERATE",
+      "justification": "Há precedentes com dados do setor elétrico dos EUA e de estado norte-americano (Pennsylvania), mesma jurisdição da evidência do manuscrito.",
+      "evidence": [
+        {
+          "source": "Scite MCP search_literature (índice Scite), 2026-09-24",
+          "checked_on": "2026-09-24",
+          "doi": "10.1016/j.jup.2022.101416"
+        },
+        {
+          "source": "Scite MCP search_literature (índice Scite), 2026-09-24",
+          "checked_on": "2026-09-24",
+          "doi": "10.1016/j.jup.2024.101721"
+        }
+      ]
+    },
+    "audience_fit": {
+      "rating": "INSUFFICIENT_EVIDENCE",
+      "justification": "Descrição de público do periódico não verificada.",
+      "evidence": []
+    },
+    "recent_publication_fit": {
+      "rating": "STRONG",
+      "justification": "Artigo diretamente comparável em tema publicado em 2022 (dentro da janela de 5 anos), além de artigos relacionados em 2024–2026.",
+      "evidence": [
+        {
+          "source": "Scite MCP search_literature (índice Scite), 2026-09-24",
+          "checked_on": "2026-09-24",
+          "doi": "10.1016/j.jup.2022.101416",
+          "note": "mesmo tema"
+        },
+        {
+          "source": "Scite MCP search_literature (índice Scite), 2026-09-24",
+          "checked_on": "2026-09-24",
+          "doi": "10.1016/j.jup.2024.101721",
+          "note": "mesmo setor/jurisdição"
+        }
+      ]
+    },
+    "article_type_fit": {
+      "rating": "INSUFFICIENT_EVIDENCE",
+      "justification": "Tipos de artigo aceitos não verificados no guia oficial.",
+      "evidence": []
+    }
+  },
+  "open_access": {
+    "status": "NOT_VERIFIED",
+    "note": "Scite indica artigos 'hybrid' e 'closed' — sugere modelo híbrido, a confirmar no site"
+  },
+  "apc": {
+    "status": "NOT_VERIFIED",
+    "note": "site da editora inacessível no ambiente de geração"
+  },
+  "indexing": {
+    "status": "NOT_VERIFIED",
+    "note": "site da editora inacessível no ambiente de geração"
+  },
+  "review_time": {
+    "status": "NOT_VERIFIED",
+    "note": "site da editora inacessível no ambiente de geração"
+  },
+  "publication_time": {
+    "status": "NOT_VERIFIED",
+    "note": "site da editora inacessível no ambiente de geração"
+  },
+  "metrics": {
+    "status": "NOT_VERIFIED",
+    "note": "site da editora inacessível no ambiente de geração"
+  },
+  "key_requirements": [
+    "NOT VERIFIED — guia oficial inacessível; ver requirements.json"
+  ],
+  "similar_articles": [
+    "10.1016/j.jup.2022.101416",
+    "10.1016/j.jup.2024.101721",
+    "10.1016/j.jup.2026.102199"
+  ],
+  "risks": [
+    "O manuscrito é uma revisão rápida sem estudos formalmente incluídos; se o periódico priorizar contribuições empíricas originais, há risco de desk rejection por tipo/contribuição (a verificar no aims & scope).",
+    "O artigo comparável mais próximo (von Loessl & Wetzel, 2022) ainda não foi lido em texto integral: o manuscrito pode estar subestimando a evidência publicada no próprio periódico."
+  ],
+  "due_diligence_conclusion": "NOT_ASSESSED (ver due-diligence.json)",
+  "date_verified": "2026-09-24"
+}

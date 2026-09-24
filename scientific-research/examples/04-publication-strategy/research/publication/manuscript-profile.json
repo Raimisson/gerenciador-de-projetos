@@ -1,0 +1,68 @@
+{
+  "title": "Revenue decoupling and utility energy efficiency programs: a structured rapid review of the quantitative evidence",
+  "abstract": "Revenue decoupling is widely presented as a regulatory tool that removes the throughput incentive of energy utilities, but the empirical literature on its effects on utility energy efficiency programs is small and difficult to access. We conducted a structured rapid review with a reproducible search log, forward citation chasing and explicit screening criteria. Of the records identified, none could be formally included because the full texts of the potentially eligible studies were not accessible; one study reports, at abstract level, an empirical association between decoupling and higher demand-side management spending. As contextual evidence, a descriptive study of United States utilities documents small average rate adjustments associated with decoupling mechanisms. No verifiable estimate of the magnitude of decoupling effects on efficiency programs was found in the accessible sources. We discuss implications for regulators considering decoupling, including in jurisdictions outside the United States, and outline the evidence needed to close this gap.",
+  "keywords": [
+    "revenue decoupling",
+    "energy efficiency programs",
+    "demand-side management",
+    "utility regulation",
+    "evidence review"
+  ],
+  "research_question": "Quais estudos mensuraram quantitativamente os efeitos de mecanismos de revenue decoupling sobre programas de eficiência energética, e o que permitem concluir?",
+  "methodology": "Revisão estruturada rápida: busca booleana no Scite, forward citation chasing, triagem com critérios explícitos e códigos de exclusão, extração com regra NR, Evidence Ledger.",
+  "main_results": "Nenhum estudo formalmente incluído (textos integrais inacessíveis); um estudo relata, no abstract, associação entre decoupling e maior gasto em DSM [E-0001]; evidência contextual descritiva de ajustes tarifários médios de 0,4% [E-0002]; nenhuma magnitude verificável de efeito [E-0005].",
+  "contribution": "Mapa rastreável e honesto do estado da evidência quantitativa, com identificação de candidatos prioritários e lacunas; relevância para reguladores que avaliam decoupling.",
+  "key_references": [
+    "10.5547/01956574.37.4.jkah",
+    "10.1016/j.tej.2020.106858",
+    "10.1016/j.enpol.2019.05.005",
+    "10.1016/j.jup.2022.101416"
+  ],
+  "article_type": "research article (revisão estruturada rápida) — tipo aceito a verificar em cada periódico",
+  "counts": {
+    "words_main_text": 496,
+    "words_with_references": 560,
+    "abstract_words": 150,
+    "keywords": 5,
+    "title_words": 15,
+    "title_chars": 113,
+    "figures": 0,
+    "tables": 0,
+    "highlights": 4
+  },
+  "sections_found": [
+    "Abstract",
+    "Highlights",
+    "1. Introduction",
+    "2. Methods",
+    "3. Results",
+    "4. Discussion",
+    "5. Limitations",
+    "6. Conclusions",
+    "Data availability",
+    "Funding",
+    "Declaration of competing interest",
+    "CRediT authorship contribution statement",
+    "Declaration of generative AI use",
+    "References"
+  ],
+  "statements_found": [
+    "data_availability",
+    "funding",
+    "competing_interests",
+    "credit",
+    "ai_use"
+  ],
+  "generated_on": "2026-09-24",
+  "target_audience": "reguladores de energia, economistas de regulação, formuladores de política de eficiência energética",
+  "jurisdiction": "Estados Unidos (evidência); discussão de transferibilidade para outras jurisdições",
+  "sector": "energia elétrica",
+  "data": "registros bibliográficos; Evidence Ledger",
+  "evidence_ledger": "research/ledger/evidence.jsonl",
+  "constraints": {
+    "apc_budget": "NR — não reportado",
+    "open_access_required": "NR — não reportado",
+    "indexing_required": "NR — não reportado",
+    "deadline": "NR — não reportado"
+  }
+}

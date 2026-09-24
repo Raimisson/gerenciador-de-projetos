@@ -1,0 +1,104 @@
+{
+  "source_id": "S-0002",
+  "extracted_on": "2026-09-24",
+  "extracted_by": "claude (exemplo)",
+  "access_level": "full_text",
+  "text_source": "Scite read_fulltext (source=fulltext), caracteres 0–14.000 de 20.108",
+  "pagination_reliable": false,
+  "fields": {
+    "reference": "Cappers, P., Satchwell, A., & Dupuy, M. (2020). The distribution of U.S. electric utility revenue decoupling rate impacts from 2005 to 2017. The Electricity Journal, 33(10), 106858.",
+    "research_question": "Distribuição (direção e magnitude) dos ajustes tarifários de mecanismos de decoupling de utilidades elétricas dos EUA.",
+    "country_jurisdiction": "Estados Unidos (11 estados e District of Columbia)",
+    "population": "Utilidades elétricas com mecanismo de decoupling por mais de três anos até 2017",
+    "unit_of_analysis": "Utilidade × classe de consumidor × ano",
+    "period": "2005–2017",
+    "data_source": "Filings regulatórios estaduais públicos; EIA Form 861 (receitas e vendas) para tarifa média",
+    "sample_size": "21 utilidades; 46 combinações utilidade–classe; 11 estados e DC",
+    "intervention": "Mecanismo de revenue decoupling",
+    "comparison": "NA — não se aplica",
+    "outcome": "Ajuste tarifário anual do decoupling como % da tarifa média de varejo",
+    "method": "Estatística descritiva",
+    "empirical_strategy": "Razão entre ajuste do decoupling ($/kWh) e tarifa média de varejo ($/kWh) por observação",
+    "causal_identification": "Não se aplica (estudo descritivo; não estima efeito causal)",
+    "model_equation": "NA — não se aplica",
+    "variables": "Ajuste do decoupling ($/kWh); tarifa média bundled ($/kWh)",
+    "main_result": "[FONTE] Média de 0.4 percent da tarifa média de varejo; mediana 0.2 percent; máximo 11.4 percent; mínimo -4.2 percent; 54% das observações entre -1 e 1 percent.",
+    "robustness": "NR — não reportado",
+    "limitations": "Leitura parcial do texto (limitações dos autores não lidas nesta extração).",
+    "doi": "10.1016/j.tej.2020.106858",
+    "url": "https://doi.org/10.1016/j.tej.2020.106858"
+  },
+  "field_locations": {
+    "sample_size": "Seção Data",
+    "period": "Seção Data",
+    "main_result": "Seção Results and Discussion; Table 2 (conforme o texto)",
+    "data_source": "Seção Data"
+  },
+  "estimates": [
+    {
+      "estimate_id": "S-0002-R1",
+      "description": "Ajuste tarifário anual médio do decoupling",
+      "estimate": 0.4,
+      "unit": "% da tarifa média de varejo (all-in)",
+      "denominator": "tarifa média anual bundled de varejo da classe",
+      "se": "NR — não reportado",
+      "ci_low": "NR — não reportado",
+      "ci_high": "NR — não reportado",
+      "p_value": "NA — não se aplica",
+      "significance": "NA — não se aplica",
+      "n": "46 combinações utilidade–classe (nº de observações-ano: NR na parte lida)",
+      "period": "2005–2017",
+      "model": "estatística descritiva",
+      "dependent_variable": "ajuste tarifário do decoupling (%)",
+      "identification": "descritivo",
+      "is_main_specification": true,
+      "location": {
+        "page": "página não identificável de forma confiável",
+        "table": "Table 2",
+        "section": "Results and Discussion"
+      },
+      "excerpt": "On average, decoupling mechanisms across our sample resulted in rate adjustments of 0.4 percent of all-in average retail rates, with a median annual rate adjustment of 0.2 percent, a maximum of 11.4 percent, and a minimum of -4.2 percent."
+    },
+    {
+      "estimate_id": "S-0002-R2",
+      "description": "Ajuste tarifário anual mediano",
+      "estimate": 0.2,
+      "unit": "% da tarifa média de varejo",
+      "se": "NR — não reportado",
+      "ci_low": "NR — não reportado",
+      "ci_high": "NR — não reportado",
+      "p_value": "NA — não se aplica",
+      "significance": "NA — não se aplica",
+      "n": "46 combinações utilidade–classe",
+      "period": "2005–2017",
+      "identification": "descritivo",
+      "location": {
+        "page": "página não identificável de forma confiável",
+        "table": "Table 2",
+        "section": "Results and Discussion"
+      },
+      "excerpt": "with a median annual rate adjustment of 0.2 percent"
+    },
+    {
+      "estimate_id": "S-0002-R3",
+      "description": "Ajuste máximo / mínimo",
+      "estimate": "11.4 / -4.2",
+      "unit": "% da tarifa média de varejo",
+      "se": "NR — não reportado",
+      "ci_low": "NR — não reportado",
+      "ci_high": "NR — não reportado",
+      "p_value": "NA — não se aplica",
+      "significance": "NA — não se aplica",
+      "n": "46 combinações utilidade–classe",
+      "period": "2005–2017",
+      "identification": "descritivo",
+      "location": {
+        "page": "página não identificável de forma confiável",
+        "table": "Table 2",
+        "section": "Results and Discussion"
+      },
+      "excerpt": "a maximum of 11.4 percent, and a minimum of -4.2 percent"
+    }
+  ],
+  "notes": "Excluído da pergunta principal (EX-OUTCOME), mantido como evidência contextual sobre impactos tarifários. A frase da introdução 'In 2017, 16 states had some form of a decoupling mechanism' é citação secundária de Berg et al. (2019) — usar a fonte primária."
+}

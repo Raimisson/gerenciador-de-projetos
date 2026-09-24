@@ -11,6 +11,7 @@ echo "== 1. validação oficial (--strict)"
 claude plugin validate "$PLUGIN_DIR" --strict
 claude plugin validate "$PLUGIN_DIR/skills" --strict
 claude plugin validate "$PLUGIN_DIR/agents" --strict
+claude plugin validate "$PLUGIN_DIR/modules/publication-strategy/skills" --strict
 claude plugin validate "$REPO_DIR" --strict
 
 echo "== 2. instalação via marketplace local"
@@ -23,10 +24,10 @@ echo "== 3. carga numa sessão (--plugin-dir) — lista de skills/agentes vista 
 OUT="$(cd "$(mktemp -d)" && claude -p --plugin-dir "$PLUGIN_DIR" \
   "Liste, um por linha e sem comentários, os nomes de todas as skills e subagentes disponíveis cujo nome começa com 'scientific-research:'.")"
 echo "$OUT"
-for s in research-project evidence-extraction citation-audit regulatory-research manuscript-review; do
+for s in research-project evidence-extraction citation-audit regulatory-research manuscript-review journal-search journal-fit-analysis pre-submission-audit peer-review-response; do
   echo "$OUT" | grep -q "scientific-research:$s" || { echo "FALHA: skill $s não visível"; exit 1; }
 done
-for a in literature-researcher citation-auditor scientific-editor; do
+for a in literature-researcher citation-auditor scientific-editor publication-strategist; do
   echo "$OUT" | grep -q "scientific-research:$a" || { echo "FALHA: agente $a não visível"; exit 1; }
 done
 echo "skills e agentes visíveis: OK"

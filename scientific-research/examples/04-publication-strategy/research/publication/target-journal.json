@@ -1,0 +1,15 @@
+{
+  "active": true,
+  "journal": "Utilities Policy",
+  "slug": "utilities-policy",
+  "activated_on": "2026-09-24",
+  "requirements_file": "journals/utilities-policy/requirements.json",
+  "article_type": "research article (a confirmar)",
+  "integrity_limits": [
+    "Regras editoriais não justificam alteração ou omissão seletiva de resultados.",
+    "Regras editoriais não justificam fabricação de análise.",
+    "Regras editoriais não justificam fabricação de referência.",
+    "Regras editoriais não justificam manipulação de evidência.",
+    "Regras editoriais não justificam exagero de conclusão."
+  ]
+}

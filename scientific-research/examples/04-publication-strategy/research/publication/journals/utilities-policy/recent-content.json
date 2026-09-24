@@ -1,0 +1,110 @@
+{
+  "journal": "Utilities Policy",
+  "window": {
+    "from_year": 2021,
+    "to_year": 2026
+  },
+  "search_log": [
+    {
+      "tool": "Scite search_literature",
+      "query": "decoupling OR \"energy efficiency\" OR \"ratemaking\"",
+      "filters": "journal=Utilities Policy; date_from=2021; limit=6",
+      "date": "2026-09-24",
+      "returned": 23,
+      "discarded_other_journal": 0,
+      "notes": "Total reportado 23; 6 primeiros por relevância examinados. Abstracts não retornados: método NR."
+    }
+  ],
+  "articles": [
+    {
+      "title": "Revenue decoupling, energy demand, and energy efficiency: Empirical evidence from the U.S. electricity sector",
+      "authors": [
+        "von Loessl, Victor",
+        "Wetzel, Heike"
+      ],
+      "year": 2022,
+      "doi": "10.1016/j.jup.2022.101416",
+      "url": "https://doi.org/10.1016/j.jup.2022.101416",
+      "method": "NR — não reportado",
+      "relation": "same_topic_other_method",
+      "relation_note": "mesmo tema (decoupling × eficiência energética, setor elétrico dos EUA); estudo empírico primário, enquanto o manuscrito é revisão",
+      "retrieved_via": "Scite MCP search_literature (índice Scite), 2026-09-24"
+    },
+    {
+      "title": "Ratemaking under indexation: How policy clauses compound into retail electricity tariffs",
+      "authors": [
+        "Abdullah, Fahad",
+        "Aqeeq, Muhammad Arsalan",
+        "Memon, Falak Shad"
+      ],
+      "year": 2026,
+      "doi": "10.1016/j.jup.2026.102199",
+      "url": "https://doi.org/10.1016/j.jup.2026.102199",
+      "method": "NR — não reportado",
+      "relation": "related",
+      "relation_note": "regulação tarifária de eletricidade (ratemaking)",
+      "retrieved_via": "Scite MCP search_literature (índice Scite), 2026-09-24"
+    },
+    {
+      "title": "Targeting energy efficiency in Portuguese urban water utilities",
+      "authors": [
+        "Cardoso, Bruno J.",
+        "Rosa, Nuno",
+        "Amaral, Ana Rita"
+      ],
+      "year": 2026,
+      "doi": "10.1016/j.jup.2026.102180",
+      "url": "https://doi.org/10.1016/j.jup.2026.102180",
+      "method": "NR — não reportado",
+      "relation": "same_sector_or_jurisdiction",
+      "relation_note": "eficiência energética em utilities (setor de água)",
+      "retrieved_via": "Scite MCP search_literature (índice Scite), 2026-09-24"
+    },
+    {
+      "title": "Technological innovation and energy efficiency in central Eastern European countries",
+      "authors": [
+        "Mengxuan, Tian",
+        "Khan, Khalid",
+        "Cifuentes-Faura, Javier"
+      ],
+      "year": 2024,
+      "doi": "10.1016/j.jup.2024.101761",
+      "url": "https://doi.org/10.1016/j.jup.2024.101761",
+      "method": "NR — não reportado",
+      "relation": "related",
+      "relation_note": "eficiência energética, nível país",
+      "retrieved_via": "Scite MCP search_literature (índice Scite), 2026-09-24"
+    },
+    {
+      "title": "Urban broadband infrastructure and green total-factor energy efficiency in China",
+      "authors": [
+        "Wen, Huwei",
+        "Liang, Weitao",
+        "Lee, Chien-Chiang"
+      ],
+      "year": 2022,
+      "doi": "10.1016/j.jup.2022.101414",
+      "url": "https://doi.org/10.1016/j.jup.2022.101414",
+      "method": "NR — não reportado",
+      "relation": "not_comparable",
+      "relation_note": "tema diferente",
+      "retrieved_via": "Scite MCP search_literature (índice Scite), 2026-09-24"
+    },
+    {
+      "title": "Collaborative governance challenges in energy efficiency and conservation: The case of Pennsylvania",
+      "authors": [
+        "Guo, Jingyu",
+        "Mallinson, Daniel J.",
+        "Ortiz, Selena E."
+      ],
+      "year": 2024,
+      "doi": "10.1016/j.jup.2024.101721",
+      "url": "https://doi.org/10.1016/j.jup.2024.101721",
+      "method": "NR — não reportado",
+      "relation": "same_sector_or_jurisdiction",
+      "relation_note": "governança de programas de eficiência energética em estado dos EUA",
+      "retrieved_via": "Scite MCP search_literature (índice Scite), 2026-09-24"
+    }
+  ],
+  "summary": "1 artigo diretamente comparável em tema (2022) e 3 relacionados ao setor/eficiência (2024–2026) entre os 6 primeiros de 23. Métodos não verificados (NR)."
+}

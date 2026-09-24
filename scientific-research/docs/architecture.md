@@ -28,6 +28,15 @@
                     │ web, APIs)  │
                     └─────────────┘
   hooks: SessionStart (lembrete) · PreToolUse (dados brutos, escrita em bibliotecas)
+
+                    ┌────────────────────────────────────────────┐
+  manuscrito ──────►│ módulo Publication Strategy                │
+  concluído         │  modules/publication-strategy/             │
+                    │  12 skills · pubtool.py · schemas · tmpl.  │
+                    │  subagente publication-strategist          │
+                    │  lê: manuscrito, Evidence Ledger, auditorias│
+                    │  escreve: research/publication/            │
+                    └────────────────────────────────────────────┘
 ```
 
 Princípios de desenho: **arquivos simples** (Markdown, JSON, JSONL, CSV), **nenhum servidor**,
@@ -39,7 +48,8 @@ Princípios de desenho: **arquivos simples** (Markdown, JSON, JSONL, CSV), **nen
 |---|---|---|
 | Manifesto | `.claude-plugin/plugin.json` | nome, versão, metadados |
 | Marketplace | `../.claude-plugin/marketplace.json` (raiz do repositório) | distribuição via `/plugin marketplace add` |
-| Skills | `skills/<nome>/SKILL.md` | workflows; viram `/scientific-research:<nome>` e são acionadas por contexto |
+| Skills (núcleo) | `skills/<nome>/SKILL.md` | workflows científicos; viram `/scientific-research:<nome>` |
+| Módulo Publication Strategy | `modules/publication-strategy/` (`skills/`, `schemas/`, `templates/`, `scripts/pubtool.py`) | etapa entre manuscrito concluído e publicação; skills carregadas pelo manifesto (`"skills": ["./skills", "./modules/publication-strategy/skills"]`) |
 | Subagentes | `agents/*.md` | especialistas com contexto isolado e ferramentas restritas |
 | Hooks | `hooks/hooks.json` + `hooks/*.py` | lembrete de integridade; confirmação para dados brutos e escrita em bibliotecas |
 | Ferramenta | `scripts/srtool.py` | validação, matriz, DOI, varredura, proveniência, PRISMA, OpenAlex |
@@ -77,6 +87,14 @@ literature-search ◄──► citation-chasing        grey-literature / regulat
                                                  │
                                                  ▼
                                         manuscript-review
+                                                 │
+                    ═══════════ módulo Publication Strategy ═══════════
+                                                 ▼
+        journal-search → journal-recent-content-analysis → journal-fit-analysis
+                 → journal-due-diligence → journal-requirements → publication-strategy
+                 → [escolha do autor] TARGET JOURNAL MODE → manuscript-compliance
+                 → submission-preparation / cover-letter → pre-submission-audit
+                 → submissão (autores) → peer-review-response | resubmission-strategy
 ```
 
 `research-project` percorre esse grafo **sob demanda**: diagnostica o que existe e propõe só as
@@ -92,6 +110,7 @@ etapas necessárias (etapas puladas são registradas no protocolo).
 | `scientific-editor` | redação/revisão após o ledger validado (sem web por desenho) | ainda não há evidência validada |
 | `quantitative-analyst` | estudos com muitas tabelas/especificações; análise reproduzível | um número isolado de um abstract |
 | `regulatory-researcher` | levantamento normativo em paralelo à busca acadêmica | pergunta sem componente normativo |
+| `publication-strategist` | conduzir a etapa de publicação (vários periódicos, compliance, pareceres) em contexto isolado | checar uma única regra de um periódico já escolhido |
 
 `systematic-review-specialist` **não** foi criado: duplicaria a skill `systematic-review` e o
 `literature-researcher`. Regra geral: um agente por tarefa independente; nunca vários agentes
@@ -145,8 +164,20 @@ research/
 ├── audit/         citation-audit.{md,json}, bibliography-audit.md, manuscript-audit.md, scan.md
 ├── data/raw/      imutável (hook pede confirmação antes de qualquer escrita)
 ├── data/derived/  gerado por scripts
-└── analysis/      scripts + analysis-run-log.md
+├── analysis/      scripts + analysis-run-log.md
+└── publication/   (módulo Publication Strategy — criado por pubtool.py init)
+    ├── manuscript-profile.json · strategy.md · target-journal.json
+    ├── journals/candidates.json · journals/<slug>/{recent-content,fit,due-diligence,requirements}.json
+    ├── compliance/ · submission/<slug>/ · pre-submission-audit-<slug>.md
+    └── peer-review/round-<n>/ · resubmission/
 ```
+
+## 7b. Proveniência na etapa de publicação
+
+O módulo não reconstrói evidência: cover letter, highlights e abstract usam os números do manuscrito
+(rastreáveis ao ledger), e a auditoria pré-submissão roda `srtool.py scan` com o ledger. Informação de
+periódico tem sua própria proveniência (URL oficial + data + trecho) em `requirements.json`,
+`fit.json` e `due-diligence.json`; o que não tem fonte atual é `NOT VERIFIED`.
 
 ## 8. Compatibilidade
 
@@ -160,7 +191,8 @@ hooks ou scripts.
 
 ## 9. Manutenção
 
-- Editar regras de integridade só em `docs/partials/integrity-block.md` e rodar
+- Editar regras de integridade só em `docs/partials/integrity-block.md` (científicas) e
+  `docs/partials/publication-integrity-block.md` (editoriais) e rodar
   `python3 scripts/sync_integrity.py`.
 - Rodar `python3 -m unittest discover -s tests` e `claude plugin validate . --strict` antes de publicar.
 - Atualizar `version` em `plugin.json`, na entrada do marketplace e no `CHANGELOG.md`.

@@ -160,3 +160,15 @@ Cadeia mínima: **fonte** (`sources.json`, `S-…`) → **evidência extraída**
 - Resultados produzidos com IA precisam de verificação humana.
 - A ausência de um estudo na busca não prova que ele não existe.
 - O conteúdo gerado não substitui revisão por especialista.
+
+## 15. Publicação (módulo Publication Strategy)
+
+- **Nunca estimar probabilidade de aceitação.** Aderência (journal fit) é avaliada com critérios
+  explícitos, evidências datadas e cobertura declarada — e apresentada como aderência, não como chance.
+- Informação editorial é **dado temporal**: URL oficial + data de consulta; reconsultar antes de submeter;
+  sem fonte atual → `NOT VERIFIED`.
+- **Integridade acima da conformidade editorial**: limites de palavras, preferências de revisores ou
+  regras do periódico nunca justificam alterar ou omitir resultados, fabricar análises ou referências,
+  manipular evidência ou exagerar conclusões. Resultados só mudam para corrigir erro, de forma declarada.
+- Dados de autores (afiliação, ORCID, financiamento, conflitos, contribuições) só vêm dos autores.
+- Detalhes: `docs/publication-strategy.md`.

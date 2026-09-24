@@ -1,0 +1,147 @@
+{
+  "journal": "Journal of Test Fixtures (SINTÉTICO)",
+  "publisher": "Test Publisher (sintético)",
+  "synthetic": true,
+  "sources": [
+    {
+      "url": "fixture://journal-of-test-fixtures/guide-for-authors",
+      "accessed_on": "2026-09-24",
+      "origin": "official_site"
+    }
+  ],
+  "accessed_on": "2026-09-24",
+  "access_status": "ok",
+  "article_type": "review article",
+  "rules": [
+    {
+      "rule_id": "S-WORDS",
+      "category": "limite de palavras",
+      "requirement": "Máximo de 8000 palavras, excluindo referências",
+      "status": "VERIFIED",
+      "check": "max_words",
+      "excerpt": "[SINTÉTICO] Máximo de 8000 palavras, excluindo referências",
+      "source_url": "fixture://journal-of-test-fixtures/guide-for-authors",
+      "accessed_on": "2026-09-24",
+      "value": 8000,
+      "count_scope": "main_text_excluding_references"
+    },
+    {
+      "rule_id": "S-ABSTRACT",
+      "category": "abstract",
+      "requirement": "Abstract com no máximo 150 palavras",
+      "status": "VERIFIED",
+      "check": "max_abstract_words",
+      "excerpt": "[SINTÉTICO] Abstract com no máximo 150 palavras",
+      "source_url": "fixture://journal-of-test-fixtures/guide-for-authors",
+      "accessed_on": "2026-09-24",
+      "value": 150
+    },
+    {
+      "rule_id": "S-KEYWORDS",
+      "category": "keywords",
+      "requirement": "Entre 4 e 6 keywords",
+      "status": "VERIFIED",
+      "check": "keywords_range",
+      "excerpt": "[SINTÉTICO] Entre 4 e 6 keywords",
+      "source_url": "fixture://journal-of-test-fixtures/guide-for-authors",
+      "accessed_on": "2026-09-24",
+      "value": [
+        4,
+        6
+      ]
+    },
+    {
+      "rule_id": "S-TITLE",
+      "category": "título",
+      "requirement": "Título com no máximo 100 caracteres",
+      "status": "VERIFIED",
+      "check": "max_title_chars",
+      "excerpt": "[SINTÉTICO] Título com no máximo 100 caracteres",
+      "source_url": "fixture://journal-of-test-fixtures/guide-for-authors",
+      "accessed_on": "2026-09-24",
+      "value": 100
+    },
+    {
+      "rule_id": "S-HIGHLIGHTS",
+      "category": "highlights",
+      "requirement": "3 a 5 highlights, até 85 caracteres cada",
+      "status": "VERIFIED",
+      "check": "highlights",
+      "excerpt": "[SINTÉTICO] 3 a 5 highlights, até 85 caracteres cada",
+      "source_url": "fixture://journal-of-test-fixtures/guide-for-authors",
+      "accessed_on": "2026-09-24",
+      "value": {
+        "required": true,
+        "min_items": 3,
+        "max_items": 5,
+        "max_chars_each": 85
+      },
+      "file_required": "highlights.md"
+    },
+    {
+      "rule_id": "S-DATA",
+      "category": "data availability",
+      "requirement": "Declaração de disponibilidade de dados obrigatória",
+      "status": "VERIFIED",
+      "check": "required_statement",
+      "excerpt": "[SINTÉTICO] Declaração de disponibilidade de dados obrigatória",
+      "source_url": "fixture://journal-of-test-fixtures/guide-for-authors",
+      "accessed_on": "2026-09-24",
+      "statement_kind": "data_availability"
+    },
+    {
+      "rule_id": "S-COI",
+      "category": "conflitos de interesse",
+      "requirement": "Declaração de conflitos de interesse obrigatória",
+      "status": "VERIFIED",
+      "check": "required_statement",
+      "excerpt": "[SINTÉTICO] Declaração de conflitos de interesse obrigatória",
+      "source_url": "fixture://journal-of-test-fixtures/guide-for-authors",
+      "accessed_on": "2026-09-24",
+      "statement_kind": "competing_interests"
+    },
+    {
+      "rule_id": "S-LIMITS",
+      "category": "seção de limitações",
+      "requirement": "Seção 'Limitations' obrigatória",
+      "status": "VERIFIED",
+      "check": "required_section",
+      "excerpt": "[SINTÉTICO] Seção 'Limitations' obrigatória",
+      "source_url": "fixture://journal-of-test-fixtures/guide-for-authors",
+      "accessed_on": "2026-09-24",
+      "section_pattern": "limitation"
+    },
+    {
+      "rule_id": "S-REFSTYLE",
+      "category": "estilo de referências",
+      "requirement": "Referências em APA 7",
+      "status": "VERIFIED",
+      "check": "manual",
+      "excerpt": "[SINTÉTICO] Referências em APA 7",
+      "source_url": "fixture://journal-of-test-fixtures/guide-for-authors",
+      "accessed_on": "2026-09-24"
+    },
+    {
+      "rule_id": "S-FIG",
+      "category": "figuras",
+      "requirement": "No máximo 6 figuras",
+      "status": "VERIFIED",
+      "check": "max_figures",
+      "excerpt": "[SINTÉTICO] No máximo 6 figuras",
+      "source_url": "fixture://journal-of-test-fixtures/guide-for-authors",
+      "accessed_on": "2026-09-24",
+      "value": 6
+    },
+    {
+      "rule_id": "S-SHORT",
+      "category": "short communication",
+      "requirement": "Regras de short communication",
+      "status": "VERIFIED",
+      "check": "manual",
+      "excerpt": "[SINTÉTICO] Regras de short communication",
+      "source_url": "fixture://journal-of-test-fixtures/guide-for-authors",
+      "accessed_on": "2026-09-24",
+      "applicable": false
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "journal": "Utilities Policy",
+  "publisher": "Elsevier BV (a confirmar)",
+  "issn": "NOT VERIFIED",
+  "sources": [
+    {
+      "url": "https://www.sciencedirect.com/journal/utilities-policy/publish/guide-for-authors",
+      "accessed_on": "2026-09-24",
+      "guideline_version": "",
+      "origin": "official_site"
+    }
+  ],
+  "accessed_on": "2026-09-24",
+  "access_status": "blocked",
+  "guideline_version": "",
+  "article_type": "research article (a confirmar)",
+  "rules": [
+    {
+      "rule_id": "R-TYPES",
+      "category": "tipos de artigo",
+      "requirement": "NOT VERIFIED — guia oficial inacessível; preencher com trecho literal do guide for authors",
+      "status": "NOT_VERIFIED",
+      "check": "manual"
+    },
+    {
+      "rule_id": "R-WORDS",
+      "category": "limite de palavras",
+      "requirement": "NOT VERIFIED — guia oficial inacessível; preencher com trecho literal do guide for authors",
+      "status": "NOT_VERIFIED",
+      "check": "max_words"
+    },
+    {
+      "rule_id": "R-ABSTRACT",
+      "category": "limite do abstract",
+      "requirement": "NOT VERIFIED — guia oficial inacessível; preencher com trecho literal do guide for authors",
+      "status": "NOT_VERIFIED",
+      "check": "max_abstract_words"
+    },
+    {
+      "rule_id": "R-KEYWORDS",
+      "category": "keywords",
+      "requirement": "NOT VERIFIED — guia oficial inacessível; preencher com trecho literal do guide for authors",
+      "status": "NOT_VERIFIED",
+      "check": "keywords_range"
+    },
+    {
+      "rule_id": "R-HIGHLIGHTS",
+      "category": "highlights",
+      "requirement": "NOT VERIFIED — guia oficial inacessível; preencher com trecho literal do guide for authors",
+      "status": "NOT_VERIFIED",
+      "check": "highlights",
+      "file_required": "highlights.md"
+    },
+    {
+      "rule_id": "R-GA",
+      "category": "graphical abstract",
+      "requirement": "NOT VERIFIED — guia oficial inacessível; preencher com trecho literal do guide for authors",
+      "status": "NOT_VERIFIED",
+      "check": "manual"
+    },
+    {
+      "rule_id": "R-REFSTYLE",
+      "category": "estilo de referências",
+      "requirement": "NOT VERIFIED — guia oficial inacessível; preencher com trecho literal do guide for authors",
+      "status": "NOT_VERIFIED",
+      "check": "manual"
+    },
+    {
+      "rule_id": "R-BLIND",
+      "category": "tipo de peer review / anonimização",
+      "requirement": "NOT VERIFIED — guia oficial inacessível; preencher com trecho literal do guide for authors",
+      "status": "NOT_VERIFIED",
+      "check": "manual"
+    },
+    {
+      "rule_id": "R-DATA",
+      "category": "data availability statement",
+      "requirement": "NOT VERIFIED — guia oficial inacessível; preencher com trecho literal do guide for authors",
+      "status": "NOT_VERIFIED",
+      "check": "required_statement",
+      "statement_kind": "data_availability"
+    },
+    {
+      "rule_id": "R-FUNDING",
+      "category": "funding",
+      "requirement": "NOT VERIFIED — guia oficial inacessível; preencher com trecho literal do guide for authors",
+      "status": "NOT_VERIFIED",
+      "check": "required_statement",
+      "statement_kind": "funding"
+    },
+    {
+      "rule_id": "R-COI",
+      "category": "competing interests",
+      "requirement": "NOT VERIFIED — guia oficial inacessível; preencher com trecho literal do guide for authors",
+      "status": "NOT_VERIFIED",
+      "check": "required_statement",
+      "statement_kind": "competing_interests"
+    },
+    {
+      "rule_id": "R-CREDIT",
+      "category": "CRediT",
+      "requirement": "NOT VERIFIED — guia oficial inacessível; preencher com trecho literal do guide for authors",
+      "status": "NOT_VERIFIED",
+      "check": "required_statement",
+      "statement_kind": "credit"
+    },
+    {
+      "rule_id": "R-AI",
+      "category": "declaração de uso de IA generativa",
+      "requirement": "NOT VERIFIED — guia oficial inacessível; preencher com trecho literal do guide for authors",
+      "status": "NOT_VERIFIED",
+      "check": "required_statement",
+      "statement_kind": "ai_use"
+    },
+    {
+      "rule_id": "R-COVER",
+      "category": "cover letter",
+      "requirement": "NOT VERIFIED — guia oficial inacessível; preencher com trecho literal do guide for authors",
+      "status": "NOT_VERIFIED",
+      "check": "manual",
+      "file_required": "cover-letter.md"
+    },
+    {
+      "rule_id": "R-TITLEPAGE",
+      "category": "title page",
+      "requirement": "NOT VERIFIED — guia oficial inacessível; preencher com trecho literal do guide for authors",
+      "status": "NOT_VERIFIED",
+      "check": "manual",
+      "file_required": "title-page.md"
+    },
+    {
+      "rule_id": "R-REVIEWERS",
+      "category": "suggested reviewers",
+      "requirement": "NOT VERIFIED — guia oficial inacessível; preencher com trecho literal do guide for authors",
+      "status": "NOT_VERIFIED",
+      "check": "manual"
+    },
+    {
+      "rule_id": "R-APC",
+      "category": "APC / open access",
+      "requirement": "NOT VERIFIED — guia oficial inacessível; preencher com trecho literal do guide for authors",
+      "status": "NOT_VERIFIED",
+      "check": "manual"
+    }
+  ]
+}

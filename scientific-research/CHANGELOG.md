@@ -3,6 +3,35 @@
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/); versões seguem
 [SemVer](https://semver.org/lang/pt-BR/).
 
+## [0.2.0] - 2026-09-24
+
+### Adicionado — módulo Publication Strategy
+- Módulo funcionalmente separado em `modules/publication-strategy/` (skills, schemas, templates,
+  `pubtool.py`), carregado pelo mesmo manifesto (`"skills": ["./skills", "./modules/publication-strategy/skills"]`)
+  e compartilhando projeto, manuscrito e Evidence Ledger.
+- 12 skills: `journal-search`, `journal-fit-analysis`, `journal-recent-content-analysis`,
+  `journal-due-diligence`, `journal-requirements`, `manuscript-compliance`, `publication-strategy`,
+  `submission-preparation`, `cover-letter`, `peer-review-response`, `resubmission-strategy`,
+  `pre-submission-audit` (workflow).
+- Subagente `publication-strategist`.
+- Regras de integridade editorial (sem probabilidade de aceitação; dados de periódicos com URL e data;
+  "predatório" nunca por ausência de uma indexação; regras editoriais nunca justificam alterar resultados)
+  sincronizadas por `scripts/sync_integrity.py`.
+- Journal Fit Report padronizado e índice de aderência transparente (fórmula, pesos, cobertura) — não é probabilidade.
+- Target Journal Mode (`research/publication/target-journal.json`) com limites de integridade.
+- `pubtool.py`: perfil do manuscrito, venues, validação por schema, fit report, comparação, compliance
+  automático (COMPLIANT / ACTION REQUIRED / NOT APPLICABLE / UNABLE TO VERIFY), checklist, frescor das
+  regras, lint de linguagem (probabilidade/garantia de aceitação, "primeiro a", elogios genéricos), carta de
+  resposta a revisores e auditoria pré-submissão (READY TO SUBMIT / ACTION REQUIRED).
+- 9 JSON Schemas e 12 templates do módulo; `docs/publication-strategy.md`.
+- Exemplo 4 (estratégia de publicação completa com dados reais do Scite; requisitos oficiais inacessíveis
+  marcados NOT VERIFIED; requisitos sintéticos rotulados para demonstrar o compliance; pareceres fictícios rotulados).
+- Testes do módulo (`tests/test_publication.py`) e novos casos de eval.
+
+### Alterado
+- Workflow principal (`research-project`) estendido até Submission, Peer Review Response e Publication/Resubmission.
+- `srtool.py`: suporte a diretórios de schema de módulos.
+
 ## [0.1.0] - 2026-09-24
 
 ### Adicionado

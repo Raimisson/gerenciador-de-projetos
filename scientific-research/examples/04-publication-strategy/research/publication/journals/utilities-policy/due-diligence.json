@@ -1,0 +1,82 @@
+{
+  "journal": "Utilities Policy",
+  "issn": "NOT VERIFIED",
+  "checked_on": "2026-09-24",
+  "framework": "Think. Check. Submit. (thinkchecksubmit.org) como roteiro; site inacessível no ambiente de geração",
+  "items": {
+    "publisher": {
+      "status": "CONFIRMED",
+      "value": "Elsevier BV",
+      "evidence_url": "https://doi.org/10.1016/j.jup.2022.101416",
+      "checked_on": "2026-09-24",
+      "note": "campo publisher dos metadados Scite de 6 artigos do periódico; confirmar no site oficial"
+    },
+    "issn": {
+      "status": "NOT_VERIFIED",
+      "note": "fonte oficial inacessível no ambiente de geração; verificar em: portal.issn.org"
+    },
+    "peer_review": {
+      "status": "NOT_VERIFIED",
+      "note": "fonte oficial inacessível no ambiente de geração; verificar em: site do periódico"
+    },
+    "editorial_board": {
+      "status": "NOT_VERIFIED",
+      "note": "fonte oficial inacessível no ambiente de geração; verificar em: site do periódico"
+    },
+    "crossref_doi": {
+      "status": "NOT_VERIFIED",
+      "note": "fonte oficial inacessível no ambiente de geração; verificar em: resolução de DOIs em doi.org"
+    },
+    "doaj": {
+      "status": "NOT_VERIFIED",
+      "note": "fonte oficial inacessível no ambiente de geração; verificar em: doaj.org (se OA integral)"
+    },
+    "cope": {
+      "status": "NOT_VERIFIED",
+      "note": "fonte oficial inacessível no ambiente de geração; verificar em: publicationethics.org"
+    },
+    "scielo": {
+      "status": "NOT_APPLICABLE",
+      "note": "periódico internacional não latino-americano"
+    },
+    "scopus": {
+      "status": "NOT_VERIFIED",
+      "note": "fonte oficial inacessível no ambiente de geração; verificar em: lista de títulos Scopus"
+    },
+    "web_of_science": {
+      "status": "NOT_VERIFIED",
+      "note": "fonte oficial inacessível no ambiente de geração; verificar em: Master Journal List (Clarivate)"
+    },
+    "redalyc": {
+      "status": "NOT_APPLICABLE",
+      "note": "idem"
+    },
+    "latindex": {
+      "status": "NOT_APPLICABLE",
+      "note": "idem"
+    },
+    "archiving": {
+      "status": "NOT_VERIFIED",
+      "note": "fonte oficial inacessível no ambiente de geração; verificar em: Keepers Registry / site"
+    },
+    "apc": {
+      "status": "NOT_VERIFIED",
+      "note": "fonte oficial inacessível no ambiente de geração; verificar em: site do periódico"
+    },
+    "copyright_license": {
+      "status": "NOT_VERIFIED",
+      "note": "fonte oficial inacessível no ambiente de geração; verificar em: site do periódico"
+    },
+    "open_access_policy": {
+      "status": "NOT_VERIFIED",
+      "note": "fonte oficial inacessível no ambiente de geração; verificar em: site / Open Policy Finder (Sherpa)"
+    },
+    "ethics_policies": {
+      "status": "NOT_VERIFIED",
+      "note": "fonte oficial inacessível no ambiente de geração; verificar em: site do periódico"
+    }
+  },
+  "alerts": [],
+  "conclusion": "NOT_ASSESSED",
+  "conclusion_note": "A maioria dos itens não pôde ser verificada. Ausência de verificação não é evidência de problema; nenhum alerta foi registrado. Completar antes de decidir."
+}

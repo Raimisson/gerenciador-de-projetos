@@ -1,0 +1,65 @@
+{
+  "journal": "Energy Policy",
+  "window": {
+    "from_year": 2021,
+    "to_year": 2026
+  },
+  "search_log": [
+    {
+      "tool": "Scite search_literature",
+      "query": "decoupling AND (utility OR utilities) AND (\"energy efficiency\" OR \"demand-side management\")",
+      "filters": "journal=Energy Policy; date_from=2021; limit=5",
+      "date": "2026-09-24",
+      "returned": 7,
+      "discarded_other_journal": 2,
+      "notes": "O filtro de periódico do Scite retornou 2 artigos de outros periódicos (Economics of Energy and Environmental Policy; Frontiers in Sustainable Energy Policy), descartados."
+    }
+  ],
+  "articles": [
+    {
+      "title": "What can the EU do to address the high natural gas prices?",
+      "authors": [
+        "Kotek, Péter",
+        "Selei, Adrienn",
+        "Takácsné Tóth, Borbála"
+      ],
+      "year": 2023,
+      "doi": "10.1016/j.enpol.2022.113312",
+      "url": "https://doi.org/10.1016/j.enpol.2022.113312",
+      "method": "NR — não reportado",
+      "relation": "not_comparable",
+      "relation_note": "preços de gás na UE",
+      "retrieved_via": "Scite MCP search_literature (índice Scite), 2026-09-24"
+    },
+    {
+      "title": "Embodied energy use of China's megacities: A comparative study of Beijing and Shanghai",
+      "authors": [
+        "Guo, Shan",
+        "Li, Yilin",
+        "He, Ping"
+      ],
+      "year": 2021,
+      "doi": "10.1016/j.enpol.2021.112243",
+      "url": "https://doi.org/10.1016/j.enpol.2021.112243",
+      "method": "NR — não reportado",
+      "relation": "not_comparable",
+      "relation_note": "energia incorporada; tema diferente",
+      "retrieved_via": "Scite MCP search_literature (índice Scite), 2026-09-24"
+    },
+    {
+      "title": "Modelling U.S. gasoline demand: A structural time series analysis with asymmetric price responses",
+      "authors": [
+        "Dilaver, Zafer",
+        "Hunt, Lester C."
+      ],
+      "year": 2021,
+      "doi": "10.1016/j.enpol.2021.112386",
+      "url": "https://doi.org/10.1016/j.enpol.2021.112386",
+      "method": "structural time series (segundo o título)",
+      "relation": "not_comparable",
+      "relation_note": "demanda de gasolina",
+      "retrieved_via": "Scite MCP search_literature (índice Scite), 2026-09-24"
+    }
+  ],
+  "summary": "Nenhum artigo comparável entre os 3 do periódico retornados na janela 2021–2026. Isso NÃO prova ausência no periódico (busca limitada a 5 registros). Datta (2019) é comparável, mas fora da janela."
+}

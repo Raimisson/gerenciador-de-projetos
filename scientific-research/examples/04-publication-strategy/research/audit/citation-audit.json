@@ -1,0 +1,77 @@
+{
+  "manuscript": "research/manuscript/manuscript.md",
+  "audited_on": "2026-09-24",
+  "coverage": "Frases empíricas de Methods, Results e Discussion.",
+  "claims": [
+    {
+      "claim_id": "C1",
+      "sentence": "The search returned 29849 and 806 hits ... forward citation chasing added 9 records [E-0006].",
+      "location": "P-M1",
+      "cited_refs": [
+        "S-0006"
+      ],
+      "reference_existence": "VERIFIED",
+      "classification": "SUPORTADA",
+      "issues": [],
+      "justification": "Contagens idênticas ao search-log.json validado.",
+      "support_excerpt": "B1 results_found 29849, records_retrieved 10; B2 results_found 806, records_retrieved 6; C1 9 citing records",
+      "support_location": "search-log.json"
+    },
+    {
+      "claim_id": "C2",
+      "sentence": "Of 25 records identified, 3 were duplicates, 22 were screened and 17 were excluded ... leaving no formally included study [E-0006].",
+      "location": "P-R1",
+      "cited_refs": [
+        "S-0006"
+      ],
+      "reference_existence": "VERIFIED",
+      "classification": "SUPORTADA",
+      "issues": [],
+      "justification": "Aritmética conferida por srtool prisma.",
+      "support_excerpt": "screening: 25 identified, 3 duplicates, 22 screened, 17 excluded, 4 full text not retrieved, 1 assessed, 0 included",
+      "support_location": "search-log.json (screening)"
+    },
+    {
+      "claim_id": "C3",
+      "sentence": "According to its abstract, Kahn-Lang (2016) reports that decoupling is historically associated with larger DSM spending and higher investment efficacy [E-0001].",
+      "location": "P-R2",
+      "cited_refs": [
+        "S-0001"
+      ],
+      "reference_existence": "PARTIALLY_VERIFIED",
+      "classification": "SUPORTADA",
+      "issues": [],
+      "justification": "A frase restringe o alcance ao abstract e usa linguagem de associação.",
+      "support_excerpt": "decoupling is historically associated with significant residential electricity consumption reductions, augmented DSM spending levels, and increased DSM investment efficacy",
+      "support_location": "Abstract"
+    },
+    {
+      "claim_id": "C4",
+      "sentence": "Cappers et al. (2020) document ... average annual decoupling rate adjustments of 0.4 percent of retail rates, with a median of 0.2 percent [E-0002; E-0003].",
+      "location": "P-R3",
+      "cited_refs": [
+        "S-0002"
+      ],
+      "reference_existence": "PARTIALLY_VERIFIED",
+      "classification": "SUPORTADA",
+      "issues": [],
+      "justification": "Valores, amostra (21 utilidades, 11 estados + DC) e período conferem com o texto integral.",
+      "support_excerpt": "On average, decoupling mechanisms across our sample resulted in rate adjustments of 0.4 percent of all-in average retail rates, with a median annual rate adjustment of 0.2 percent",
+      "support_location": "Results and Discussion; Table 2; Data"
+    },
+    {
+      "claim_id": "C5",
+      "sentence": "The accessible evidence does not allow an estimate of how much decoupling changes utility efficiency programs [E-0005].",
+      "location": "P-D1",
+      "cited_refs": [
+        "S-0001"
+      ],
+      "reference_existence": "PARTIALLY_VERIFIED",
+      "classification": "SUPORTADA",
+      "issues": [],
+      "justification": "Inferência analítica registrada no ledger (analytic_inference) e formulada como tal no texto.",
+      "support_excerpt": "[INFERÊNCIA] Derivada de E-0001 e do status de acesso de S-0003, S-0004 e S-0005",
+      "support_location": "Evidence Ledger E-0005"
+    }
+  ]
+}

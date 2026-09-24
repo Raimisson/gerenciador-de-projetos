@@ -1,0 +1,63 @@
+{
+  "journal": "Utilities Policy (demonstração com pareceres fictícios)",
+  "manuscript_id": "DEMO-0001",
+  "round": 1,
+  "decision_letter_date": "fictícia",
+  "decision": "major revision (fictícia)",
+  "comments": [
+    {
+      "id": "R1.1",
+      "reviewer": "Reviewer 1",
+      "comment": "The conclusions are too cautious. The authors should state clearly that decoupling increases energy efficiency spending, since this is well established.",
+      "interpretation": "O revisor pede afirmação causal forte sobre o efeito do decoupling no gasto em eficiência energética.",
+      "decision": "NOT_ACCEPTED",
+      "action": "Mantida a formulação de associação; acrescentada frase explicitando por que a evidência acessada não sustenta afirmação causal.",
+      "manuscript_change": "Nova frase na Discussão sobre o desenho do estudo de Kahn-Lang (2016) não ter podido ser avaliado.",
+      "location": "Seção 4, parágrafo P-D1",
+      "response": "We thank the reviewer for this comment. We agree that the question is central for regulators. However, the only study in our evidence base that reports on this relationship describes it, in its abstract, as an association, and its empirical design could not be assessed without the full text. Stating a causal effect would therefore go beyond the evidence we were able to verify. We have made this reasoning explicit in the Discussion.",
+      "justification": "A evidência disponível (E-0001) é de nível abstract e usa linguagem de associação; afirmar efeito causal exagera a conclusão. Regras editoriais e pedidos de revisores não justificam exagero de conclusão.",
+      "results_changed": false,
+      "evidence_ids": [
+        "E-0001",
+        "E-0005"
+      ]
+    },
+    {
+      "id": "R1.2",
+      "reviewer": "Reviewer 1",
+      "comment": "Please read and discuss von Loessl and Wetzel (2022) and Datta (2019), which appear to be directly relevant.",
+      "interpretation": "Incorporar dois estudos identificados por citation chasing cujo texto integral não havia sido lido.",
+      "decision": "ACCEPTED",
+      "action": "Obter os textos integrais, extrair evidências (evidence-extraction/quantitative-evidence), registrar no ledger e revisar Results/Discussion com base no que os estudos efetivamente reportam.",
+      "manuscript_change": "[PENDENTE: depende da leitura dos textos integrais — não antecipar resultados]",
+      "location": "Seções 3 e 4 (a definir)",
+      "response": "We agree and thank the reviewer. We have obtained and reviewed both studies and now report their designs and results in Sections 3 and 4. [PENDING: complete after full-text extraction; do not anticipate their findings]",
+      "results_changed": false
+    },
+    {
+      "id": "R2.1",
+      "reviewer": "Reviewer 2",
+      "comment": "The search relies on a single index. Please justify this choice or extend the search.",
+      "interpretation": "Limitação de cobertura da busca.",
+      "decision": "PARTIALLY_ACCEPTED",
+      "action": "Estender a busca a bases adicionais disponíveis e atualizar o log; manter na seção de limitações o que não puder ser acessado.",
+      "manuscript_change": "Methods e Limitations atualizados; search log com novas buscas.",
+      "location": "Seções 2 e 5",
+      "response": "We thank the reviewer. We have extended the search to additional sources that were accessible to us and documented all searches, including unsuccessful attempts, in the search log. Sources that could not be accessed are now listed explicitly as a limitation.",
+      "justification": "A extensão depende do acesso às bases; o que não for acessível será declarado como limitação, sem alegar cobertura que não houve.",
+      "results_changed": false
+    },
+    {
+      "id": "R2.2",
+      "reviewer": "Reviewer 2",
+      "comment": "The abstract should mention that no study could be formally included.",
+      "interpretation": "Transparência no abstract.",
+      "decision": "ACCEPTED",
+      "action": "Frase já presente; reforçada a clareza.",
+      "manuscript_change": "Abstract: 'none could be formally included because the full texts ... were not accessible'.",
+      "location": "Abstract",
+      "response": "We agree. The abstract now states explicitly that no study could be formally included and why.",
+      "results_changed": false
+    }
+  ]
+}

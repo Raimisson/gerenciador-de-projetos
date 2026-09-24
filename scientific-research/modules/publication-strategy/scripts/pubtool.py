@@ -120,7 +120,10 @@ class Manuscript:
     @property
     def abstract(self) -> str:
         h = self._find(r"^(abstract|resumo)\b")
-        return "\n".join(self.sections.get(h, [])).strip() if h else ""
+        if not h:
+            return ""
+        kw = re.compile(r"^\s*\**\s*(keywords|key words|palavras-chave)\s*\**\s*:", re.I)
+        return "\n".join(l for l in self.sections.get(h, []) if not kw.match(l)).strip()
 
     @property
     def keywords(self) -> list[str]:
@@ -358,12 +361,12 @@ def fit_index(fit: dict) -> dict:
                        "dimensões INSUFFICIENT_EVIDENCE excluídas e reportadas como cobertura"}
 
 
-def _nv(value) -> str:
+def _nv(value, short: bool = False) -> str:
     if value in (None, "", []):
         return NOT_VERIFIED
     if isinstance(value, dict):
         if value.get("status") in ("NOT_VERIFIED", NOT_VERIFIED):
-            return NOT_VERIFIED + (f" — {value['note']}" if value.get("note") else "")
+            return NOT_VERIFIED + (f" — {value['note']}" if value.get("note") and not short else "")
         parts = [str(value.get("value", ""))]
         if value.get("source"):
             parts.append(f"(fonte: {value['source']}")
@@ -423,10 +426,10 @@ def render_compare(fits: list[dict]) -> str:
         idx = fit_index(f)
         dims = [((f.get("dimensions") or {}).get(k) or {}).get("rating", "INSUFFICIENT_EVIDENCE") for k, _ in DIMENSIONS]
         dims = [d.replace("INSUFFICIENT_EVIDENCE", "INSUF.") for d in dims]
-        times = f"{_nv(f.get('review_time'))} / {_nv(f.get('publication_time'))}"
+        times = f"{_nv(f.get('review_time'), True)} / {_nv(f.get('publication_time'), True)}"
         rows.append((idx["index"] if idx["index"] is not None else -1,
                      f"| {f.get('journal')} | {idx['index'] if idx['index'] is not None else NOT_VERIFIED} ({idx['assessed']}/7) | "
-                     + " | ".join(dims) + f" | {_nv(f.get('open_access'))} | {_nv(f.get('apc'))} | {_nv(f.get('indexing'))} | {times} | "
+                     + " | ".join(dims) + f" | {_nv(f.get('open_access'), True)} | {_nv(f.get('apc'), True)} | {_nv(f.get('indexing'), True)} | {times} | "
                      f"{_nv(f.get('due_diligence_conclusion'))} | {f.get('date_verified')} |"))
     L += [r for _, r in sorted(rows, key=lambda x: -x[0])]
     L += ["", "_Ordenado pelo índice de aderência; a decisão final considera também restrições do autor (APC, OA, indexação exigida, prazo)._"]
@@ -770,8 +773,8 @@ def presubmit(research: pathlib.Path, slug: str | None, max_age: int) -> tuple[s
             st = (s.get("metadata_verification") or {}).get("status")
             if st == "CONTRADICTED":
                 pend.append(f"{s['source_id']}: metadados CONTRADICTED (referência possivelmente inventada/errada).")
-            elif st in ("UNVERIFIED", "NOT_REPORTED"):
-                pend.append(f"{s['source_id']}: metadados {st} — verificar DOI/metadados.")
+            elif st in ("UNVERIFIED", "NOT_REPORTED", "PARTIALLY_VERIFIED"):
+                pend.append(f"{s['source_id']}: metadados {st} — conferir DOI/metadados em fonte autoritativa (bibliography-audit / srtool refs-check).")
         obs.append(f"{len(data.get('sources', []))} fonte(s) no registro")
     steps.append(("4. Reference audit", pend, obs))
 
@@ -935,6 +938,8 @@ def main(argv=None) -> int:
         items = check_compliance(load_manuscript(a.manuscript), req, manual)
         pub_dir = pathlib.Path(a.requirements).resolve().parent.parent.parent
         tgt = read_target(pub_dir) if (pub_dir / "target-journal.json").exists() else None
+        if tgt and tgt.get("slug") != pathlib.Path(a.requirements).resolve().parent.name:
+            tgt = None  # modo ativo para outro periódico
         report = {"journal": req.get("journal"), "manuscript": a.manuscript, "requirements_file": a.requirements,
                   "generated_on": today(), "target_journal_mode": bool(tgt), "items": items}
         md = render_compliance(items, req.get("journal", ""), bool(tgt))

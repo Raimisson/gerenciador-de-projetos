@@ -1,0 +1,93 @@
+{
+  "journal": "Energy Policy",
+  "slug": "energy-policy",
+  "publisher": "Elsevier BV (metadados Scite; site não consultado)",
+  "aims_scope": {
+    "status": "NOT_VERIFIED"
+  },
+  "dimensions": {
+    "topic_fit": {
+      "rating": "MODERATE",
+      "justification": "Publicou Datta (2019) sobre decoupling e DSM no setor elétrico dos EUA; na janela 2021–2026 a busca limitada não recuperou comparáveis.",
+      "evidence": [
+        {
+          "source": "Scite MCP (metadados por DOI), 2026-09-24",
+          "checked_on": "2026-09-24",
+          "doi": "10.1016/j.enpol.2019.05.005"
+        }
+      ]
+    },
+    "method_fit": {
+      "rating": "INSUFFICIENT_EVIDENCE",
+      "justification": "Métodos não verificados.",
+      "evidence": []
+    },
+    "contribution_fit": {
+      "rating": "INSUFFICIENT_EVIDENCE",
+      "justification": "Aims & scope não verificado.",
+      "evidence": []
+    },
+    "empirical_fit": {
+      "rating": "MODERATE",
+      "justification": "Precedente com evidência do setor elétrico dos EUA (Datta, 2019, pelo título).",
+      "evidence": [
+        {
+          "source": "Scite MCP (metadados por DOI), 2026-09-24",
+          "checked_on": "2026-09-24",
+          "doi": "10.1016/j.enpol.2019.05.005"
+        }
+      ]
+    },
+    "audience_fit": {
+      "rating": "INSUFFICIENT_EVIDENCE",
+      "justification": "Não verificado.",
+      "evidence": []
+    },
+    "recent_publication_fit": {
+      "rating": "INSUFFICIENT_EVIDENCE",
+      "justification": "Busca limitada (5 registros, 2 de outros periódicos) não recuperou comparáveis 2021–2026; ausência na busca não prova ausência no periódico.",
+      "evidence": []
+    },
+    "article_type_fit": {
+      "rating": "INSUFFICIENT_EVIDENCE",
+      "justification": "Tipos de artigo não verificados.",
+      "evidence": []
+    }
+  },
+  "open_access": {
+    "status": "NOT_VERIFIED",
+    "note": "site da editora inacessível no ambiente de geração"
+  },
+  "apc": {
+    "status": "NOT_VERIFIED",
+    "note": "site da editora inacessível no ambiente de geração"
+  },
+  "indexing": {
+    "status": "NOT_VERIFIED",
+    "note": "site da editora inacessível no ambiente de geração"
+  },
+  "review_time": {
+    "status": "NOT_VERIFIED",
+    "note": "site da editora inacessível no ambiente de geração"
+  },
+  "publication_time": {
+    "status": "NOT_VERIFIED",
+    "note": "site da editora inacessível no ambiente de geração"
+  },
+  "metrics": {
+    "status": "NOT_VERIFIED",
+    "note": "site da editora inacessível no ambiente de geração"
+  },
+  "key_requirements": [
+    "NOT VERIFIED"
+  ],
+  "similar_articles": [
+    "10.1016/j.enpol.2019.05.005"
+  ],
+  "risks": [
+    "Comparável mais próximo fora da janela de 5 anos; aderência recente não demonstrada.",
+    "Mesmo risco de tipo de contribuição (revisão rápida) a verificar."
+  ],
+  "due_diligence_conclusion": "NOT_ASSESSED",
+  "date_verified": "2026-09-24"
+}

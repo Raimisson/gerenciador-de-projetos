@@ -33,7 +33,7 @@ EXPECTED_SKILLS = {
     "citation-audit", "bibliography-audit", "replication-check", "manuscript-review",
 }
 EXPECTED_AGENTS = {"literature-researcher", "methodology-reviewer", "citation-auditor", "scientific-editor",
-                   "quantitative-analyst", "regulatory-researcher"}
+                   "quantitative-analyst", "regulatory-researcher", "publication-strategist"}
 KNOWN_TOOLS = {"Read", "Write", "Edit", "MultiEdit", "NotebookEdit", "Grep", "Glob", "Bash", "WebSearch", "WebFetch",
                "Agent", "Skill", "TodoWrite"}
 INTEGRITY_PHRASES = [
@@ -140,7 +140,7 @@ class TestManifest(unittest.TestCase):
         self.assertRegex(self.manifest["name"], r"^[a-z0-9]+(-[a-z0-9]+)*$")
         self.assertEqual(self.manifest["name"], "scientific-research")
         self.assertRegex(self.manifest["version"], r"^\d+\.\d+\.\d+$")
-        self.assertEqual(self.manifest["version"], "0.1.0")
+        self.assertEqual(self.manifest["version"], "0.2.0")
 
     def test_04b_changelog_matches_version(self):
         self.assertIn(f"[{self.manifest['version']}]", (ROOT / "CHANGELOG.md").read_text(encoding="utf-8"))
@@ -183,7 +183,7 @@ class TestLinksAndConfig(unittest.TestCase):
 
     def test_06b_plugin_root_references_exist(self):
         bad = []
-        for f in list((ROOT / "skills").rglob("*.md")) + list((ROOT / "agents").glob("*.md")):
+        for f in list((ROOT / "skills").rglob("*.md")) + list((ROOT / "modules").rglob("SKILL.md")) + list((ROOT / "agents").glob("*.md")):
             for ref in re.findall(r"\$\{CLAUDE_PLUGIN_ROOT\}/([\w./-]+)", f.read_text(encoding="utf-8")):
                 if not (ROOT / ref.rstrip(".")).exists():
                     bad.append(f"{f.relative_to(ROOT)} → {ref}")
@@ -314,7 +314,7 @@ class TestNoFabrication(unittest.TestCase):
     def test_09_integrity_block_synced_everywhere(self):
         r = run([sys.executable, str(ROOT / "scripts" / "sync_integrity.py"), "--check"])
         self.assertEqual(r.returncode, 0, r.stderr)
-        for f in list((ROOT / "skills").glob("*/SKILL.md")) + list((ROOT / "agents").glob("*.md")):
+        for f in list((ROOT / "skills").glob("*/SKILL.md")) + list((ROOT / "modules").glob("*/skills/*/SKILL.md")) + list((ROOT / "agents").glob("*.md")):
             text = f.read_text(encoding="utf-8")
             for phrase in INTEGRITY_PHRASES:
                 self.assertIn(phrase, text, f"{f.relative_to(ROOT)} sem a frase obrigatória: {phrase}")

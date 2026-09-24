@@ -93,3 +93,15 @@ scientific-research/
 - Compatibilidade Cowork/claude.ai: skills e agentes são portáveis; hooks e scripts dependem
   de execução local de `python3` e podem não estar disponíveis em todos os ambientes.
   As skills funcionam sem eles (os scripts são aceleradores, não requisitos).
+
+## 6. Adendo v0.2.0 — módulo Publication Strategy
+
+| Decisão | Motivo |
+|---|---|
+| Módulo em `modules/publication-strategy/` dentro do mesmo plugin | separação funcional sem perder contexto compartilhado (projeto `research/`, manuscrito, Evidence Ledger) — não é um plugin independente |
+| Skills do módulo carregadas por `"skills": ["./skills", "./modules/publication-strategy/skills"]` | testado com `claude plugin validate --strict`, instalação real e `plugin details` |
+| Agente `publication-strategist` em `agents/` | o campo `agents` substitui o diretório padrão; manter um único diretório evita ambiguidade |
+| `pubtool.py` separado, importando `srtool.py` | reutiliza validador e varredura do núcleo; nenhuma dependência externa |
+| Índice de aderência com cobertura, sem probabilidade | exigência do princípio fundamental; validadores e lint bloqueiam probabilidades |
+| Target Journal Mode como arquivo de estado | simples, auditável e legível por skills, scripts e humanos |
+| Exemplo com requisitos reais `NOT VERIFIED` + requisitos sintéticos rotulados | sites de editoras bloqueados no ambiente de construção; nada foi preenchido de memória |

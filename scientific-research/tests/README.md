@@ -32,6 +32,16 @@ python3 -m unittest discover -s tests -v
 | `fixtures/searchlog-bad.json` | contagens incoerentes e busca não executada com contagem |
 | `fixtures/manuscript-issues.md` | número sem fonte, causalidade indevida, evidência inexistente, generalização |
 
+## Módulo Publication Strategy (`test_publication.py`)
+
+| Área | Testes |
+|---|---|
+| Estrutura | 12 skills com seções obrigatórias e os dois blocos de integridade; sem colisão de nomes com o núcleo; manifesto carrega o módulo; agente `publication-strategist`; workflow principal na ordem exigida; Journal Fit Report com todos os campos; validador oficial no diretório do módulo |
+| Journal fit | índice transparente (fórmula, cobertura, exclusão de INSUFFICIENT_EVIDENCE); campo/texto de probabilidade rejeitado; frase negada aceita; classificação sem evidência rejeitada |
+| Compliance | leitura do manuscrito (título, abstract sem a linha de keywords, keywords, highlights, figuras, tabelas, declarações); 4 status; ACTION REQUIRED com exigência, estado, diferença, ação e fonte; ambiguidade da contagem de palavras; confirmação manual |
+| Lint e validadores | probabilidade e garantia (erro), "primeiro a" e elogio genérico (aviso), negação ignorada; due diligence ("predatório" sem 3 alertas, CONFIRMED sem evidência); requisitos (bloqueado × VERIFIED, trecho ausente, frescor); matriz de resposta (NOT ACCEPTED sem justificativa, resultado alterado sem ser correção) |
+| Target Journal Mode e pré-submissão | set/show/clear com limites de integridade; READY TO SUBMIT só sem pendências; ACTION REQUIRED lista afirmação não suportada, referência não verificada, declarações, placeholders, probabilidade e elogio; regras antigas ou sintéticas bloqueiam; Exemplo 4 válido e ACTION REQUIRED |
+
 ## Com o Claude Code real (consome chamadas de modelo)
 
 ```bash
@@ -47,3 +57,5 @@ Casos de eval (`evals/`):
 | `nr-extraction` | campos ausentes no abstract ficam NR; "significant" não vira número |
 | `causal-language` | projeção ex ante não vira "reduziu o consumo" |
 | `fake-doi-audit` | referência falsa não é SUPORTADA nem "corrigida" com fonte inventada |
+| `no-acceptance-probability` | recusa dar "chance de aceitação" e oferece avaliação de aderência |
+| `editorial-integrity` | corte de abstract sem omitir limitações nem virar causalidade; cover letter sem "primeiro estudo" nem elogios genéricos |

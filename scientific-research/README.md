@@ -5,7 +5,7 @@ evidências e regras estritas contra fabricação. Pensado para pesquisa aplicad
 políticas públicas, economia, energia, infraestrutura, saneamento, avaliação de políticas e
 programas, AIR/ARR e eficiência energética** — mas genérico o bastante para outras áreas.
 
-Versão **0.1.0** · Licença MIT · Formato oficial de plugins do Claude Code (verificado em 24/09/2026).
+Versão **0.2.0** · Licença MIT · Formato oficial de plugins do Claude Code (verificado em 24/09/2026).
 
 ---
 
@@ -14,10 +14,17 @@ Versão **0.1.0** · Licença MIT · Formato oficial de plugins do Claude Code (
 O plugin cobre o ciclo completo de um artigo, e cada etapa pode ser usada isoladamente:
 
 ```
-Pergunta → Protocolo → Busca (acadêmica, cinzenta, regulatória, citation chasing) → Triagem →
-Extração → Evidence Ledger → Matriz de evidências → Avaliação metodológica → Síntese →
-Redação → Auditoria de citações e referências → Auditoria final do manuscrito
+Research Question → Protocol → Literature Search → Screening → Evidence Extraction → Evidence Ledger
+→ Evidence Matrix → Methodology Review → Scientific Writing → Citation Audit → Manuscript Review
+→ Journal Search → Journal Fit Analysis → Journal Selection → Target Journal Mode
+→ Manuscript Compliance → Pre-Submission Audit → Submission → Peer Review Response
+→ Publication / Resubmission
 ```
+
+A parte final (a partir de Journal Search) é o **módulo Publication Strategy**
+(`modules/publication-strategy/`): funcionalmente separado, mas dentro do mesmo plugin, compartilhando
+o projeto, o manuscrito e o Evidence Ledger. Ele **nunca estima probabilidade de aceitação** — produz
+avaliações de aderência (journal fit) com critérios, fontes e datas explícitos.
 
 O que o diferencia de "pedir ao Claude para escrever uma revisão":
 
@@ -138,6 +145,23 @@ Invocação: `/scientific-research:<skill>` ou linguagem natural (as skills são
 | `replication-check` | Dados, código, parâmetros, filtros, software, seeds |
 | `manuscript-review` | Auditoria final: coerência, números, tabelas/figuras, causalidade, limitações |
 
+### Skills do módulo Publication Strategy
+
+| Skill | Finalidade |
+|---|---|
+| `journal-search` | Periódicos candidatos a partir de várias fontes (literatura citada, artigos comparáveis recentes, citantes, diretórios, várias editoras) |
+| `journal-recent-content-analysis` | Artigos comparáveis dos últimos 3–5 anos no periódico, com DOI e relação com o manuscrito |
+| `journal-fit-analysis` | Aderência em 7 dimensões + índice transparente com cobertura (não é probabilidade) |
+| `journal-due-diligence` | Legitimidade e transparência (ISSN, peer review, indexações, COPE, DOAJ, APC, licenças, ética) |
+| `journal-requirements` | Regras atuais do guia oficial, com URL, data e versão |
+| `manuscript-compliance` | Manuscrito × regras: COMPLIANT / ACTION REQUIRED / NOT APPLICABLE / UNABLE TO VERIFY |
+| `publication-strategy` | Lista curta comparada, ordem sugerida, riscos, ativação do Target Journal Mode |
+| `submission-preparation` | Checklist e arquivos de submissão, sem inventar dados dos autores |
+| `cover-letter` | Carta específica ao periódico, sem elogios genéricos nem "primeiro" sem verificação |
+| `peer-review-response` | Matriz Comment → Interpretation → Action → Change → Location → Response |
+| `resubmission-strategy` | Diagnóstico da rejeição, reuso da pesquisa de periódicos, regras reconsultadas |
+| `pre-submission-audit` | Workflow final: READY TO SUBMIT ou ACTION REQUIRED |
+
 ## Agents
 
 | Agent | Finalidade |
@@ -148,6 +172,7 @@ Invocação: `/scientific-research:<skill>` ou linguagem natural (as skills são
 | `scientific-editor` | Redação acadêmica **sem acesso à web** — só usa o que está no ledger |
 | `quantitative-analyst` | Extração quantitativa de estudos complexos, comparabilidade de unidades, análise reproduzível |
 | `regulatory-researcher` | Levantamento normativo e regulatório em paralelo à busca acadêmica |
+| `publication-strategist` | Coordena a etapa de publicação reutilizando o Evidence Ledger |
 
 Subagentes são usados só quando há paralelismo real ou verificação independente; tarefas simples
 são executadas diretamente. `systematic-review-specialist` não foi criado por redundância com a
@@ -172,6 +197,15 @@ skill `systematic-review`.
 /scientific-research:regulatory-research ARR do programa de eficiência energética das distribuidoras --jurisdicao BR --setor energia
 ```
 
+**Estratégia de publicação e submissão**
+```text
+/scientific-research:journal-search research/manuscript/manuscript.md
+/scientific-research:journal-fit-analysis research/publication/journals/candidates.json
+/scientific-research:publication-strategy research/
+/scientific-research:pre-submission-audit research/ --journal <slug>
+/scientific-research:peer-review-response pareceres.md
+```
+
 **Auditoria de manuscrito**
 ```text
 /scientific-research:citation-audit manuscrito.md
@@ -191,6 +225,16 @@ python3 $S trace E-0003 --ledger research/ledger/evidence.jsonl --sources resear
 python3 $S format research/sources/sources.json --style abnt
 python3 $S prisma research/search/search-log.json
 python3 $S chase forward 10.xxxx/yyyy
+
+P=<caminho-do-plugin>/modules/publication-strategy/scripts/pubtool.py
+python3 $P init research
+python3 $P profile research/manuscript/manuscript.md --out research/publication/manuscript-profile.json
+python3 $P fit-report research/publication/journals/<slug>/fit.json
+python3 $P compare research/publication/journals/*/fit.json
+python3 $P target set research/publication --journal <slug>          # Target Journal Mode
+python3 $P check-compliance research/manuscript/manuscript.md research/publication/journals/<slug>/requirements.json
+python3 $P presubmit research --journal <slug>                        # READY TO SUBMIT | ACTION REQUIRED
+python3 $P lint research/publication/submission/<slug>/cover-letter.md
 ```
 
 ### Exemplos completos
@@ -200,6 +244,7 @@ python3 $S chase forward 10.xxxx/yyyy
 | [`examples/01-revenue-decoupling`](examples/01-revenue-decoupling/README.md) | Economia/regulação: busca, citation chasing, triagem, matriz, extração quantitativa |
 | [`examples/02-compulsory-energy-efficiency`](examples/02-compulsory-energy-efficiency/README.md) | Avaliação de política: ex ante × ex post, generalização, portão de meta-análise |
 | [`examples/03-manuscript-audit`](examples/03-manuscript-audit/README.md) | Auditoria de manuscrito com referência falsa e defeitos plantados |
+| [`examples/04-publication-strategy`](examples/04-publication-strategy/README.md) | Do manuscrito à submissão: candidatos, conteúdo recente, fit, due diligence, compliance, Target Journal Mode, auditoria pré-submissão, resposta a pareceres |
 
 Os exemplos foram produzidos com ferramentas reais (conector Scite) e documentam onde o acesso
 ao texto integral faltou — em vez de preencher as lacunas.
@@ -227,6 +272,16 @@ Regras anti-alucinação (documento canônico: [`docs/scientific-method.md`](doc
 9. **Dados brutos imutáveis**: hook pede confirmação antes de alterar `data/raw/`.
 10. **Zotero somente leitura** por padrão; escrita em bibliotecas exige intenção explícita (hook).
 
+Regras editoriais adicionais (módulo Publication Strategy — [`docs/publication-strategy.md`](docs/publication-strategy.md)):
+
+11. **Nunca inventar probabilidade de aceitação** ("80% de chance"): o índice de aderência é
+    transparente (critérios, pesos, fontes, cobertura) e não é probabilidade de publicação.
+12. Informação de periódico é **temporal**: URL oficial + data; reconsulta antes de submeter; senão `NOT VERIFIED`.
+13. Métricas (JIF, CiteScore, quartil) nunca substituem aderência; "predatório" nunca por ausência de uma indexação.
+14. **Target Journal Mode** prioriza as regras do periódico escolhido, mas regras editoriais nunca justificam
+    alterar/omitir resultados, fabricar análises ou referências, manipular evidência ou exagerar conclusões.
+15. Dados de autores nunca são inventados; "primeiro/inédito" só com verificação documentada.
+
 Essas regras estão replicadas em cada skill e agente (bloco sincronizado por
 `scripts/sync_integrity.py`) e reforçadas por hook de início de sessão.
 
@@ -234,7 +289,7 @@ Essas regras estão replicadas em cada skill e agente (bloco sincronizado por
 
 ```bash
 cd scientific-research
-python3 -m unittest discover -s tests -v     # 45 testes (estrutura, NR, DOI falso, não fabricação, hooks, offline)
+python3 -m unittest discover -s tests -v     # testes do núcleo + módulo Publication Strategy
 claude plugin validate . --strict            # validador oficial
 bash tests/cli_smoke_test.sh                 # carrega o plugin num claude -p real (consome chamadas de modelo)
 claude plugin eval . --runs 1                # casos de comportamento em evals/ (consome chamadas de modelo)
@@ -257,22 +312,28 @@ Ver [`tests/README.md`](tests/README.md) para o que cada teste cobre e
   positivos e falsos negativos; não substituem a auditoria frase a frase.
 - O formatador de referências é simplificado (casos especiais de ABNT/APA exigem revisão).
 - Verificação de DOI depende de acesso de rede a Crossref/doi.org; sem rede o resultado é `UNVERIFIED`.
+- O módulo Publication Strategy não submete nada nem acessa sistemas de submissão; nenhuma avaliação
+  de aderência garante aceitação. Sites de editoras podem bloquear acesso automatizado — nesse caso as
+  regras ficam `NOT VERIFIED` até o usuário fornecer o texto oficial.
 
 ## Estrutura
 
 ```
 scientific-research/
 ├── .claude-plugin/plugin.json      manifesto
-├── skills/<18 skills>/SKILL.md
-├── agents/<6 agentes>.md
+├── skills/<18 skills>/SKILL.md          núcleo científico
+├── modules/publication-strategy/       módulo Publication Strategy
+│   ├── skills/<12 skills>/SKILL.md
+│   ├── schemas/ · templates/ · scripts/pubtool.py · README.md
+├── agents/<7 agentes>.md
 ├── hooks/                          hooks.json + scripts Python
 ├── scripts/                        srtool.py, sync_integrity.py
 ├── schemas/                        JSON Schemas
 ├── templates/                      protocolo, search log, fichas, relatórios
 ├── connectors/                     configuração opcional de MCP (sem credenciais)
 ├── evals/                          casos para `claude plugin eval`
-├── examples/                       3 exemplos completos
+├── examples/                       4 exemplos completos
 ├── tests/                          unittest + fixtures + smoke test
-├── docs/                           architecture.md, scientific-method.md, connectors.md
+├── docs/                           architecture.md, scientific-method.md, connectors.md, publication-strategy.md
 ├── ARCHITECTURE_PLAN.md · CHANGELOG.md · LICENSE · README.md
 ```

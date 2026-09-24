@@ -1,0 +1,121 @@
+{
+  "journal": "Journal of Test Fixtures (SINTÉTICO)",
+  "manuscript": "research/manuscript/manuscript.md",
+  "requirements_file": "research/publication/journals/demo-synthetic-journal/requirements.json",
+  "generated_on": "2026-09-24",
+  "target_journal_mode": false,
+  "items": [
+    {
+      "rule_id": "S-WORDS",
+      "category": "limite de palavras",
+      "requirement": "Máximo de 8000 palavras, excluindo referências",
+      "source": "fixture://journal-of-test-fixtures/guide-for-authors (consultado em 2026-09-24) — \"[SINTÉTICO] Máximo de 8000 palavras, excluindo referências\" [REQUISITO SINTÉTICO]",
+      "status": "COMPLIANT",
+      "current_state": "496 palavras (main_text_excluding_references)",
+      "gap": "",
+      "action": ""
+    },
+    {
+      "rule_id": "S-ABSTRACT",
+      "category": "abstract",
+      "requirement": "Abstract com no máximo 150 palavras",
+      "source": "fixture://journal-of-test-fixtures/guide-for-authors (consultado em 2026-09-24) — \"[SINTÉTICO] Abstract com no máximo 150 palavras\" [REQUISITO SINTÉTICO]",
+      "status": "COMPLIANT",
+      "current_state": "150 palavras",
+      "gap": "",
+      "action": ""
+    },
+    {
+      "rule_id": "S-KEYWORDS",
+      "category": "keywords",
+      "requirement": "Entre 4 e 6 keywords",
+      "source": "fixture://journal-of-test-fixtures/guide-for-authors (consultado em 2026-09-24) — \"[SINTÉTICO] Entre 4 e 6 keywords\" [REQUISITO SINTÉTICO]",
+      "status": "COMPLIANT",
+      "current_state": "5 keywords",
+      "gap": "",
+      "action": ""
+    },
+    {
+      "rule_id": "S-TITLE",
+      "category": "título",
+      "requirement": "Título com no máximo 100 caracteres",
+      "source": "fixture://journal-of-test-fixtures/guide-for-authors (consultado em 2026-09-24) — \"[SINTÉTICO] Título com no máximo 100 caracteres\" [REQUISITO SINTÉTICO]",
+      "status": "ACTION_REQUIRED",
+      "current_state": "113 caracteres",
+      "gap": "excede em 13",
+      "action": "Encurtar título para ≤ 100 caracteres."
+    },
+    {
+      "rule_id": "S-HIGHLIGHTS",
+      "category": "highlights",
+      "requirement": "3 a 5 highlights, até 85 caracteres cada",
+      "source": "fixture://journal-of-test-fixtures/guide-for-authors (consultado em 2026-09-24) — \"[SINTÉTICO] 3 a 5 highlights, até 85 caracteres cada\" [REQUISITO SINTÉTICO]",
+      "status": "COMPLIANT",
+      "current_state": "4 highlights",
+      "gap": "",
+      "action": ""
+    },
+    {
+      "rule_id": "S-DATA",
+      "category": "data availability",
+      "requirement": "Declaração de disponibilidade de dados obrigatória",
+      "source": "fixture://journal-of-test-fixtures/guide-for-authors (consultado em 2026-09-24) — \"[SINTÉTICO] Declaração de disponibilidade de dados obrigatória\" [REQUISITO SINTÉTICO]",
+      "status": "ACTION_REQUIRED",
+      "current_state": "declaração 'data_availability' presente mas incompleta/placeholder",
+      "gap": "conteúdo pendente",
+      "action": "Autores devem preencher.",
+      "integrity_note": "Não inventar informações dos autores."
+    },
+    {
+      "rule_id": "S-COI",
+      "category": "conflitos de interesse",
+      "requirement": "Declaração de conflitos de interesse obrigatória",
+      "source": "fixture://journal-of-test-fixtures/guide-for-authors (consultado em 2026-09-24) — \"[SINTÉTICO] Declaração de conflitos de interesse obrigatória\" [REQUISITO SINTÉTICO]",
+      "status": "ACTION_REQUIRED",
+      "current_state": "declaração 'competing_interests' presente mas incompleta/placeholder",
+      "gap": "conteúdo pendente",
+      "action": "Autores devem preencher.",
+      "integrity_note": "Não inventar informações dos autores."
+    },
+    {
+      "rule_id": "S-LIMITS",
+      "category": "seção de limitações",
+      "requirement": "Seção 'Limitations' obrigatória",
+      "source": "fixture://journal-of-test-fixtures/guide-for-authors (consultado em 2026-09-24) — \"[SINTÉTICO] Seção 'Limitations' obrigatória\" [REQUISITO SINTÉTICO]",
+      "status": "COMPLIANT",
+      "current_state": "seção encontrada: 5. Limitations",
+      "gap": "",
+      "action": ""
+    },
+    {
+      "rule_id": "S-REFSTYLE",
+      "category": "estilo de referências",
+      "requirement": "Referências em APA 7",
+      "source": "fixture://journal-of-test-fixtures/guide-for-authors (consultado em 2026-09-24) — \"[SINTÉTICO] Referências em APA 7\" [REQUISITO SINTÉTICO]",
+      "status": "UNABLE_TO_VERIFY",
+      "current_state": "requer verificação manual",
+      "gap": "",
+      "action": "Conferir manualmente e registrar confirmação."
+    },
+    {
+      "rule_id": "S-FIG",
+      "category": "figuras",
+      "requirement": "No máximo 6 figuras",
+      "source": "fixture://journal-of-test-fixtures/guide-for-authors (consultado em 2026-09-24) — \"[SINTÉTICO] No máximo 6 figuras\" [REQUISITO SINTÉTICO]",
+      "status": "COMPLIANT",
+      "current_state": "0 figuras",
+      "gap": "",
+      "action": ""
+    },
+    {
+      "rule_id": "S-SHORT",
+      "category": "short communication",
+      "requirement": "Regras de short communication",
+      "source": "fixture://journal-of-test-fixtures/guide-for-authors (consultado em 2026-09-24) — \"[SINTÉTICO] Regras de short communication\" [REQUISITO SINTÉTICO]",
+      "status": "NOT_APPLICABLE",
+      "current_state": "regra não se aplica a este tipo de manuscrito",
+      "gap": "",
+      "action": ""
+    }
+  ]
+}

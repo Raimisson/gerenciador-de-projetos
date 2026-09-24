@@ -1,0 +1,4 @@
+- Structured rapid review of evidence on revenue decoupling and efficiency programs
+- One abstract-level study reports an association with higher DSM spending
+- No verifiable effect magnitude was found in the accessible sources
+- Transferability outside the United States requires institutional analysis
