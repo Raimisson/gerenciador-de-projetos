@@ -1,0 +1,21 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "raimisson-research",
+  "owner": {
+    "name": "Raimisson"
+  },
+  "metadata": {
+    "description": "Marketplace do plugin Scientific Research."
+  },
+  "plugins": [
+    {
+      "name": "scientific-research",
+      "displayName": "Scientific Research",
+      "source": "./scientific-research",
+      "description": "Pesquisa científica e redação de artigos com rastreabilidade de evidências, auditoria de citações e regras contra fabricação.",
+      "version": "0.1.0",
+      "category": "research",
+      "license": "MIT"
+    }
+  ]
+}

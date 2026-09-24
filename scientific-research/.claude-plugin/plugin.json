@@ -1,0 +1,25 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "scientific-research",
+  "version": "0.1.0",
+  "description": "Scientific Research: ambiente reutilizável para pesquisa científica e redação de artigos — pergunta de pesquisa, busca bibliográfica e de literatura cinzenta, triagem, extração estruturada de evidências, Evidence Ledger, matrizes de evidência, avaliação metodológica, síntese, redação, auditoria de citações e do manuscrito. Regras estritas contra fabricação de evidências. Ênfase em regulação, políticas públicas, economia, energia e infraestrutura.",
+  "author": {
+    "name": "Raimisson",
+    "url": "https://github.com/Raimisson"
+  },
+  "homepage": "https://github.com/Raimisson/gerenciador-de-projetos/tree/main/scientific-research",
+  "repository": "https://github.com/Raimisson/gerenciador-de-projetos",
+  "license": "MIT",
+  "keywords": [
+    "research",
+    "scientific-writing",
+    "literature-review",
+    "systematic-review",
+    "evidence-synthesis",
+    "citation-audit",
+    "regulation",
+    "public-policy",
+    "economics",
+    "energy"
+  ]
+}
