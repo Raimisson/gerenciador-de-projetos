@@ -1,8 +1,8 @@
 {
   "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
   "name": "scientific-research",
-  "version": "0.2.2",
-  "description": "Scientific Research: ambiente reutilizável para pesquisa científica e publicação de artigos — pergunta de pesquisa, busca bibliográfica e de literatura cinzenta, triagem, extração estruturada de evidências, Evidence Ledger, matrizes de evidência, avaliação metodológica, síntese, redação, auditoria de citações e do manuscrito, e módulo Publication Strategy (escolha de periódicos por aderência, due diligence, requisitos atuais, compliance, submissão, resposta a pareceres). Regras estritas contra fabricação de evidências e contra probabilidades de aceitação.",
+  "version": "0.2.3",
+  "description": "Pesquisa científica e publicação de artigos: pergunta, busca bibliográfica e cinzenta, triagem, extração de evidências, Evidence Ledger, matrizes, avaliação metodológica, síntese, redação, auditoria de citações e do manuscrito, e estratégia de publicação (periódicos, requisitos, submissão, pareceres). Sem fabricação de evidências nem probabilidades de aceitação.",
   "author": {
     "name": "Raimisson",
     "url": "https://github.com/Raimisson"

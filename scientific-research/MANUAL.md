@@ -1,4 +1,4 @@
-# Manual do usuário — Plugin **Scientific Research** (v0.2.2)
+# Manual do usuário — Plugin **Scientific Research** (v0.2.3)
 
 > Manual didático e completo. Leia as seções 1 a 6 antes de começar (cerca de 20 minutos) e use o
 > restante como consulta. Os termos em `código` são nomes de comandos, arquivos ou status.

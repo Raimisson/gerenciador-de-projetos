@@ -3,6 +3,11 @@
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/); versões seguem
 [SemVer](https://semver.org/lang/pt-BR/).
 
+## [0.2.3] - 2026-09-25
+
+### Corrigido
+- Descrição do `plugin.json` reduzida para menos de 500 caracteres (limite exigido pelo Cowork no upload).
+
 ## [0.2.2] - 2026-09-25
 
 ### Adicionado

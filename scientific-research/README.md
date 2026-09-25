@@ -5,7 +5,7 @@ evidências e regras estritas contra fabricação. Pensado para pesquisa aplicad
 políticas públicas, economia, energia, infraestrutura, saneamento, avaliação de políticas e
 programas, AIR/ARR e eficiência energética** — mas genérico o bastante para outras áreas.
 
-Versão **0.2.2** · Licença MIT · Formato oficial de plugins do Claude Code (verificado em 24/09/2026).
+Versão **0.2.3** · Licença MIT · Formato oficial de plugins do Claude Code (verificado em 24/09/2026).
 
 ---
 
