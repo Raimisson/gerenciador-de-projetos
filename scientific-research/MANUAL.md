@@ -232,11 +232,57 @@ claude plugin uninstall scientific-research@raimisson-research
 claude --plugin-dir caminho/para/gerenciador-de-projetos/scientific-research
 ```
 
-### 4.6 E no Claude.ai (chat) ou Cowork?
-O formato das skills é o padrão oficial, mas a compatibilidade com o Claude.ai/Cowork **não foi
-testada**. Nesses ambientes, as skills tendem a funcionar como instruções; subagentes, proteções
-automáticas (hooks) e scripts dependem de o ambiente permitir agentes e execução de código. As regras
-de integridade estão dentro de cada skill, então o comportamento essencial se mantém.
+### 4.6 Usar no Claude Cowork (app Desktop) e no Claude.ai
+
+Plugins estão disponíveis nos planos pagos (Pro, Max, Team, Enterprise). Fonte: artigo oficial
+"Use plugins in Claude" (support.claude.com), consultado em 25/09/2026.
+
+**Instalar no Cowork — opção 1: enviar o arquivo do plugin**
+1. Obtenha `scientific-research-cowork.zip` (o `.claude-plugin/plugin.json` fica na raiz do zip).
+   Para gerar a partir do repositório: compacte o **conteúdo** da pasta `scientific-research/`
+   (não a pasta em si); `tests/`, `evals/` e `install/` podem ficar de fora.
+2. No app Claude Desktop, abra a aba **Cowork**.
+3. Clique em **Customize** → aba **Plugins**.
+4. Use a opção de **enviar (upload) um plugin personalizado** e selecione o `.zip`.
+5. Confirme que "Scientific Research" aparece como instalado e ativo.
+
+**Instalar no Cowork — opção 2: sincronizar a partir do GitHub**
+Em **Customize → Plugins**, adicione um marketplace sincronizado com o repositório
+`Raimisson/gerenciador-de-projetos` (o arquivo `.claude-plugin/marketplace.json` está na raiz) e instale
+`scientific-research`. Só funciona depois que o plugin estiver no branch padrão do repositório.
+
+**No Claude.ai (chat web):** menu **Customize** (barra lateral) → **Plugins**. No chat, **apenas as
+skills** funcionam; subagentes e hooks aparecem desabilitados (funcionam no Cowork e no Claude Code).
+
+**O que funciona onde**
+
+| Componente | Claude Code | Cowork | Chat (claude.ai) |
+|---|---|---|---|
+| 30 skills (`/scientific-research:…`) | ✔ | ✔ | ✔ |
+| 7 subagentes | ✔ | ✔ | — |
+| Hooks (lembrete, proteção de `data/raw/`, Zotero) | ✔ | ✔ (exigem Python no ambiente) | — |
+| Scripts `srtool.py` / `pubtool.py` | ✔ | quando o ambiente executa código | — |
+| Conectores do claude.ai (Scite, Consensus, Elicit, Drive…) | ✔ | ✔ | ✔ |
+
+**Como trabalhar no Cowork**
+1. Ative os conectores de pesquisa em **Customize → Connectors** (Scite, Consensus, Elicit, Google Drive).
+2. Dê ao Cowork acesso a uma **pasta de trabalho** do seu computador — por exemplo
+   `C:\Users\raimi\Documents\claude\projetos\<nome-do-artigo>`. É nela que o plugin cria `research/`
+   (log de busca, fichas, Evidence Ledger, manuscrito, auditorias, estratégia de publicação).
+3. Coloque os PDFs dos artigos nessa pasta (ou numa subpasta `pdfs/`) e peça, por exemplo:
+   *"Use /scientific-research:research-project para iniciar um projeto sobre … nesta pasta."*
+4. Dê as tarefas em linguagem natural; o Cowork trabalha por etapas e entrega arquivos prontos.
+   Exemplos: *"extraia as evidências de todos os PDFs da pasta pdfs/ para fichas e para o ledger"*,
+   *"gere a matriz de evidências em CSV"*, *"audite as citações de manuscrito.docx"*,
+   *"faça a auditoria pré-submissão para a revista X"*.
+
+**Limites e cuidados no Cowork**
+- A compatibilidade específica deste plugin com o Cowork **não foi testada**; ele segue o formato
+  oficial de plugins, que o Cowork usa.
+- Se os scripts não puderem ser executados no ambiente, as skills seguem funcionando como
+  instruções, e as validações são feitas pelo próprio Claude seguindo os schemas.
+- Não instale o mesmo plugin pelo Cowork e pelo Claude Code com versões diferentes; atualize os dois
+  juntos para evitar comportamentos distintos.
 
 ### 4.7 Custo de contexto
 O plugin adiciona cerca de **3,1 mil tokens** a cada sessão (as descrições das skills que o Claude
@@ -775,7 +821,7 @@ find ~/.claude/plugins/cache -path "*scientific-research*" -name srtool.py
 - **O formatador de referências é simplificado**: casos especiais de ABNT/APA (autoria institucional,
   normas, capítulos) precisam de revisão.
 - **Regras de periódicos mudam**: reconsulte antes de submeter (a auditoria cobra isso).
-- **Claude.ai/Cowork**: compatibilidade não testada; o uso recomendado é no Claude Code.
+- **Claude.ai/Cowork**: compatibilidade não testada; no chat só as skills funcionam (seção 4.6).
 - **Custo**: buscas em conectores e leituras de texto integral consomem cotas dos serviços e tokens.
 
 ---
