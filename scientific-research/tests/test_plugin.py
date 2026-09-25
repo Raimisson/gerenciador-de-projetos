@@ -140,7 +140,7 @@ class TestManifest(unittest.TestCase):
         self.assertRegex(self.manifest["name"], r"^[a-z0-9]+(-[a-z0-9]+)*$")
         self.assertEqual(self.manifest["name"], "scientific-research")
         self.assertRegex(self.manifest["version"], r"^\d+\.\d+\.\d+$")
-        self.assertEqual(self.manifest["version"], "0.2.1")
+        self.assertEqual(self.manifest["version"], "0.2.2")
 
     def test_04b_changelog_matches_version(self):
         self.assertIn(f"[{self.manifest['version']}]", (ROOT / "CHANGELOG.md").read_text(encoding="utf-8"))

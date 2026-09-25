@@ -1,4 +1,4 @@
-# Manual do usuário — Plugin **Scientific Research** (v0.2.1)
+# Manual do usuário — Plugin **Scientific Research** (v0.2.2)
 
 > Manual didático e completo. Leia as seções 1 a 6 antes de começar (cerca de 20 minutos) e use o
 > restante como consulta. Os termos em `código` são nomes de comandos, arquivos ou status.
@@ -171,6 +171,35 @@ claude plugin install scientific-research@raimisson-research
 > claude plugin marketplace add ./gerenciador-de-projetos
 > claude plugin install scientific-research@raimisson-research
 > ```
+
+### 4.2b Instalação local no Windows (pasta `C:\Users\raimi\Documents\claude`)
+
+Use esta opção para manter o plugin numa pasta do seu computador, sem depender do GitHub.
+
+1. Baixe o pacote `scientific-research-windows.zip` (ou gere-o a partir do repositório: conteúdo de
+   `install/` + pastas `.claude-plugin/` e `scientific-research/` da raiz do repositório).
+2. Extraia **todo** o conteúdo em `C:\Users\raimi\Documents\claude`. Devem existir:
+   - `C:\Users\raimi\Documents\claude\.claude-plugin\marketplace.json` (pasta que começa com ponto)
+   - `C:\Users\raimi\Documents\claude\scientific-research\` (o plugin)
+   - `C:\Users\raimi\Documents\claude\instalar-plugin.ps1`
+3. Abra o **PowerShell** e execute:
+   ```powershell
+   cd C:\Users\raimi\Documents\claude
+   powershell -ExecutionPolicy Bypass -File .\instalar-plugin.ps1
+   ```
+   O script confere o Claude Code e o Python, registra a pasta como *marketplace* local e instala
+   `scientific-research@raimisson-research`.
+4. Sem o script, o equivalente é:
+   ```powershell
+   claude plugin marketplace add "C:\Users\raimi\Documents\claude"
+   claude plugin install scientific-research@raimisson-research
+   ```
+5. Feche e abra o Claude Code. **Não apague nem mova a pasta** depois de instalar; para atualizar,
+   substitua a pasta `scientific-research` pela versão nova e rode o script de novo.
+
+**Python no Windows:** instale o Python 3 em python.org marcando *"Add python.exe to PATH"*. As
+proteções automáticas (hooks) tentam `python3`, `python` e `py`, nessa ordem. Nos comandos das
+seções 14.1 e 14.2, troque `python3` por `python` se necessário.
 
 ### 4.3 Conferir se deu certo
 

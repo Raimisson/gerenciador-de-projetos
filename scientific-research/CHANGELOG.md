@@ -3,6 +3,15 @@
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/); versões seguem
 [SemVer](https://semver.org/lang/pt-BR/).
 
+## [0.2.2] - 2026-09-25
+
+### Adicionado
+- Pacote de instalação local para Windows: `install/instalar-plugin.ps1` e `install/LEIA-ME.txt`
+  (pasta padrão `%USERPROFILE%\Documents\claude`).
+
+### Corrigido
+- Hooks funcionam também no Windows: tentam `python3`, depois `python` e `py -3`.
+
 ## [0.2.1] - 2026-09-24
 
 ### Alterado

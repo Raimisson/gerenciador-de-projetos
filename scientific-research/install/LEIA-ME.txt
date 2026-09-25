@@ -1,0 +1,37 @@
+﻿PLUGIN SCIENTIFIC RESEARCH - INSTALAÇÃO NO WINDOWS
+===================================================
+
+Pasta de instalação: C:\Users\raimi\Documents\claude
+
+1) Extraia TODO o conteúdo deste pacote para:
+       C:\Users\raimi\Documents\claude
+   Depois da extração, devem existir:
+       C:\Users\raimi\Documents\claude\.claude-plugin\marketplace.json
+       C:\Users\raimi\Documents\claude\scientific-research\   (o plugin)
+       C:\Users\raimi\Documents\claude\instalar-plugin.ps1
+   Observação: a pasta ".claude-plugin" começa com ponto; confira se ela foi extraída.
+
+2) Abra o PowerShell (menu Iniciar > "PowerShell") e execute:
+       cd C:\Users\raimi\Documents\claude
+       powershell -ExecutionPolicy Bypass -File .\instalar-plugin.ps1
+
+   O script verifica o Claude Code e o Python, registra a pasta como
+   marketplace local e instala o plugin "scientific-research@raimisson-research".
+
+3) Feche e abra o Claude Code. Digite:
+       /scientific-research:research-project
+
+Requisitos
+- Claude Code instalado e com login (https://code.claude.com).
+- Recomendado: Python 3 (https://www.python.org/downloads/), marcando
+  "Add python.exe to PATH" na instalação.
+
+Instalação manual (sem o script), no PowerShell ou no próprio Claude Code:
+       claude plugin marketplace add "C:\Users\raimi\Documents\claude"
+       claude plugin install scientific-research@raimisson-research
+
+Importante: o Claude Code usa o plugin a partir desta pasta. Não apague nem
+mova "C:\Users\raimi\Documents\claude" depois de instalar (se mover, rode o
+script de novo a partir do novo local).
+
+Manual completo: scientific-research\MANUAL.md
